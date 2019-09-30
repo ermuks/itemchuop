@@ -2,6 +2,25 @@
     font-family: '돋움',Dotum;
 }
 
+
+div#cosum_button {
+    background: url(img/itemList/cosum/item_back.png) no-repeat;
+    width: 156px;
+    height: 126px;
+    text-align: center;
+    font-size: 9pt;
+    color: white;
+    cursor: pointer;
+    overflow: hidden;
+}
+div#cosumicon {
+    height: 50px;
+    padding-top: 25px;
+}
+div#cosumname {
+    padding: 16px;
+}
+
 div#itembackground {
     height: 0px;
 }
