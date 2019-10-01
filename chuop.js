@@ -1,68 +1,74 @@
-function nodata() {
-    // 0  STR
-    // 1  DEX
-    // 2  INT
-    // 3  LUK
-    // 4  최대HP
-    // 5  최대MP
-    // 6  최대HP%
-    // 7  최대MP%
-    // 8  공격력
-    // 9  마력
-    // 10 방어력
-    // 11 이동속도
-    // 12 점프력
-    // 13 보공
-    // 14 방무
-    // 15 데미지
-    // 16 올스탯
 
-    // 방어구 추옵 종류
-    // 0 STR        5%  5
-    // 1 DEX        5%  10
-    // 2 INT        5%  15
-    // 3 LUK        5%  20
-    // 4 STR DEX    5%  25
-    // 5 STR INT    5%  30
-    // 6 STR LUK    5%  35
-    // 7 DEX INT    5%  40
-    // 8 DEX LUK    5%  45
-    // 9 INT LUK    5%  50
-    // 10 최대HP    6%  56
-    // 11 최대MP    6%  62
-    // 12 공격력     5%  68
-    // 13 마력       5%  73
-    // 14 방어력     6%  79
-    // 15 이동속도   8%  87
-    // 16 점프력     8%  95
-    // 17 올스탯     5%  100
+var nochu = new Array(20); // 추옵배열 겹침 방지
+var chustring = ["STR", "DEX", "INT", "LUK", "최대HP", "최대MP", "최대HP", "최대MP", "공격력", "마력", "방어력", "이동속도", "점프력", "보스 몬스터 공격 시 데미지", "몬스터 방어율 무시", "데미지", "올스탯", "착용 레벨 제한 감소"];
+var opper = ["", "", "", "", "", "", "%", "%", "", "", "", "", "", "%", "%", "%", "%"];
+var basic = [15, 15, 15, 15, 0, 0, 0, 0, 2, 2, 250, 0, 0, 0, 0, 0, 0, 0]; // 기본 옵션
+var jak = [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0]; // 작된 옵션 (주문서 및 스타포스)
+var chu = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]; // 추가 옵션
 
-    // 무기 추옵 종류
-    // 0 STR
-    // 1 DEX
-    // 2 INT
-    // 3 LUK
-    // 4 STR DEX
-    // 5 STR INT
-    // 6 STR LUK
-    // 7 DEX INT
-    // 8 DEX LUK
-    // 9 INT LUK
-    // 10 최대HP
-    // 11 최대MP
-    // 12 공격력
-    // 13 마력
-    // 14 방어력
-    // 15 이동속도
-    // 16 점프력
-    // 17 보공
-    // 18 데미지
-    // 19 올스탯
+var ucount = 0; // 강화된 횟수
+var goldhm = false;
+var maxupg = 7; // 최대 업그레이드 가능횟수
+var elseup = 7; // 업그레이드 가능 횟수
+var goldhm = false; // 황금망치 제련 적용
+var strfrc = 0; // 현재 스타포스
+var maxstr = 25; // 최대 스타포스
+
+var itemname = "앱솔랩스 메이지 케이프";
+
+
+function upg(lv, itemtype, mns, code, price) {
+    if (mns == true) {
+        if (elseup <= 0) {
+            elseup = 0;
+            alert("더이상 강화를 할 수 없습니다.");
+            return false;
+        }
+    }
+    switch (code) {
+        case "주흔70":
+            elseup--;
+            if (Math.random() * 100 < 70) {
+                jak[2] += 4;
+                ucount++;
+            }
+            break;
+        case "주흔30":
+            elseup--;
+            if (Math.random() * 100 < 30) {
+                jak[2] += 7;
+                ucount++;
+            }
+            break;
+        case "주흔15":
+            elseup--;
+            if (Math.random() * 100 < 15) {
+                jak[2] += 15;
+                ucount++;
+            }
+            break;
+        case "순백":
+            if (elseup + ucount < maxupg) {
+                if (Math.random() * 100 < 10) {
+                    elseup++;
+                }
+            }
+            break;
+        case "황망":
+            maxupg++;
+            goldhm = true;
+            if (Math.random() * 100 < 50) {
+                elseup++;
+            }
+            break;
+        default:
+            alert("잘못 표기되었습니다. code : " + code);
+            break;
+    }
+    refresh();
 }
 
 function setchu(lv, itemtype, icls) {
-    var chu = new Array(17); // 추옵배열
-    var nochu = new Array(20); // 추옵배열 겹침 방지
     for (var i = 0; i < chu.length; i++) {
         chu[i] = 0;
     }
@@ -71,9 +77,6 @@ function setchu(lv, itemtype, icls) {
     }
     var danchu = 0; // 받아온 아이템 베이스 추옵 (단일추옵)
     var yeechu = 0; // 받아온 아이템 이중추옵
-    var chustring = ["STR", "DEX", "INT", "LUK", "최대HP", "최대MP", "최대HP", "최대MP", "공격력", "마력", "방어력", "이동속도", "점프력", "보스 몬스터 공격 시 데미지", "몬스터 방어율 무시", "데미지", "올스탯"];
-    var opper = ["", "", "", "", "", "", "%", "%", "", "", "", "", "", "%", "%", "%", "%"];
-    var basic = [0, 0, 40, 40, 0, 0, 0, 0, 0, 2, 200, 0, 0, 0, 0, 0, 0]
     // lv = 아이템 레벨 제한
     // itemtype = 장비 종류
     // icls = 환생의 불꽃 종류
@@ -241,12 +244,23 @@ function setchu(lv, itemtype, icls) {
             }
         }
     }
+    refresh();
+}
 
+function refresh() {
     for (var i = 0; i < 17; i++) {
         if (chu[i] != 0) {
-            document.getElementsByName("ioption")[i + 2].innerHTML = "<font id=\"upop\">" + chustring[i] + " : +" + (chu[i] + basic[i]) + opper[i] + "</font> (" + basic[i] + " <font id=\"addop\">+" + chu[i] + opper[i] + "</font>)";
+            if (jak[i] != 0) {
+                document.getElementsByName("ioption")[i + 2].innerHTML = "<font id=\"upop\">" + chustring[i] + " : +" + (chu[i] + jak[i] + basic[i]) + opper[i] + "</font> (" + basic[i] + " <font id=\"addop\">+" + chu[i] + opper[i] + "</font> <font id=\"upop\">+" + jak[i] + "</font>)";
+            } else {
+                document.getElementsByName("ioption")[i + 2].innerHTML = "<font id=\"upop\">" + chustring[i] + " : +" + (chu[i] + basic[i]) + opper[i] + "</font> (" + basic[i] + " <font id=\"addop\">+" + chu[i] + opper[i] + "</font>)";
+            }
         } else {
-            document.getElementsByName("ioption")[i + 2].innerHTML = chustring[i] + " : +" + basic[i] + opper[i];
+            if (jak[i] != 0) {
+                document.getElementsByName("ioption")[i + 2].innerHTML = "<font id=\"upop\">" + chustring[i] + " : +" + (jak[i] + basic[i]) + opper[i] + "</font> (" + basic[i] + " <font id=\"upop\">+" + jak[i] + opper[i] + "</font>)";
+            } else {
+                document.getElementsByName("ioption")[i + 2].innerHTML = chustring[i] + " : +" + basic[i] + opper[i];
+            }
         }
         if (chu[i] + basic[i] <= 0) {
             document.getElementsByName("ioption")[i + 2].style.display = "none";
@@ -254,4 +268,78 @@ function setchu(lv, itemtype, icls) {
             document.getElementsByName("ioption")[i + 2].style.display = "block";
         }
     }
+    document.getElementsByName("ioption")[20].innerText = "업그레이드 가능 횟수 : " + elseup;
+
+    if (goldhm) {
+        document.getElementsByName("ioption")[22].hidden = false;
+    } else {
+        document.getElementsByName("ioption")[22].hidden = true;
+    }
+    if (ucount > 0) {
+        document.getElementById("itemname").innerText = itemname + "(+" + ucount + ")";
+    } else {
+        document.getElementById("itemname").innerText = itemname;
+    }
+}
+
+function nodata() {
+    // 0  STR
+    // 1  DEX
+    // 2  INT
+    // 3  LUK
+    // 4  최대HP
+    // 5  최대MP
+    // 6  최대HP%
+    // 7  최대MP%
+    // 8  공격력
+    // 9  마력
+    // 10 방어력
+    // 11 이동속도
+    // 12 점프력
+    // 13 보공
+    // 14 방무
+    // 15 데미지
+    // 16 올스탯
+
+    // 방어구 추옵 종류
+    // 0 STR        5%  5
+    // 1 DEX        5%  10
+    // 2 INT        5%  15
+    // 3 LUK        5%  20
+    // 4 STR DEX    5%  25
+    // 5 STR INT    5%  30
+    // 6 STR LUK    5%  35
+    // 7 DEX INT    5%  40
+    // 8 DEX LUK    5%  45
+    // 9 INT LUK    5%  50
+    // 10 최대HP    6%  56
+    // 11 최대MP    6%  62
+    // 12 공격력     5%  68
+    // 13 마력       5%  73
+    // 14 방어력     6%  79
+    // 15 이동속도   8%  87
+    // 16 점프력     8%  95
+    // 17 올스탯     5%  100
+
+    // 무기 추옵 종류
+    // 0 STR
+    // 1 DEX
+    // 2 INT
+    // 3 LUK
+    // 4 STR DEX
+    // 5 STR INT
+    // 6 STR LUK
+    // 7 DEX INT
+    // 8 DEX LUK
+    // 9 INT LUK
+    // 10 최대HP
+    // 11 최대MP
+    // 12 공격력
+    // 13 마력
+    // 14 방어력
+    // 15 이동속도
+    // 16 점프력
+    // 17 보공
+    // 18 데미지
+    // 19 올스탯
 }
