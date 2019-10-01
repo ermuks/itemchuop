@@ -6,6 +6,8 @@ var basic = [15, 15, 15, 15, 0, 0, 0, 0, 2, 2, 250, 0, 0, 0, 0, 0, 0, 0]; // 기
 var jak = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]; // 작된 옵션 (주문서 및 스타포스)
 var chu = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]; // 추가 옵션
 
+var ngh = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]; // 놀긍혼 리턴 배열
+
 var ucount = 0; // 강화된 횟수
 var goldhm = false;
 var maxupg = 7; // 최대 업그레이드 가능횟수
@@ -16,7 +18,7 @@ var maxstr = 25; // 최대 스타포스
 
 var itemname = "아케인셰이드 메이지 케이프";
 
-var cosumcnt = new Array(20);
+var cosumcnt = new Array(23);
 for (var i = 0; i < cosumcnt.length; i++) {
     cosumcnt[i] = 0;
 }
@@ -32,11 +34,32 @@ function textrefresh() {
     }
 }
 
+function cash(code) {
+    switch (code) {
+        case "리턴":
+            for (var i = 0; i < ngh.length; i++) {
+                jak[i] -= ngh[i];
+            }
+            elseup++;
+            ucount--;
+
+            for (var i = 0; i < ngh.length; i++) {
+                ngh[i] = 0;
+            }
+            break;
+        default:
+            alert('잘못된 접근 코드 : ' + code);
+    }
+    refresh();
+}
+
 function upg(lv, itemtype, mns, code, price) {
+    for (var i = 0; i < ngh.length; i++) {
+        ngh[i] = 0;
+    }
     if (mns == true) {
         if (elseup <= 0) {
             elseup = 0;
-            alert("더이상 강화를 할 수 없습니다.");
             return false;
         }
     }
@@ -62,6 +85,27 @@ function upg(lv, itemtype, mns, code, price) {
                 ucount++;
             }
             break;
+        case "놀긍혼":
+            elseup--;
+            if (Math.random() * 100 < 60) {
+                ucount++;
+                for (var b = 0; b < basic.length - 1; b++) {
+                    if (basic[b] + chu[b] + jak[b] > 0) {
+                        var ranper = [25, 30, 20, 15, 5, 0, 5];
+                        var t = Math.random() * 100;
+                        var tp = 0;
+                        for (var i = 0; i < ranper.length; i++) {
+                            tp += ranper[i];
+                            if (tp > t) {
+                                jak[b] += i;
+                                ngh[b] = i;
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+            break;
         case "순백":
             if (elseup + ucount < maxupg) {
                 if (Math.random() * 100 < 10) {
@@ -78,8 +122,38 @@ function upg(lv, itemtype, mns, code, price) {
                 }
             }
             break;
+        case "이노":
+            if (Math.random() * 100 < 50) {
+                if (goldhm) maxupg--;
+                goldhm = false;
+                elseup = maxupg;
+                for (var i = 0; i < jak.length; i++) {
+                    jak[i] = 0;
+                }
+            }
+            break;
         case "에잠":
-            test();
+            if (potlv < 2) {
+                if (Math.random() * 100 < 50) {
+                    potlv = 2;
+                    cube("레큐");
+                }
+            }
+        case "유잠":
+            if (potlv < 3) {
+                if (Math.random() * 100 < 30) {
+                    potlv = 3;
+                    cube("레큐");
+                }
+            }
+            break;
+        case "에디에잠":
+            if (edipotlv < 2) {
+                if (Math.random() * 100 < 30) {
+                    edipotlv = 2;
+                    cube("에큐");
+                }
+            }
             break;
         default:
             alert("잘못 표기되었습니다. code : " + code);
