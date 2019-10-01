@@ -71,10 +71,64 @@ function cube(item) {
             }
             break;
         case "레큐":
+            var sg = [0, 150, 50, 15];
+            t = Math.random() * 1000;
+            if (potlv < 4) {
+                if (t < sg[potlv]) {
+                    potlv++;
+                }
+            }
+            lv = [potlv, potlv - 1, potlv - 1];
+            if (Math.random() * 1000 < 90) {
+                lv[1] = potlv;
+            }
+            if (Math.random() * 1000 < 90) {
+                lv[2] = potlv;
+            }
 
+            for (var i = 0; i < pot.length; i++) {
+                t = parseInt(Math.random() * 100);
+                perc = 0;
+                for (var j = 0; j < potenlist_per[lv[i]].length; j++) {
+                    perc += potenlist_per[lv[i]][j];
+                    if (perc > t) {
+                        pot[i] = potenlist_cape[lv[i]][j];
+                        pot[i] = pot[i].replace('#v', potenvalue_cape[lv[i]][j]);
+                        pot[i] = pot[i].replace('#p', potenper_cape[lv[i]][j]);
+                        break;
+                    }
+                }
+            }
             break;
         case "블큐":
+            var sg = [0, 200, 120, 40];
+            t = Math.random() * 1000;
+            if (potlv < 4) {
+                if (t < sg[potlv]) {
+                    potlv++;
+                }
+            }
+            lv = [potlv, potlv - 1, potlv - 1];
+            if (Math.random() * 1000 < 210) {
+                lv[1] = potlv;
+            }
+            if (Math.random() * 1000 < 210) {
+                lv[2] = potlv;
+            }
 
+            for (var i = 0; i < pot.length; i++) {
+                t = parseInt(Math.random() * 100);
+                perc = 0;
+                for (var j = 0; j < potenlist_per[lv[i]].length; j++) {
+                    perc += potenlist_per[lv[i]][j];
+                    if (perc > t) {
+                        pot[i] = potenlist_cape[lv[i]][j];
+                        pot[i] = pot[i].replace('#v', potenvalue_cape[lv[i]][j]);
+                        pot[i] = pot[i].replace('#p', potenper_cape[lv[i]][j]);
+                        break;
+                    }
+                }
+            }
             break;
         case "에큐":
 
