@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
@@ -12,21 +13,22 @@
         <div id="cosumname">영원한 환생의 불꽃</div>
     </div>
     <div id="cosum_button" style="position: absolute; left: 448px; top: 8px;" onclick="setchu(160,0,1);">
-        <div id="cosumicon"><img src="img/ItemList/cosum/%EA%B0%95%ED%99%98%EB%B6%88.png" /></div>
+        <div id="cosumicon"><img src="img/ItemList/cosum/강환불.png" /></div>
         <div id="cosumname">강력한 환생의 불꽃</div>
     </div>
-    <div id="cosum_button" style="position: absolute; left: 616px; top: 8px;">
+    <div id="cosum_button" style="position: absolute; left: 616px; top: 8px;" onclick="upg(160, 0, true, '주흔70', 480 * 2000);">
         <div id="cosumicon"><img src="img/ItemList/cosum/주흔.png" /></div>
         <div id="cosumname">주문의 흔적 70%<br />INT : +3</div>
     </div>
-    <div id="cosum_button" style="position: absolute; left: 784px; top: 8px;">
+    <div id="cosum_button" style="position: absolute; left: 784px; top: 8px;" onclick="upg(160, 0, true, '주흔30', 480 * 2000);">
         <div id="cosumicon"><img src="img/ItemList/cosum/주흔.png" /></div>
         <div id="cosumname">주문의 흔적 30%<br />INT : +4</div>
     </div>
-    <div id="cosum_button" style="position: absolute; left: 952px; top: 8px;">
+    <div id="cosum_button" style="position: absolute; left: 952px; top: 8px;" onclick="upg(160, 0, true, '주흔15', 480 * 2000);">
         <div id="cosumicon"><img src="img/ItemList/cosum/주흔.png" /></div>
         <div id="cosumname">주문의 흔적 15%<br />INT : +7</div>
     </div>
+
     <div id="cosum_button" style="position: absolute; left: 280px; top: 144px;">
         <div id="cosumicon"><img src="img/ItemList/cosum/잠재.png" /></div>
         <div id="cosumname">잠재능력 부여 주문서</div>
@@ -47,6 +49,7 @@
         <div id="cosumicon"><img src="img/ItemList/cosum/에디에잠.png" /></div>
         <div id="cosumname">에픽 에디셔널 잠재능력 부여 주문서 30%</div>
     </div>
+
     <div id="cosum_button" style="position: absolute; left: 280px; top: 280px;">
         <div id="cosumicon"><img src="img/ItemList/cosum/수큐.png" /></div>
         <div id="cosumname">수상한 큐브</div>
@@ -67,11 +70,12 @@
         <div id="cosumicon"><img src="img/ItemList/cosum/에디큐브.png" /></div>
         <div id="cosumname">에디셔널 큐브</div>
     </div>
+
     <div id="cosum_button" style="position: absolute; left: 280px; top: 416px;">
         <div id="cosumicon"><img src="img/ItemList/cosum/이노.png" /></div>
         <div id="cosumname">이노센트 주문서 50%</div>
     </div>
-    <div id="cosum_button" style="position: absolute; left: 448px; top: 416px;">
+    <div id="cosum_button" style="position: absolute; left: 448px; top: 416px;" onclick="upg(160, 0, false, '순백', 480 * 2000);">
         <div id="cosumicon"><img src="img/ItemList/cosum/순백.png" /></div>
         <div id="cosumname">순백의 주문서 10%</div>
     </div>
@@ -79,14 +83,15 @@
         <div id="cosumicon"><img src="img/ItemList/cosum/놀긍혼.png" /></div>
         <div id="cosumname">놀라운 긍정의 혼돈의 주문서 60%</div>
     </div>
-    <div id="cosum_button" style="position: absolute; left: 784px; top: 416px;">
-        <div id="cosumicon"><img src="img/ItemList/cosum/강화권.png" /></div>
-        <div id="cosumname">15성 강화권</div>
+    <div id="cosum_button" style="position: absolute; left: 784px; top: 416px;" onclick="upg(160, 0, false, '황망', 480 * 2000);">
+        <div id="cosumicon"><img src="img/ItemList/cosum/황망.png" /></div>
+        <div id="cosumname">황금 망치 50%</div>
     </div>
     <div id="cosum_button" style="position: absolute; left: 952px; top: 416px;">
         <div id="cosumicon"><img src="img/ItemList/cosum/강화권.png" /></div>
-        <div id="cosumname">17성 강화권</div>
+        <div id="cosumname">15성 강화권</div>
     </div>
+
     <div id="iteminfoUI" style="position: absolute; left: 8px; top: 8px;">
         <div id="itembackground">
             <div id="itembacktopleft"></div>
@@ -100,26 +105,33 @@
                     <div id="star"></div>
                     <div id="star"></div>
                     <div id="star"></div>
+
                     <div id="starblank"></div>
+
                     <div id="star"></div>
                     <div id="star"></div>
                     <div id="star"></div>
                     <div id="star"></div>
                     <div id="star"></div>
+
                     <div id="starblank"></div>
+
                     <div id="star"></div>
                     <div id="star"></div>
                     <div id="star"></div>
                     <div id="star"></div>
                     <div id="star"></div>
                 </div>
+
                 <div id="star2">
                     <div id="star"></div>
                     <div id="star"></div>
                     <div id="star"></div>
                     <div id="star"></div>
                     <div id="star"></div>
+
                     <div id="starblank"></div>
+
                     <div id="star"></div>
                     <div id="star"></div>
                     <div id="star"></div>
@@ -145,8 +157,7 @@
             </div>
             <div id="itemaddpowertext">공격력 증가량</div>
             <div id="addpower">
-                <div id="add5"></div>
-                <div id="addp"></div>
+                <div id="add0"></div>
             </div>
             <div id="reqlevel">
                 <div id="reqlevelimg"></div>
