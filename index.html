@@ -8,7 +8,7 @@
     <script type="text/javascript" src="poten.js"></script>
     <title>메이플스토리 환생의 불꽃 시뮬레이터</title>
 </head>
-<body style="padding: 0px; margin: 0px;" onload="setchu(200,0,0); cube('수큐');">
+<body style="padding: 0px; margin: 0px;" onload="setchu(200,0,0); cube('수큐'); cube('에큐');">
     <div id="info_text" style="position: absolute; left: 8px; top: 8px; "></div>
     <div id="cosum_button" style="position: absolute; left: 280px; top: 40px; " onclick="setchu(200, 0, 0); cosumcount(0);">
         <div id="cosumicon"><img src="img/ItemList/cosum/영환불.png" /></div>
@@ -77,12 +77,12 @@
         <div id="cosumname">블랙 큐브</div>
         <div id="cosumuse" name="usecount">사용 한 갯수 : 0개</div>
     </div>
-    <div id="cosum_button" style="position: absolute; left: 784px; top: 312px;" onclick=" cosumcount(13);">
+    <div id="cosum_button" style="position: absolute; left: 784px; top: 312px;" onclick="cube('수에큐'); cosumcount(13);">
         <div id="cosumicon"><img src="img/ItemList/cosum/수에큐.png" /></div>
         <div id="cosumname">수상한 에디셔널 큐브</div>
         <div id="cosumuse" name="usecount">사용 한 갯수 : 0개</div>
     </div>
-    <div id="cosum_button" style="position: absolute; left: 952px; top: 312px;" onclick=" cosumcount(14);">
+    <div id="cosum_button" style="position: absolute; left: 952px; top: 312px;" onclick="cube('에큐'); cosumcount(14);">
         <div id="cosumicon"><img src="img/ItemList/cosum/에디큐브.png" /></div>
         <div id="cosumname">에디셔널 큐브</div>
         <div id="cosumuse" name="usecount">사용 한 갯수 : 0개</div>
@@ -234,16 +234,16 @@
         <div name="optionline" style="display: block;">
             <div id="dotline"></div>
             <div id="potential" style="width:254px;">
-                <div id="potendata" style="margin-left:0px;"><div id="potenlevel" class="l">잠재옵션</div></div>
+                <div id="potendata" style="margin-left:0px;"><div id="potenlevel" class="l" name="plevel">잠재옵션</div></div>
                 <div id="potendata" name="uppoten">올스탯 : +9%</div>
                 <div id="potendata" name="uppoten">올스탯 : +6%</div>
                 <div id="potendata" name="uppoten">올스탯 : +6%</div>
             </div>
         </div>
-        <div name="optionline" style="display: none;">
+        <div name="optionline" style="display: block;">
             <div id="dotline"></div>
             <div id="potential" style="width:254px;">
-                <div id="potendata" style="margin-left:0px;"><div id="potenlevel" class="l">에디셔널 잠재옵션</div></div>
+                <div id="potendata" style="margin-left:0px;"><div id="potenlevel" class="l" name="plevel">에디셔널 잠재옵션</div></div>
                 <div id="potendata" name="downpoten">+ 올스탯 : +5%</div>
                 <div id="potendata" name="downpoten">+ 올스탯 : +4%</div>
                 <div id="potendata" name="downpoten">+ 올스탯 : +4%</div>

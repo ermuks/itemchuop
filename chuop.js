@@ -302,9 +302,14 @@ function refresh() {
     }
 
     var potenclass = ["r", "e", "u", "l"];
-    document.getElementById("potenlevel").className = potenclass[potlv - 1];
+    document.getElementsByName("plevel")[0].className = potenclass[potlv - 1];
     for (var i = 0; i < 3; i++) {
         document.getElementsByName("uppoten")[i].innerText = pot[i];
+    }
+
+    document.getElementsByName("plevel")[1].className = potenclass[edipotlv - 1];
+    for (var i = 0; i < 3; i++) {
+        document.getElementsByName("downpoten")[i].innerText = "+ " + edipot[i];
     }
 }
 
