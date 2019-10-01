@@ -55,11 +55,16 @@ function upg(lv, itemtype, mns, code, price) {
             }
             break;
         case "황망":
-            maxupg++;
-            goldhm = true;
-            if (Math.random() * 100 < 50) {
-                elseup++;
+            if (!goldhm) {
+                maxupg++;
+                goldhm = true;
+                if (Math.random() * 100 < 50) {
+                    elseup++;
+                }
             }
+            break;
+        case "에잠":
+            test();
             break;
         default:
             alert("잘못 표기되었습니다. code : " + code);
@@ -162,7 +167,7 @@ function setchu(lv, itemtype, icls) {
                 chu[9] += clv;
                 nochu[13] = true;
             } else if (t < 790 && !nochu[14]) {
-                chu[10] += clv;
+                chu[10] += danchu * clv;
                 nochu[14] = true;
             } else if (t < 870 && !nochu[15]) {
                 chu[11] += clv;
@@ -224,7 +229,7 @@ function setchu(lv, itemtype, icls) {
                 chu[9] += clv;
                 nochu[13] = true;
             } else if (t < 740 && !nochu[14]) {
-                chu[10] += clv;
+                chu[10] += danchu * clv;
                 nochu[14] = true;
             } else if (t < 790 && !nochu[15]) {
                 chu[11] += clv;
@@ -279,6 +284,12 @@ function refresh() {
         document.getElementById("itemname").innerText = itemname + "(+" + ucount + ")";
     } else {
         document.getElementById("itemname").innerText = itemname;
+    }
+
+    var potenclass = ["r", "e", "u", "l"];
+    document.getElementById("potenlevel").className = potenclass[potlv - 1];
+    for (var i = 0; i < 3; i++) {
+        document.getElementsByName("uppoten")[i].innerText = pot[i];
     }
 }
 
