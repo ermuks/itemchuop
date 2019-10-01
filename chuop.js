@@ -14,8 +14,23 @@ var goldhm = false; // 황금망치 제련 적용
 var strfrc = 0; // 현재 스타포스
 var maxstr = 25; // 최대 스타포스
 
-var itemname = "앱솔랩스 메이지 케이프";
+var itemname = "아케인셰이드 메이지 케이프";
 
+var cosumcnt = new Array(20);
+for (var i = 0; i < cosumcnt.length; i++) {
+    cosumcnt[i] = 0;
+}
+
+function cosumcount(index) {
+    cosumcnt[index]++;
+    textrefresh();
+}
+
+function textrefresh() {
+    for (var i = 0; i < cosumcnt.length; i++) {
+        document.getElementsByName("usecount")[i].innerText = "사용 한 갯수 : " + cosumcnt[i] + "개";
+    }
+}
 
 function upg(lv, itemtype, mns, code, price) {
     if (mns == true) {

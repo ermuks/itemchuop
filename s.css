@@ -14,11 +14,16 @@ div#cosum_button {
     overflow: hidden;
 }
 div#cosumicon {
-    height: 50px;
-    padding-top: 25px;
+    height: 34px;
+    padding-top: 13px;
 }
 div#cosumname {
     padding: 16px;
+    height: 25px;
+}
+div#cosumuse {
+    font-size: 8.5pt;
+    color: rgba(255,255,255,0.4);
 }
 
 div#itembackground {

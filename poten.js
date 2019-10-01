@@ -71,7 +71,7 @@ function cube(item) {
             }
             break;
         case "레큐":
-            var sg = [0, 150, 50, 15];
+            var sg = [0, 60, 20, 6];
             t = Math.random() * 1000;
             if (potlv < 4) {
                 if (t < sg[potlv]) {
@@ -101,7 +101,7 @@ function cube(item) {
             }
             break;
         case "블큐":
-            var sg = [0, 200, 120, 40];
+            var sg = [0, 150, 35, 14];
             t = Math.random() * 1000;
             if (potlv < 4) {
                 if (t < sg[potlv]) {
