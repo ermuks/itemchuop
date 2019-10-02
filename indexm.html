@@ -1,0 +1,287 @@
+﻿<!DOCTYPE html>
+
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="s.css" />
+    <script type="text/javascript" src="chuop.js"></script>
+    <script type="text/javascript" src="poten.js"></script>
+    <title>메이플스토리 환생의 불꽃 시뮬레이터</title>
+</head>
+<body style="padding: 0px; margin: 0px;" onload="setchu(200,0,0); cube('수큐'); cube('에큐');">
+    <div id="info_text" style="position: absolute; left: 8px; top: 8px; "></div>
+    <div id="cosum_button" style="position: absolute; left: 280px; top: 40px; " onclick="setchu(200, 0, 0); cosumcount(0);">
+        <div id="cosumicon"><img src="img/ItemList/cosum/영환불.png" /></div>
+        <div id="cosumname">영원한 환생의 불꽃</div>
+        <div id="cosumuse" name="usecount">사용 한 갯수 : 0개</div>
+    </div>
+    <div id="cosum_button" style="position: absolute; left: 448px; top: 40px;" onclick="setchu(200,0,1); cosumcount(1);">
+        <div id="cosumicon"><img src="img/ItemList/cosum/강환불.png" /></div>
+        <div id="cosumname">강력한 환생의 불꽃</div>
+        <div id="cosumuse" name="usecount">사용 한 갯수 : 0개</div>
+    </div>
+    <div id="cosum_button" style="position: absolute; left: 616px; top: 40px;" onclick="upg(200, 0, true, '주흔70', 480 * 2000); cosumcount(2);">
+        <div id="cosumicon"><img src="img/ItemList/cosum/주흔.png" /></div>
+        <div id="cosumname">주문의 흔적 70%<br />INT : +3</div>
+        <div id="cosumuse" name="usecount">사용 한 갯수 : 0개</div>
+    </div>
+    <div id="cosum_button" style="position: absolute; left: 784px; top: 40px;" onclick="upg(200, 0, true, '주흔30', 480 * 2000); cosumcount(3);">
+        <div id="cosumicon"><img src="img/ItemList/cosum/주흔.png" /></div>
+        <div id="cosumname">주문의 흔적 30%<br />INT : +4</div>
+        <div id="cosumuse" name="usecount">사용 한 갯수 : 0개</div>
+    </div>
+    <div id="cosum_button" style="position: absolute; left: 952px; top: 40px;" onclick="upg(200, 0, true, '주흔15', 480 * 2000); cosumcount(4);">
+        <div id="cosumicon"><img src="img/ItemList/cosum/주흔.png" /></div>
+        <div id="cosumname">주문의 흔적 15%<br />INT : +7</div>
+        <div id="cosumuse" name="usecount">사용 한 갯수 : 0개</div>
+    </div>
+
+    <div id="cosum_button" style="position: absolute; left: 280px; top: 176px;" onclick="upg(200, 0, false, '잠재', 80000); cosumcount(5);">
+        <div id="cosumicon"><img src="img/ItemList/cosum/잠재.png" /></div>
+        <div id="cosumname">잠재능력 부여 주문서</div>
+        <div id="cosumuse" name="usecount">사용 한 갯수 : 0개</div>
+    </div>
+    <div id="cosum_button" style="position: absolute; left: 448px; top: 176px;" onclick="upg(200, 0, false, '에잠', 12000000); cosumcount(6);">
+        <div id="cosumicon"><img src="img/ItemList/cosum/에잠.png" /></div>
+        <div id="cosumname">에픽 잠재능력 부여 주문서 50%</div>
+        <div id="cosumuse" name="usecount">사용 한 갯수 : 0개</div>
+    </div>
+    <div id="cosum_button" style="position: absolute; left: 616px; top: 176px;" onclick="upg(200, 0, false, '유잠', 350000000); cosumcount(7);">
+        <div id="cosumicon"><img src="img/ItemList/cosum/유잠.png" /></div>
+        <div id="cosumname">유니크 잠재능력 부여 주문서</div>
+        <div id="cosumuse" name="usecount">사용 한 갯수 : 0개</div>
+    </div>
+    <div id="cosum_button" style="position: absolute; left: 784px; top: 176px;" onclick="upg(200, 0, false, '에디잠', 6000000); cosumcount(8);">
+        <div id="cosumicon"><img src="img/ItemList/cosum/에디잠재.png" /></div>
+        <div id="cosumname">에디셔널 잠재능력 부여 주문서 50%</div>
+        <div id="cosumuse" name="usecount">사용 한 갯수 : 0개</div>
+    </div>
+    <div id="cosum_button" style="position: absolute; left: 952px; top: 176px;" onclick="upg(200, 0, false, '에디에잠', 350000000); cosumcount(9);">
+        <div id="cosumicon"><img src="img/ItemList/cosum/에디에잠.png" /></div>
+        <div id="cosumname">에픽 에디셔널 잠재능력 부여 주문서 30%</div>
+        <div id="cosumuse" name="usecount">사용 한 갯수 : 0개</div>
+    </div>
+
+    <div id="cosum_button" style="position: absolute; left: 280px; top: 312px;" onclick="cube('수큐'); cosumcount(10);">
+        <div id="cosumicon"><img src="img/ItemList/cosum/수큐.png" /></div>
+        <div id="cosumname">수상한 큐브</div>
+        <div id="cosumuse" name="usecount">사용 한 갯수 : 0개</div>
+    </div>
+    <div id="cosum_button" style="position: absolute; left: 448px; top: 312px;" onclick="cube('레큐'); cosumcount(11);">
+        <div id="cosumicon"><img src="img/ItemList/cosum/레드큐브.png" /></div>
+        <div id="cosumname">레드 큐브</div>
+        <div id="cosumuse" name="usecount">사용 한 갯수 : 0개</div>
+    </div>
+    <div id="cosum_button" style="position: absolute; left: 616px; top: 312px;" onclick="cube('블큐'); cosumcount(12);">
+        <div id="cosumicon"><img src="img/ItemList/cosum/블랙큐브.png" /></div>
+        <div id="cosumname">블랙 큐브</div>
+        <div id="cosumuse" name="usecount">사용 한 갯수 : 0개</div>
+    </div>
+    <div id="cosum_button" style="position: absolute; left: 784px; top: 312px;" onclick="cube('수에큐'); cosumcount(13);">
+        <div id="cosumicon"><img src="img/ItemList/cosum/수에큐.png" /></div>
+        <div id="cosumname">수상한 에디셔널 큐브</div>
+        <div id="cosumuse" name="usecount">사용 한 갯수 : 0개</div>
+    </div>
+    <div id="cosum_button" style="position: absolute; left: 952px; top: 312px;" onclick="cube('에큐'); cosumcount(14);">
+        <div id="cosumicon"><img src="img/ItemList/cosum/에디큐브.png" /></div>
+        <div id="cosumname">에디셔널 큐브</div>
+        <div id="cosumuse" name="usecount">사용 한 갯수 : 0개</div>
+    </div>
+
+    <div id="cosum_button" style="position: absolute; left: 280px; top: 448px;" onclick="upg(200, 0, false, '이노', 12000000); cosumcount(15);">
+        <div id="cosumicon"><img src="img/ItemList/cosum/이노.png" /></div>
+        <div id="cosumname">이노센트 주문서 50%</div>
+        <div id="cosumuse" name="usecount">사용 한 갯수 : 0개</div>
+    </div>
+    <div id="cosum_button" style="position: absolute; left: 448px; top: 448px;" onclick="upg(200, 0, false, '순백', 4500000); cosumcount(16);">
+        <div id="cosumicon"><img src="img/ItemList/cosum/순백.png" /></div>
+        <div id="cosumname">순백의 주문서 10%</div>
+        <div id="cosumuse" name="usecount">사용 한 갯수 : 0개</div>
+    </div>
+    <div id="cosum_button" style="position: absolute; left: 616px; top: 448px;" onclick="upg(200, 0, true, '놀긍혼', 25000000); cosumcount(17);">
+        <div id="cosumicon"><img src="img/ItemList/cosum/놀긍혼.png" /></div>
+        <div id="cosumname">놀라운 긍정의 혼돈의 주문서 60%</div>
+        <div id="cosumuse" name="usecount">사용 한 갯수 : 0개</div>
+    </div>
+    <div id="cosum_button" style="position: absolute; left: 784px; top: 448px;" onclick="upg(200, 0, false, '황망', 3000000); cosumcount(18);">
+        <div id="cosumicon"><img src="img/ItemList/cosum/황망.png" /></div>
+        <div id="cosumname">황금 망치 50%</div>
+        <div id="cosumuse" name="usecount">사용 한 갯수 : 0개</div>
+    </div>
+    <div id="cosum_button" style="position: absolute; left: 952px; top: 448px;" onclick=" cosumcount(19);">
+        <div id="cosumicon"><img src="img/ItemList/cosum/강화권.png" /></div>
+        <div id="cosumname">15성 강화권</div>
+        <div id="cosumuse" name="usecount">사용 한 갯수 : 0개</div>
+    </div>
+
+    <div id="cosum_button" style="position: absolute; left: 280px; top: 584px;" onclick="cash('리턴'); cosumcount(20);">
+        <div id="cosumicon"><img src="img/ItemList/cosum/리턴.png" /></div>
+        <div id="cosumname">리턴 스크롤</div>
+        <div id="cosumuse" name="usecount">사용 한 갯수 : 0개</div>
+    </div>
+    <div id="cosum_button" style="position: absolute; left: 448px; top: 584px;" onclick=" cosumcount(21);">
+        <div id="cosumicon"><img src="img/ItemList/cosum/프텍.png" /></div>
+        <div id="cosumname">프로텍트 실드</div>
+        <div id="cosumuse" name="usecount">사용 한 갯수 : 0개</div>
+    </div>
+    <div id="cosum_button" style="position: absolute; left: 616px; top: 584px;" onclick=" cosumcount(22);">
+        <div id="cosumicon"><img src="img/ItemList/cosum/리커.png" /></div>
+        <div id="cosumname">리커버리 실드</div>
+        <div id="cosumuse" name="usecount">사용 한 갯수 : 0개</div>
+    </div>
+
+    <div id="iteminfoUI" style="position: absolute; left: 8px; top: 40px;">
+        <div id="itembackground">
+            <div id="itembacktopleft"></div>
+        </div>
+        <div id="itembacktop"></div>
+        <div id="itemnormalinfo">
+            <div id="starforce">
+                <div id="star1">
+                    <div id="star"></div>
+                    <div id="star"></div>
+                    <div id="star"></div>
+                    <div id="star"></div>
+                    <div id="star"></div>
+
+                    <div id="starblank"></div>
+
+                    <div id="star"></div>
+                    <div id="star"></div>
+                    <div id="star"></div>
+                    <div id="star"></div>
+                    <div id="star"></div>
+
+                    <div id="starblank"></div>
+
+                    <div id="star"></div>
+                    <div id="star"></div>
+                    <div id="star"></div>
+                    <div id="star"></div>
+                    <div id="star"></div>
+                </div>
+
+                <div id="star2">
+                    <div id="star"></div>
+                    <div id="star"></div>
+                    <div id="star"></div>
+                    <div id="star"></div>
+                    <div id="star"></div>
+
+                    <div id="starblank"></div>
+
+                    <div id="star"></div>
+                    <div id="star"></div>
+                    <div id="star"></div>
+                    <div id="star"></div>
+                    <div id="star"></div>
+                </div>
+            </div>
+            <div id="itemsoulname" hidden>위대한 진 힐라의</div>
+            <div id="itemname" class="lv6">아케인셰이드 메이지 케이프</div>
+            <div id="itemclass">(레전드리 아이템)</div>
+            <div id="itemtrade">장착 시 교환 불가</div>
+        </div>
+        <div id="dotline"></div>
+        <div id="iteminfo">
+            <div id="iconlayout">
+                <div id="itemicon">
+                    <div id="itemclassb">
+                        <div id="itemcode">
+                            <img src="img/ItemList/01102941.png" width="70" style="margin-top: 13px;margin-left: 6px;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="itemaddpowertext">공격력 증가량</div>
+            <div id="addpower">
+                <div id="add0"></div>
+            </div>
+            <div id="reqlevel">
+                <div id="reqlevelimg"></div>
+            </div>
+            <div id="reqstat">
+                <div id="reqSTRimg"></div>
+                <div id="reqLUKimg"></div>
+                <div id="reqDEXimg"></div>
+                <div id="reqINTimg"></div>
+            </div>
+            <div id="itemabil">
+            </div>
+            <div id="itemjob">
+                <div id="Jobbg">
+                    <div id="ijob" class="j00"></div>
+                    <div id="ijob" class="j10"></div>
+                    <div id="ijob" class="j20"></div>
+                    <div id="ijob" class="j31"></div>
+                    <div id="ijob" class="j40"></div>
+                    <div id="ijob" class="j50"></div>
+                </div>
+            </div>
+        </div>
+        <div id="dotline"></div>
+        <div id="itemoption">
+            <div id="itemoptiondetail" name="ioption">장비종류 : 망토</div>
+            <div id="itemoptiondetail" name="ioption" hidden>공격속도 : 보통</div>
+            <div id="itemoptiondetail" name="ioption"><font id="upop">STR : +118</font> (0 <font id="upop">+118</font>)</div>
+            <div id="itemoptiondetail" name="ioption"><font id="upop">DEX : +118</font> (0 <font id="upop">+118</font>)</div>
+            <div id="itemoptiondetail" name="ioption"><font id="upop">INT : +308</font> (150 <font id="upop">+158</font>)</div>
+            <div id="itemoptiondetail" name="ioption"><font id="upop">LUK : +308</font> (150 <font id="upop">+158</font>)</div>
+            <div id="itemoptiondetail" name="ioption"><font id="upop">최대 HP : +255</font> (0 <font id="upop">+255</font>)</div>
+            <div id="itemoptiondetail" name="ioption"><font id="upop">최대 MP : +255</font> (0 <font id="upop">+255</font>)</div>
+            <div id="itemoptiondetail" name="ioption" hidden>최대 HP : +0%</div>
+            <div id="itemoptiondetail" name="ioption" hidden>최대 MP : +0%</div>
+            <div id="itemoptiondetail" name="ioption">공격력 : +299</div>
+            <div id="itemoptiondetail" name="ioption"><font id="upop">마력 : +1155</font> (482 <font id="addop">+298</font> <font id="upop">+375</font>)</div>
+            <div id="itemoptiondetail" name="ioption" hidden>방어력 : +100 (0 +100)</div>
+            <div id="itemoptiondetail" name="ioption" hidden>이동속도 : +100 (0 +100)</div>
+            <div id="itemoptiondetail" name="ioption" hidden>점프력 : +100 (0 +100)</div>
+            <div id="itemoptiondetail" name="ioption"><font id="upop">보스 몬스터 공격 시 데미지 +42%</font> (30% <font id="addop">+12%</font>)</div>
+            <div id="itemoptiondetail" name="ioption">몬스터 방어율 무시 : +20%</div>
+            <div id="itemoptiondetail" name="ioption"><font id="upop">데미지 : +6%</font> (0% <font id="addop">+6%</font>)</div>
+            <div id="itemoptiondetail" name="ioption"><font id="upop">올스탯 : +7%</font> (0% <font id="addop">+7%</font>)</div>
+            <div id="itemoptiondetail" name="ioption" hidden>착용 레벨 감소 : -100</div>
+            <div id="itemoptiondetail" name="ioption">업그레이드 가능 횟수 : 7</div>
+            <div id="itemoptiondetail" name="ioption">가위 사용 가능 횟수 : 10회</div>
+            <div id="itemoptiondetail" name="ioption" hidden>황금망치 제련 적용</div>
+            <div id="itemoptiondetail" name="ioption" hidden>22성 강화 적용 (최대 25성)</div>
+            <div id="itemoptiondetail" name="ioption" hidden>강화 불가</div>
+        </div>
+        <div name="optionline" style="display: block;">
+            <div id="dotline"></div>
+            <div id="potential" style="width:254px;">
+                <div id="potendata" style="margin-left:0px;"><div id="potenlevel" class="l" name="plevel">잠재옵션</div></div>
+                <div id="potendata" name="uppoten">올스탯 : +9%</div>
+                <div id="potendata" name="uppoten">올스탯 : +6%</div>
+                <div id="potendata" name="uppoten">올스탯 : +6%</div>
+            </div>
+        </div>
+        <div name="optionline" style="display: block;">
+            <div id="dotline"></div>
+            <div id="potential" style="width:254px;">
+                <div id="potendata" style="margin-left:0px;"><div id="potenlevel" class="l" name="plevel">에디셔널 잠재옵션</div></div>
+                <div id="potendata" name="downpoten">+ 올스탯 : +5%</div>
+                <div id="potendata" name="downpoten">+ 올스탯 : +4%</div>
+                <div id="potendata" name="downpoten">+ 올스탯 : +4%</div>
+            </div>
+        </div>
+        <div name="optionline" style="display: none;">
+            <div id="dotline"></div>
+            <div id="itemsoul">
+                <div id="isoul" class="name">위대한 진 힐라의 소울 적용</div>
+                <div id="isoul" class="charge">소울 충전량 1000/1000 (공:+20,마:+20)</div>
+                <div id="isoul" class="pasv">크리티컬 확률 : +12%</div>
+                <div id="isoul" class="skill">소울 충전 시 '영혼 찢기' 사용 가능</div>
+            </div>
+        </div>
+        <div name="optionline" style="display: none;">
+            <div id="dotline"></div>
+            <div id="itemdefault">
+                <div id="dft" class="lucky">3개 이상 착용하고 있는 모든 세트 아이템에 포함되는 럭키 아이템!</div>
+            </div>
+        </div>
+        <div id="itembackbottom"></div>
+    </div>
+</body>
+</html>
