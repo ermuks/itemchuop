@@ -1,4 +1,7 @@
 
+var reqlev = 200;
+var eqptype = 0;
+
 var nochu = new Array(20); // 추옵배열 겹침 방지
 var chustring = ["STR", "DEX", "INT", "LUK", "최대HP", "최대MP", "최대HP", "최대MP", "공격력", "마력", "방어력", "이동속도", "점프력", "보스 몬스터 공격 시 데미지", "몬스터 방어율 무시", "데미지", "올스탯", "착용 레벨 제한 감소"];
 var opper = ["", "", "", "", "", "", "%", "%", "", "", "", "", "", "%", "%", "%", "%"];
@@ -13,8 +16,8 @@ var goldhm = false;
 var maxupg = 7; // 최대 업그레이드 가능횟수
 var elseup = 7; // 업그레이드 가능 횟수
 var goldhm = false; // 황금망치 제련 적용
-var strfrc = 0; // 현재 스타포스
 var maxstr = 25; // 최대 스타포스
+var strfrc = 0; // 현재 스타포스
 
 var itemname = "아케인셰이드 메이지 케이프";
 
@@ -34,14 +37,19 @@ function textrefresh() {
     }
 }
 
+var isngh = false;
 function cash(code) {
     switch (code) {
         case "리턴":
             for (var i = 0; i < ngh.length; i++) {
                 jak[i] -= ngh[i];
             }
-            elseup++;
-            ucount--;
+
+            if (isngh) {
+                elseup++;
+                ucount--;
+                isngh = false;
+            }
 
             for (var i = 0; i < ngh.length; i++) {
                 ngh[i] = 0;
@@ -87,9 +95,10 @@ function upg(lv, itemtype, mns, code, price) {
             break;
         case "놀긍혼":
             elseup--;
+            isngh = true;
             if (Math.random() * 100 < 60) {
                 ucount++;
-                for (var b = 0; b < basic.length - 1; b++) {
+                for (var b = 0; b < 13; b++) {
                     if (basic[b] + chu[b] + jak[b] > 0) {
                         var ranper = [25, 30, 20, 15, 5, 0, 5];
                         var t = Math.random() * 100;
@@ -97,7 +106,15 @@ function upg(lv, itemtype, mns, code, price) {
                         for (var i = 0; i < ranper.length; i++) {
                             tp += ranper[i];
                             if (tp > t) {
-                                jak[b] += i;
+                                if (b == 4 || b == 5) {
+                                    jak[b] += i * 5;
+                                } else {
+                                    if (b == 6 || b == 7) {
+                                        jak[b] += 0;
+                                    } else {
+                                        jak[b] += i;
+                                    }
+                                }
                                 ngh[b] = i;
                                 break;
                             }
@@ -127,6 +144,7 @@ function upg(lv, itemtype, mns, code, price) {
                 if (goldhm) maxupg--;
                 goldhm = false;
                 elseup = maxupg;
+                ucount = 0;
                 for (var i = 0; i < jak.length; i++) {
                     jak[i] = 0;
                 }
@@ -136,9 +154,10 @@ function upg(lv, itemtype, mns, code, price) {
             if (potlv < 2) {
                 if (Math.random() * 100 < 50) {
                     potlv = 2;
-                    cube("레큐");
+                    cube("수큐");
                 }
             }
+            break;
         case "유잠":
             if (potlv < 3) {
                 if (Math.random() * 100 < 30) {
@@ -162,7 +181,7 @@ function upg(lv, itemtype, mns, code, price) {
     refresh();
 }
 
-function setchu(lv, itemtype, icls) {
+function setchu(icls) {
     for (var i = 0; i < chu.length; i++) {
         chu[i] = 0;
     }
@@ -171,7 +190,6 @@ function setchu(lv, itemtype, icls) {
     }
     var danchu = 0; // 받아온 아이템 베이스 추옵 (단일추옵)
     var yeechu = 0; // 받아온 아이템 이중추옵
-    // lv = 아이템 레벨 제한
     // itemtype = 장비 종류
     // icls = 환생의 불꽃 종류
     // -------------------------
@@ -183,8 +201,8 @@ function setchu(lv, itemtype, icls) {
     // 0 : 영환불    (1~4 추옵) ( 12.5 20 30 37.5 )
     // 1 : 강환불    (2~5 추옵) ( 12.5 20 30 37.5 )
     // 2 : 일반 환불 (2~5 추옵) ( 5 15 35 45 )
-    danchu = parseInt(lv / 20) + 1;
-    yeechu = parseInt(lv / 40) + 1;
+    danchu = parseInt(reqlev / 20) + 1;
+    yeechu = parseInt(reqlev / 40) + 1;
     for (var i = 0; i < 4; i++) {
         if (Math.random() * 100 < 10) continue;
         var t = Math.floor(Math.random() * 1000);
@@ -206,7 +224,7 @@ function setchu(lv, itemtype, icls) {
             else if (t < 1000) clv = 3
         }
         t = Math.floor(Math.random() * 1000);
-        if (itemtype == 0) {
+        if (eqptype == 0) {
             if (t < 50 && !nochu[0]) {
                 chu[0] += danchu * clv;
                 nochu[0] = true;
@@ -244,10 +262,10 @@ function setchu(lv, itemtype, icls) {
                 chu[3] += yeechu * clv;
                 nochu[9] = true;
             } else if (t < 560 && !nochu[10]) {
-                chu[4] += lv * 3 * clv;
+                chu[4] += reqlev * 3 * clv;
                 nochu[10] = true;
             } else if (t < 620 && !nochu[11]) {
-                chu[5] += lv * 3 * clv;
+                chu[5] += reqlev * 3 * clv;
                 nochu[11] = true;
             } else if (t < 680 && !nochu[12]) {
                 chu[8] += clv;
@@ -268,7 +286,7 @@ function setchu(lv, itemtype, icls) {
                 chu[16] += clv;
                 nochu[17] = true;
             }
-        } else if (itemtype == 1) {
+        } else if (eqptype == 1) {
             if (t < 50 && !nochu[0]) {
                 chu[0] += danchu * clv;
                 nochu[0] = true;
@@ -306,10 +324,10 @@ function setchu(lv, itemtype, icls) {
                 chu[3] += yeechu * clv;
                 nochu[9] = true;
             } else if (t < 550 && !nochu[10]) {
-                chu[4] += lv * 3 * clv;
+                chu[4] += reqlev * 3 * clv;
                 nochu[10] = true;
             } else if (t < 600 && !nochu[11]) {
-                chu[5] += lv * 3 * clv;
+                chu[5] += reqlev * 3 * clv;
                 nochu[11] = true;
             } else if (t < 645 && !nochu[12]) {
                 chu[8] += clv;
@@ -356,7 +374,7 @@ function refresh() {
                 document.getElementsByName("ioption")[i + 2].innerHTML = chustring[i] + " : +" + basic[i] + opper[i];
             }
         }
-        if (chu[i] + basic[i] <= 0) {
+        if (chu[i] + basic[i] + jak[i] <= 0) {
             document.getElementsByName("ioption")[i + 2].style.display = "none";
         } else {
             document.getElementsByName("ioption")[i + 2].style.display = "block";
@@ -385,6 +403,7 @@ function refresh() {
     for (var i = 0; i < 3; i++) {
         document.getElementsByName("downpoten")[i].innerText = "+ " + edipot[i];
     }
+    document.getElementById("itemclass").innerText = "(" + potenstring[potlv - 1] + " 아이템)";
 }
 
 function nodata() {

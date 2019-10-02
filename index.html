@@ -8,14 +8,14 @@
     <script type="text/javascript" src="poten.js"></script>
     <title>메이플스토리 환생의 불꽃 시뮬레이터</title>
 </head>
-<body style="padding: 0px; margin: 0px;" onload="setchu(200,0,0); cube('수큐'); cube('에큐');">
-    <div id="info_text" style="position: absolute; left: 8px; top: 8px; "></div>
-    <div id="cosum_button" style="position: absolute; left: 280px; top: 40px; " onclick="setchu(200, 0, 0); cosumcount(0);">
+<body style="padding: 0px; margin: 0px;" onload="setchu(0,0); cube('수큐'); cube('에큐');">
+    <div id="info_text" style="position: absolute; left: 8px; top: 8px; " name="info"></div>
+    <div id="cosum_button" style="position: absolute; left: 280px; top: 40px; " onclick="setchu(0, 0); cosumcount(0);">
         <div id="cosumicon"><img src="img/ItemList/cosum/영환불.png" /></div>
         <div id="cosumname">영원한 환생의 불꽃</div>
         <div id="cosumuse" name="usecount">사용 한 갯수 : 0개</div>
     </div>
-    <div id="cosum_button" style="position: absolute; left: 448px; top: 40px;" onclick="setchu(200,0,1); cosumcount(1);">
+    <div id="cosum_button" style="position: absolute; left: 448px; top: 40px;" onclick="setchu(0,1); cosumcount(1);">
         <div id="cosumicon"><img src="img/ItemList/cosum/강환불.png" /></div>
         <div id="cosumname">강력한 환생의 불꽃</div>
         <div id="cosumuse" name="usecount">사용 한 갯수 : 0개</div>
@@ -110,7 +110,7 @@
     </div>
     <div id="cosum_button" style="position: absolute; left: 952px; top: 448px;" onclick=" cosumcount(19);">
         <div id="cosumicon"><img src="img/ItemList/cosum/강화권.png" /></div>
-        <div id="cosumname">15성 강화권</div>
+        <div id="cosumname">스타포스 강화</div>
         <div id="cosumuse" name="usecount">사용 한 갯수 : 0개</div>
     </div>
 

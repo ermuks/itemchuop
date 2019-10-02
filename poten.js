@@ -58,6 +58,9 @@ var edipotenper_cape = [
 ];
 
 //
+var potenstring = ["레어", "에픽", "유니크", "레전드리"];
+
+//
 var potlv = 1;
 var pot = ["", "", ""];
 
