@@ -1,5 +1,6 @@
 var star_cnt = 0;
 var starcatch = 4.5;
+var fail = 0;
 var star_per =
     [
         950, 900, 850, 850, 800,
@@ -37,10 +38,15 @@ function starforce() {
             cost = Math.round(1000 + Math.pow(reqlev, 3) * Math.pow(star_cnt + 1, 2.7) / 20000) * 100;
         }
         var hr = Math.random() * 1000;
+        if (fail >= 2) {
+            fail = 0;
+            hr = 0;
+        }
         if (hr < star_per[star_cnt]) {
             star_cnt++;
             meso += cost;
         } else if (hr < star_per[star_cnt] + star_maintain[star_cnt]) {
+            fail++;
             meso += cost;
             if (star_cnt < 11 || star_cnt == 15 || star_cnt == 20) {
 
