@@ -23,7 +23,7 @@ var edjamj = false; // 에디가 있는가
 var jamjul = 0;
 var edijul = 0;
 
-var itemname = "오션 글로우 이어링";
+var itemname = "아케인셰이드 메이지 케이프";
 
 var cosumcnt = new Array(23);
 for (var i = 0; i < cosumcnt.length; i++) {

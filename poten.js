@@ -119,13 +119,6 @@ function cube(item) {
                     potlv++;
                 }
             }
-            lv = [potlv, potlv - 1, potlv - 1];
-            if (Math.random() * 1000 < 210) {
-                lv[1] = potlv;
-            }
-            if (Math.random() * 1000 < 210) {
-                lv[2] = potlv;
-            }
             jamsetting();
             break;
         case "수에큐":
@@ -148,13 +141,6 @@ function cube(item) {
                     edipotlv++;
                 }
             }
-            lv = [edipotlv, edipotlv - 1, edipotlv - 1];
-            if (Math.random() * 1000 < 10) {
-                lv[1] = edipotlv;
-            }
-            if (Math.random() * 1000 < 10) {
-                lv[2] = edipotlv;
-            }
             edisetting();
             break;
         default:
@@ -163,6 +149,13 @@ function cube(item) {
 }
 
 function jamsetting() {
+    lv = [potlv, potlv - 1, potlv - 1];
+    if (Math.random() * 1000 < 210) {
+        lv[1] = potlv;
+    }
+    if (Math.random() * 1000 < 210) {
+        lv[2] = potlv;
+    }
     for (var i = 0; i < pot.length; i++) {
         t = parseInt(Math.random() * 100);
         perc = 0;
@@ -180,6 +173,13 @@ function jamsetting() {
 }
 
 function edisetting() {
+    lv = [edipotlv, edipotlv - 1, edipotlv - 1];
+    if (Math.random() * 1000 < 10) {
+        lv[1] = edipotlv;
+    }
+    if (Math.random() * 1000 < 10) {
+        lv[2] = edipotlv;
+    }
     for (var i = 0; i < edipot.length; i++) {
         t = parseInt(Math.random() * 100);
         perc = 0;
