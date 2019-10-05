@@ -16,8 +16,12 @@ var goldhm = false;
 var maxupg = 7; // 최대 업그레이드 가능횟수
 var elseup = 7; // 업그레이드 가능 횟수
 var goldhm = false; // 황금망치 제련 적용
-var maxstr = 25; // 최대 스타포스
-var strfrc = 0; // 현재 스타포스
+
+var jamjae = false; // 잠재가 있는가
+var edjamj = false; // 에디가 있는가
+
+var jamjul = 0;
+var edijul = 0;
 
 var itemname = "아케인셰이드 메이지 케이프";
 
@@ -61,7 +65,7 @@ function cash(code) {
     refresh();
 }
 
-function upg(lv, itemtype, mns, code, price) {
+function upg(mns, code) {
     for (var i = 0; i < ngh.length; i++) {
         ngh[i] = 0;
     }
@@ -150,9 +154,32 @@ function upg(lv, itemtype, mns, code, price) {
                 }
             }
             break;
+        case "잠재":
+            if (!jamjae) {
+                if (Math.random() * 100 < 70) {
+                    if (jamjul == 0) {
+                        jamjul = parseInt(Math.random() * 2) + 2;
+                        jamjae = true;
+                        var rnd = Math.random() * 1000;
+
+                        if (rnd < 950) {
+                            potlv = 1;
+                        } else if (rnd < 994) {
+                            potlv = 2;
+                        } else {
+                            potlv = 3;
+                        }
+                    }
+                }
+            }
+            break;
         case "에잠":
             if (potlv < 2) {
                 if (Math.random() * 100 < 50) {
+                    if (jamjul == 0) {
+                        jamjul = parseInt(Math.random() * 2) + 2;
+                        jamjae = true;
+                    }
                     potlv = 2;
                     cube("수큐");
                 }
@@ -161,16 +188,65 @@ function upg(lv, itemtype, mns, code, price) {
         case "유잠":
             if (potlv < 3) {
                 if (Math.random() * 100 < 30) {
+                    if (jamjul == 0) {
+                        jamjul = parseInt(Math.random() * 2) + 2;
+                        jamjae = true;
+                    }
                     potlv = 3;
                     cube("레큐");
                 }
             }
             break;
+        case "에디잠":
+            if (jamjae) {
+                if (!edjamj) {
+                    if (Math.random() * 100 < 50) {
+                        if (edijul == 0) {
+                            edijul = parseInt(Math.random() * 2) + 2;
+                            edjamj = true;
+                            var rnd = Math.random() * 1000;
+
+                            if (rnd < 950) {
+                                edipotlv = 1;
+                            } else if (rnd < 994) {
+                                edipotlv = 2;
+                            } else {
+                                edipotlv = 3;
+                            }
+                        }
+                    }
+                }
+            }
+            break;
         case "에디에잠":
-            if (edipotlv < 2) {
-                if (Math.random() * 100 < 30) {
-                    edipotlv = 2;
-                    cube("에큐");
+            if (jamjae) {
+                if (edipotlv < 2) {
+                    if (Math.random() * 100 < 30) {
+                        if (edijul == 0) {
+                            edijul = parseInt(Math.random() * 2) + 2;
+                            edjamj = true;
+                        }
+                        edipotlv = 2;
+                        cube("에큐");
+                    }
+                }
+            }
+            break;
+        case "금각":
+            if (jamjae) {
+                if (jamjul == 2) {
+                    if (Math.random() * 100 < 80) {
+                        jamjul = 3;
+                    }
+                }
+            }
+            break;
+        case "에디금각":
+            if (edjamj) {
+                if (edijul == 2) {
+                    if (Math.random() * 100 < 80) {
+                        edijul = 3;
+                    }
                 }
             }
             break;
@@ -412,13 +488,45 @@ function refresh() {
 
     var potenclass = ["r", "e", "u", "l"];
     document.getElementsByName("plevel")[0].className = potenclass[potlv - 1];
-    for (var i = 0; i < 3; i++) {
+    for (var i = 0; i < jamjul; i++) {
         document.getElementsByName("uppoten")[i].innerText = pot[i];
     }
 
     document.getElementsByName("plevel")[1].className = potenclass[edipotlv - 1];
-    for (var i = 0; i < 3; i++) {
+    for (var i = 0; i < edijul; i++) {
         document.getElementsByName("downpoten")[i].innerText = "+ " + edipot[i];
+    }
+
+    if (jamjae) {
+        if (document.getElementsByName("optionline")[0].style.display != "block") {
+            document.getElementsByName("optionline")[0].style.display = "block";
+        }
+    } else {
+        if (document.getElementsByName("optionline")[0].style.display != "none") {
+            document.getElementsByName("optionline")[0].style.display = "none";
+        }
+    }
+    if (edjamj) {
+        if (document.getElementsByName("optionline")[1].style.display != "block") {
+            document.getElementsByName("optionline")[1].style.display = "block";
+        }
+    } else {
+        if (document.getElementsByName("optionline")[1].style.display != "none") {
+            document.getElementsByName("optionline")[1].style.display = "none";
+        }
+    }
+
+
+    if (jamjul == 2) {
+        document.getElementsByName("uppoten")[2].style.display = "none";
+    } else {
+        document.getElementsByName("uppoten")[2].style.display = "block";
+    }
+
+    if (edijul == 2) {
+        document.getElementsByName("downpoten")[2].style.display = "none";
+    } else {
+        document.getElementsByName("downpoten")[2].style.display = "block";
     }
     document.getElementById("itemclass").innerText = "(" + potenstring[potlv - 1] + " 아이템)";
 

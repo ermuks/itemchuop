@@ -1,6 +1,8 @@
 var star_cnt = 0;
 var starcatch = 4.5;
 var fail = 0;
+var maxstf = 0;
+
 var star_per =
     [
         950, 900, 850, 850, 800,
@@ -29,7 +31,7 @@ var star_destroy =
 
 function starforce() {
     var cost = 0;
-    if (star_cnt < maxstr) {
+    if (star_cnt < maxstf) {
         if (star_cnt < 10) {
             cost = Math.round(1000 + Math.pow(reqlev, 3) * (star_cnt + 1) / 2500) * 100;
         } else if (star_cnt < 15) {
