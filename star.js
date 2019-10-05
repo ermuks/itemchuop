@@ -49,7 +49,7 @@ function starforce() {
             }
         } else {
             star_cnt = 12;
-            alert("ÆÄ±« ¤»¤»¤»¤»¤»¤»¤»¤»");
+            alert("íŒŒê´´ ã…‹ã…‹ã…‹ã…‹ã…‹ã…‹ã…‹ã…‹");
         }
     }
     refresh();
