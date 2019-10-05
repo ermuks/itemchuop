@@ -66,13 +66,13 @@ var pot = ["", "", ""];
 
 var edipotlv = 1;
 var edipot = ["", "", ""];
+var lv = [0, 0, 0];
 
 function test() {
     alert(chustring);
 }
 
 function cube(item) {
-    var lv = [0, 0, 0];
     var t = 0;
     var perc = 0;
     switch (item) {
@@ -91,20 +91,7 @@ function cube(item) {
                 if (Math.random() * 1000 < 30) {
                     lv[2] = potlv;
                 }
-
-                for (var i = 0; i < pot.length; i++) {
-                    t = parseInt(Math.random() * 100);
-                    perc = 0;
-                    for (var j = 0; j < potenlist_per[lv[i]].length; j++) {
-                        perc += potenlist_per[lv[i]][j];
-                        if (perc > t) {
-                            pot[i] = potenlist_cape[lv[i]][j];
-                            pot[i] = pot[i].replace('#v', potenvalue_cape[lv[i]][j]);
-                            pot[i] = pot[i].replace('#p', potenper_cape[lv[i]][j]);
-                            break;
-                        }
-                    }
-                }
+                jamsetting();
             }
             break;
         case "레큐":
@@ -122,20 +109,7 @@ function cube(item) {
             if (Math.random() * 1000 < 90) {
                 lv[2] = potlv;
             }
-
-            for (var i = 0; i < pot.length; i++) {
-                t = parseInt(Math.random() * 100);
-                perc = 0;
-                for (var j = 0; j < potenlist_per[lv[i]].length; j++) {
-                    perc += potenlist_per[lv[i]][j];
-                    if (perc > t) {
-                        pot[i] = potenlist_cape[lv[i]][j];
-                        pot[i] = pot[i].replace('#v', potenvalue_cape[lv[i]][j]);
-                        pot[i] = pot[i].replace('#p', potenper_cape[lv[i]][j]);
-                        break;
-                    }
-                }
-            }
+            jamsetting();
             break;
         case "블큐":
             var sg = [0, 150, 35, 14];
@@ -152,20 +126,7 @@ function cube(item) {
             if (Math.random() * 1000 < 210) {
                 lv[2] = potlv;
             }
-
-            for (var i = 0; i < pot.length; i++) {
-                t = parseInt(Math.random() * 100);
-                perc = 0;
-                for (var j = 0; j < potenlist_per[lv[i]].length; j++) {
-                    perc += potenlist_per[lv[i]][j];
-                    if (perc > t) {
-                        pot[i] = potenlist_cape[lv[i]][j];
-                        pot[i] = pot[i].replace('#v', potenvalue_cape[lv[i]][j]);
-                        pot[i] = pot[i].replace('#p', potenper_cape[lv[i]][j]);
-                        break;
-                    }
-                }
-            }
+            jamsetting();
             break;
         case "수에큐":
             if (edipotlv <= 1) {
@@ -176,20 +137,7 @@ function cube(item) {
                 if (Math.random() * 1000 < 6) {
                     lv[2] = edipotlv;
                 }
-
-                for (var i = 0; i < edipot.length; i++) {
-                    t = parseInt(Math.random() * 100);
-                    perc = 0;
-                    for (var j = 0; j < edipotenlist_per[lv[i]].length; j++) {
-                        perc += edipotenlist_per[lv[i]][j];
-                        if (perc > t) {
-                            edipot[i] = edipotenlist_cape[lv[i]][j];
-                            edipot[i] = edipot[i].replace('#v', edipotenvalue_cape[lv[i]][j]);
-                            edipot[i] = edipot[i].replace('#p', edipotenper_cape[lv[i]][j]);
-                            break;
-                        }
-                    }
-                }
+                edisetting();
             }
             break;
         case "에큐":
@@ -207,23 +155,43 @@ function cube(item) {
             if (Math.random() * 1000 < 10) {
                 lv[2] = edipotlv;
             }
-
-            for (var i = 0; i < edipot.length; i++) {
-                t = parseInt(Math.random() * 100);
-                perc = 0;
-                for (var j = 0; j < edipotenlist_per[lv[i]].length; j++) {
-                    perc += edipotenlist_per[lv[i]][j];
-                    if (perc > t) {
-                        edipot[i] = edipotenlist_cape[lv[i]][j];
-                        edipot[i] = edipot[i].replace('#v', edipotenvalue_cape[lv[i]][j]);
-                        edipot[i] = edipot[i].replace('#p', edipotenper_cape[lv[i]][j]);
-                        break;
-                    }
-                }
-            }
+            edisetting();
             break;
         default:
             alert("잘못된 접근입니다.");
+    }
+}
+
+function jamsetting() {
+    for (var i = 0; i < pot.length; i++) {
+        t = parseInt(Math.random() * 100);
+        perc = 0;
+        for (var j = 0; j < potenlist_per[lv[i]].length; j++) {
+            perc += potenlist_per[lv[i]][j];
+            if (perc > t) {
+                pot[i] = potenlist_cape[lv[i]][j];
+                pot[i] = pot[i].replace('#v', potenvalue_cape[lv[i]][j]);
+                pot[i] = pot[i].replace('#p', potenper_cape[lv[i]][j]);
+                break;
+            }
+        }
+    }
+    refresh();
+}
+
+function edisetting() {
+    for (var i = 0; i < edipot.length; i++) {
+        t = parseInt(Math.random() * 100);
+        perc = 0;
+        for (var j = 0; j < edipotenlist_per[lv[i]].length; j++) {
+            perc += edipotenlist_per[lv[i]][j];
+            if (perc > t) {
+                edipot[i] = edipotenlist_cape[lv[i]][j];
+                edipot[i] = edipot[i].replace('#v', edipotenvalue_cape[lv[i]][j]);
+                edipot[i] = edipot[i].replace('#p', edipotenper_cape[lv[i]][j]);
+                break;
+            }
+        }
     }
     refresh();
 }

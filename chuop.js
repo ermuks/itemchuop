@@ -169,6 +169,7 @@ function upg(mns, code) {
                         } else {
                             potlv = 3;
                         }
+                        jamsetting();
                     }
                 }
             }
@@ -181,7 +182,7 @@ function upg(mns, code) {
                         jamjae = true;
                     }
                     potlv = 2;
-                    cube("수큐");
+                    jamsetting();
                 }
             }
             break;
@@ -193,7 +194,7 @@ function upg(mns, code) {
                         jamjae = true;
                     }
                     potlv = 3;
-                    cube("레큐");
+                    jamsetting();
                 }
             }
             break;
@@ -213,6 +214,7 @@ function upg(mns, code) {
                             } else {
                                 edipotlv = 3;
                             }
+                            edisetting();
                         }
                     }
                 }
@@ -227,7 +229,7 @@ function upg(mns, code) {
                             edjamj = true;
                         }
                         edipotlv = 2;
-                        cube("에큐");
+                        edisetting();
                     }
                 }
             }
