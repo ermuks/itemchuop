@@ -434,8 +434,29 @@ function refresh() {
         }
     }
 
-    document.getElementById("info_text").innerText = meso;
+    document.getElementsByName("info")[0].innerText = "사용한 메소 : " +  comma(meso) ;
 }
+
+function comma(num) {
+    var len, point, str;
+
+    num = num + "";
+    point = num.length % 3;
+    len = num.length;
+
+    str = num.substring(0, point);
+    while (point < len) {
+        if (str != "") str += ",";
+        str += num.substring(point, point + 3);
+        point += 3;
+    }
+
+    return str;
+
+}
+
+
+출처: https://fruitdev.tistory.com/160 [과일가게 개발자]
 
 function nodata() {
     // 0  STR

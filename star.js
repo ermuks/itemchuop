@@ -30,11 +30,11 @@ function starforce() {
     var cost = 0;
     if (star_cnt < maxstr) {
         if (star_cnt < 10) {
-            cost = Math.round(1000 + Math.pow(reqlev, 3) * (star_cnt + 1) / 25, -2);
+            cost = Math.round(1000 + Math.pow(reqlev, 3) * (star_cnt + 1) / 2500) * 100;
         } else if (star_cnt < 15) {
-            cost = Math.round(1000 + Math.pow(reqlev, 3) * Math.pow(star_cnt + 1, 2.7) / 400, -2);
+            cost = Math.round(1000 + Math.pow(reqlev, 3) * Math.pow(star_cnt + 1, 2.7) / 40000) * 100;
         } else if (star_cnt < 25) {
-            cost = Math.round(1000 + Math.pow(reqlev, 3) * Math.pow(star_cnt + 1, 2.7) / 200, -2);
+            cost = Math.round(1000 + Math.pow(reqlev, 3) * Math.pow(star_cnt + 1, 2.7) / 20000) * 100;
         }
         var hr = Math.random() * 1000;
         if (hr < star_per[star_cnt]) {
