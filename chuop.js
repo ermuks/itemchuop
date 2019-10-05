@@ -1,5 +1,5 @@
 
-var reqlev = 200;
+var reqlev = 150;
 var eqptype = 0;
 
 var nochu = new Array(20); // 추옵배열 겹침 방지
