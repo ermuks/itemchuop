@@ -359,7 +359,24 @@ function setchu(icls) {
     refresh();
 }
 
+function get_maxstf() {
+    if (reqlev < 98) {
+        maxstf = 5;
+    } else if (reqlev < 108) {
+        maxstf = 8;
+    } else if (reqlev < 118) {
+        maxstf = 10;
+    } else if (reqlev < 128) {
+        maxstf = 15;
+    } else if (reqlev < 138) {
+        maxstf = 20;
+    } else {
+        maxstf = 25;
+    }
+}
+
 function refresh() {
+    get_maxstf();
     for (var i = 0; i < 17; i++) {
         if (chu[i] != 0) {
             if (jak[i] != 0) {
@@ -404,6 +421,20 @@ function refresh() {
         document.getElementsByName("downpoten")[i].innerText = "+ " + edipot[i];
     }
     document.getElementById("itemclass").innerText = "(" + potenstring[potlv - 1] + " 아이템)";
+
+    for (var i = 0; i < maxstf; i++) {
+        if (i < star_cnt) {
+            if (document.getElementsByName("stf")[i].id != "stary") {
+                document.getElementsByName("stf")[i].id = "stary";
+            }
+        } else {
+            if (document.getElementsByName("stf")[i].id != "star") {
+                document.getElementsByName("stf")[i].id = "star";
+            }
+        }
+    }
+
+    document.getElementById("info_text").innerText = meso;
 }
 
 function nodata() {
