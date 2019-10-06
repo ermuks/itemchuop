@@ -4,14 +4,14 @@
 <head>
     <meta name="viewport" content="width=device-width,initial-scale=0.75,minimum-scale=0.75,maximum-scale=0.75,user-scalable=no">
     <meta charset="utf-8" />
-    <link rel="stylesheet" type="text/css" href="s.css" />
+    <link rel="stylesheet" type="text/css" href="sm.css" />
     <script type="text/javascript" src="chuop.js"></script>
     <script type="text/javascript" src="star.js"></script>
     <script type="text/javascript" src="inventory.js"></script>
     <script type="text/javascript" src="poten.js"></script>
     <title>메이플스토리 환생의 불꽃 시뮬레이터</title>
 </head>
-<body style="padding: 0px; margin: 8px;" onload="refresh();">
+<body style="padding: 0px; margin: 8px;" onload="setmobile(true); refresh();">
     <div id="minfo_text" name="info">반갑습니다 아이템 강화 시뮬레이션입니다.</div>
 
     <div id="miteminfoUI" style="left: 8px; top: 40px;">
@@ -168,134 +168,580 @@
     </div>
 
     <div id="cosumlist">
-        <div id="cosum_button" onclick="setchu(0); cosumcount(0);">
-            <div id="cosumicon"><img src="img/ItemList/cosum/영환불.png" /></div>
-            <div id="cosumname">영원한 환생의 불꽃</div>
-            <div id="cosumuse" name="usecount">사용 한 갯수 : 0개</div>
-        </div>
-        <div id="cosum_button" onclick="setchu(1); cosumcount(1);">
-            <div id="cosumicon"><img src="img/ItemList/cosum/강환불.png" /></div>
-            <div id="cosumname">강력한 환생의 불꽃</div>
-            <div id="cosumuse" name="usecount">사용 한 갯수 : 0개</div>
-        </div>
-        <div id="cosum_button" onclick="upg(true, '주흔70'); cosumcount(2);">
-            <div id="cosumicon"><img src="img/ItemList/cosum/주흔.png" /></div>
-            <div id="cosumname">주문의 흔적 70%<br />INT : +3</div>
-            <div id="cosumuse" name="usecount">사용 한 갯수 : 0개</div>
-        </div>
-        <div id="cosum_button" onclick="upg(true, '주흔30'); cosumcount(3);">
-            <div id="cosumicon"><img src="img/ItemList/cosum/주흔.png" /></div>
-            <div id="cosumname">주문의 흔적 30%<br />INT : +4</div>
-            <div id="cosumuse" name="usecount">사용 한 갯수 : 0개</div>
-        </div>
-        <div id="cosum_button" onclick="upg(true, '주흔15'); cosumcount(4);">
-            <div id="cosumicon"><img src="img/ItemList/cosum/주흔.png" /></div>
-            <div id="cosumname">주문의 흔적 15%<br />INT : +7</div>
-            <div id="cosumuse" name="usecount">사용 한 갯수 : 0개</div>
-        </div>
+        <div id="cosum_all" style="left: 280px; top: 40px; " name="info">
+            <div id="cosum_title" onclick="onoff(0);">
+                <div id="title_left"></div>
+                <div id="title_center">불꽃</div>
+                <div id="title_right"></div>
+            </div>
+            <div id="cosum_list" name="c_list" style="display:none;">
+                <div id="cosum_button" onclick="setchu(0, 0); cosumcount(0);">
 
-        <div id="cosum_button" onclick="upg(false, '잠재'); cosumcount(5);">
-            <div id="cosumicon"><img src="img/ItemList/cosum/잠재.png" /></div>
-            <div id="cosumname">잠재능력 부여 주문서</div>
-            <div id="cosumuse" name="usecount">사용 한 갯수 : 0개</div>
-        </div>
-        <div id="cosum_button" onclick="upg(false, '에잠'); cosumcount(6);">
-            <div id="cosumicon"><img src="img/ItemList/cosum/에잠.png" /></div>
-            <div id="cosumname">에픽 잠재능력 부여 주문서 50%</div>
-            <div id="cosumuse" name="usecount">사용 한 갯수 : 0개</div>
-        </div>
-        <div id="cosum_button" onclick="upg(false, '유잠'); cosumcount(7);">
-            <div id="cosumicon"><img src="img/ItemList/cosum/유잠.png" /></div>
-            <div id="cosumname">유니크 잠재능력 부여 주문서</div>
-            <div id="cosumuse" name="usecount">사용 한 갯수 : 0개</div>
-        </div>
-        <div id="cosum_button" onclick="upg(false, '에디잠'); cosumcount(8);">
-            <div id="cosumicon"><img src="img/ItemList/cosum/에디잠재.png" /></div>
-            <div id="cosumname">에디셔널 잠재능력 부여 주문서 50%</div>
-            <div id="cosumuse" name="usecount">사용 한 갯수 : 0개</div>
-        </div>
-        <div id="cosum_button" onclick="upg(false, '에디에잠'); cosumcount(9);">
-            <div id="cosumicon"><img src="img/ItemList/cosum/에디에잠.png" /></div>
-            <div id="cosumname">에픽 에디셔널 잠재능력 부여 주문서 30%</div>
-            <div id="cosumuse" name="usecount">사용 한 갯수 : 0개</div>
-        </div>
-        <div id="cosum_button" onclick="upg(false, '금각'); cosumcount(18);">
-            <div id="cosumicon"><img src="img/ItemList/cosum/금각.png" /></div>
-            <div id="cosumname">금빛 각인의 인장</div>
-            <div id="cosumuse" name="usecount">사용 한 갯수 : 0개</div>
-        </div>
-        <div id="cosum_button" onclick="upg(false, '에디금각'); cosumcount(19);">
-            <div id="cosumicon"><img src="img/ItemList/cosum/에디금각.png" /></div>
-            <div id="cosumname">금빛  에디셔널 각인의 인장</div>
-            <div id="cosumuse" name="usecount">사용 한 갯수 : 0개</div>
-        </div>
+                    <div id="cosumicon">
+                        <div id="bt_left"></div>
+                        <div id="bt_center">
+                            <img src="img/ItemList/cosum/영환불.png" />
+                        </div>
+                        <div id="bt_right"></div>
+                    </div>
 
-        <div id="cosum_button" onclick="cube('수큐'); cosumcount(10);">
-            <div id="cosumicon"><img src="img/ItemList/cosum/수큐.png" /></div>
-            <div id="cosumname">수상한 큐브</div>
-            <div id="cosumuse" name="usecount">사용 한 갯수 : 0개</div>
-        </div>
-        <div id="cosum_button" onclick="cube('레큐'); cosumcount(11);">
-            <div id="cosumicon"><img src="img/ItemList/cosum/레드큐브.png" /></div>
-            <div id="cosumname">레드 큐브</div>
-            <div id="cosumuse" name="usecount">사용 한 갯수 : 0개</div>
-        </div>
-        <div id="cosum_button" onclick="cube('블큐'); cosumcount(12);">
-            <div id="cosumicon"><img src="img/ItemList/cosum/블랙큐브.png" /></div>
-            <div id="cosumname">블랙 큐브</div>
-            <div id="cosumuse" name="usecount">사용 한 갯수 : 0개</div>
-        </div>
-        <div id="cosum_button" onclick="cube('수에큐'); cosumcount(13);">
-            <div id="cosumicon"><img src="img/ItemList/cosum/수에큐.png" /></div>
-            <div id="cosumname">수상한 에디셔널 큐브</div>
-            <div id="cosumuse" name="usecount">사용 한 갯수 : 0개</div>
-        </div>
-        <div id="cosum_button" onclick="cube('에큐'); cosumcount(14);">
-            <div id="cosumicon"><img src="img/ItemList/cosum/에디큐브.png" /></div>
-            <div id="cosumname">에디셔널 큐브</div>
-            <div id="cosumuse" name="usecount">사용 한 갯수 : 0개</div>
-        </div>
+                    <div id="cosumname">
+                        <div id="nm_left"></div>
+                        <div id="nm_center">영원한 환생의 불꽃</div>
+                        <div id="nm_right"></div>
+                    </div>
 
-        <div id="cosum_button" onclick="upg(false, '이노'); cosumcount(15);">
-            <div id="cosumicon"><img src="img/ItemList/cosum/이노.png" /></div>
-            <div id="cosumname">이노센트 주문서 50%</div>
-            <div id="cosumuse" name="usecount">사용 한 갯수 : 0개</div>
-        </div>
-        <div id="cosum_button" onclick="upg(false, '순백'); cosumcount(16);">
-            <div id="cosumicon"><img src="img/ItemList/cosum/순백.png" /></div>
-            <div id="cosumname">순백의 주문서 10%</div>
-            <div id="cosumuse" name="usecount">사용 한 갯수 : 0개</div>
-        </div>
-        <div id="cosum_button" onclick="upg(true, '놀긍혼'); cosumcount(17);">
-            <div id="cosumicon"><img src="img/ItemList/cosum/놀긍혼.png" /></div>
-            <div id="cosumname">놀라운 긍정의 혼돈의 주문서 60%</div>
-            <div id="cosumuse" name="usecount">사용 한 갯수 : 0개</div>
-        </div>
-        <div id="cosum_button" onclick="upg(false, '황망'); cosumcount(18);">
-            <div id="cosumicon"><img src="img/ItemList/cosum/황망.png" /></div>
-            <div id="cosumname">황금 망치 50%</div>
-            <div id="cosumuse" name="usecount">사용 한 갯수 : 0개</div>
-        </div>
-        <div id="cosum_button" onclick="starforce(0); cosumcount(19);">
-            <div id="cosumicon"><img src="img/ItemList/cosum/강화권.png" /></div>
-            <div id="cosumname">15성 강화권</div>
-            <div id="cosumuse" name="usecount">사용 한 갯수 : 0개</div>
-        </div>
+                    <div id="cosumuse">
+                        <div id="cn_left"></div>
+                        <div id="cn_center" name="usecount"></div>
+                        <div id="cn_right"></div>
+                    </div>
+                </div>
+                <div id="cosum_button" onclick="setchu(0,1); cosumcount(1);">
+                    <div id="cosumicon">
+                        <div id="bt_left"></div>
+                        <div id="bt_center">
+                            <img src="img/ItemList/cosum/강환불.png" />
+                        </div>
+                        <div id="bt_right"></div>
+                    </div>
 
-        <div id="cosum_button" onclick="cash('리턴'); cosumcount(20);">
-            <div id="cosumicon"><img src="img/ItemList/cosum/리턴.png" /></div>
-            <div id="cosumname">리턴 스크롤</div>
-            <div id="cosumuse" name="usecount">사용 한 갯수 : 0개</div>
-        </div>
-        <div id="cosum_button" onclick=" cosumcount(21);">
-            <div id="cosumicon"><img src="img/ItemList/cosum/프텍.png" /></div>
-            <div id="cosumname">프로텍트 실드</div>
-            <div id="cosumuse" name="usecount">사용 한 갯수 : 0개</div>
-        </div>
-        <div id="cosum_button" onclick=" cosumcount(22);">
-            <div id="cosumicon"><img src="img/ItemList/cosum/리커.png" /></div>
-            <div id="cosumname">리커버리 실드</div>
-            <div id="cosumuse" name="usecount">사용 한 갯수 : 0개</div>
+                    <div id="cosumname">
+                        <div id="nm_left"></div>
+                        <div id="nm_center">강력한 환생의 불꽃</div>
+                        <div id="nm_right"></div>
+                    </div>
+
+                    <div id="cosumuse">
+                        <div id="cn_left"></div>
+                        <div id="cn_center" name="usecount"></div>
+                        <div id="cn_right"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="cosum_title" onclick="onoff(1);">
+                <div id="title_left"></div>
+                <div id="title_center">흔적</div>
+                <div id="title_right"></div>
+            </div>
+            <div id="cosum_list" name="c_list" style="display:none;">
+                <div id="cosum_button" onclick="upg(true, '주흔70'); cosumcount(2);">
+                    <div id="cosumicon">
+                        <div id="bt_left"></div>
+                        <div id="bt_center">
+                            <img src="img/ItemList/cosum/주흔.png" />
+                        </div>
+                        <div id="bt_right"></div>
+                    </div>
+
+                    <div id="cosumname">
+                        <div id="nm_left"></div>
+                        <div id="nm_center">주문의 흔적 70%</div>
+                        <div id="nm_right"></div>
+                    </div>
+
+                    <div id="cosumuse">
+                        <div id="cn_left"></div>
+                        <div id="cn_center" name="usecount"></div>
+                        <div id="cn_right"></div>
+                    </div>
+                </div>
+                <div id="cosum_button" onclick="upg(true, '주흔30'); cosumcount(3);">
+                    <div id="cosumicon">
+                        <div id="bt_left"></div>
+                        <div id="bt_center">
+                            <img src="img/ItemList/cosum/주흔.png" />
+                        </div>
+                        <div id="bt_right"></div>
+                    </div>
+
+                    <div id="cosumname">
+                        <div id="nm_left"></div>
+                        <div id="nm_center">주문의 흔적 30%</div>
+                        <div id="nm_right"></div>
+                    </div>
+
+                    <div id="cosumuse">
+                        <div id="cn_left"></div>
+                        <div id="cn_center" name="usecount"></div>
+                        <div id="cn_right"></div>
+                    </div>
+                </div>
+                <div id="cosum_button" onclick="upg(true, '주흔15'); cosumcount(4);">
+                    <div id="cosumicon">
+                        <div id="bt_left"></div>
+                        <div id="bt_center">
+                            <img src="img/ItemList/cosum/주흔.png" />
+                        </div>
+                        <div id="bt_right"></div>
+                    </div>
+
+                    <div id="cosumname">
+                        <div id="nm_left"></div>
+                        <div id="nm_center">주문의 흔적 15%</div>
+                        <div id="nm_right"></div>
+                    </div>
+
+                    <div id="cosumuse">
+                        <div id="cn_left"></div>
+                        <div id="cn_center" name="usecount"></div>
+                        <div id="cn_right"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="cosum_title" onclick="onoff(2);">
+                <div id="title_left"></div>
+                <div id="title_center">유틸</div>
+                <div id="title_right"></div>
+            </div>
+            <div id="cosum_list" name="c_list" style="display:none;">
+                <div id="cosum_button" onclick="upg(false, '이노'); cosumcount(5);">
+                    <div id="cosumicon">
+                        <div id="bt_left"></div>
+                        <div id="bt_center">
+                            <img src="img/ItemList/cosum/이노.png" />
+                        </div>
+                        <div id="bt_right"></div>
+                    </div>
+
+                    <div id="cosumname">
+                        <div id="nm_left"></div>
+                        <div id="nm_center">이노센트 주문서 50%</div>
+                        <div id="nm_right"></div>
+                    </div>
+
+                    <div id="cosumuse">
+                        <div id="cn_left"></div>
+                        <div id="cn_center" name="usecount"></div>
+                        <div id="cn_right"></div>
+                    </div>
+                </div>
+                <div id="cosum_button" onclick="upg(false, '순백'); cosumcount(6);">
+                    <div id="cosumicon">
+                        <div id="bt_left"></div>
+                        <div id="bt_center">
+                            <img src="img/ItemList/cosum/순백.png" />
+                        </div>
+                        <div id="bt_right"></div>
+                    </div>
+
+                    <div id="cosumname">
+                        <div id="nm_left"></div>
+                        <div id="nm_center">순백의 주문서 10%</div>
+                        <div id="nm_right"></div>
+                    </div>
+
+                    <div id="cosumuse">
+                        <div id="cn_left"></div>
+                        <div id="cn_center" name="usecount"></div>
+                        <div id="cn_right"></div>
+                    </div>
+                </div>
+                <div id="cosum_button" onclick="upg(true, '놀긍혼'); cosumcount(7);">
+                    <div id="cosumicon">
+                        <div id="bt_left"></div>
+                        <div id="bt_center">
+                            <img src="img/ItemList/cosum/놀긍혼.png" />
+                        </div>
+                        <div id="bt_right"></div>
+                    </div>
+
+                    <div id="cosumname">
+                        <div id="nm_left"></div>
+                        <div id="nm_center">놀라운 긍정의 혼돈의 주문서 60%</div>
+                        <div id="nm_right"></div>
+                    </div>
+
+                    <div id="cosumuse">
+                        <div id="cn_left"></div>
+                        <div id="cn_center" name="usecount"></div>
+                        <div id="cn_right"></div>
+                    </div>
+                </div>
+                <div id="cosum_button" onclick="upg(false, '황망'); cosumcount(8);">
+                    <div id="cosumicon">
+                        <div id="bt_left"></div>
+                        <div id="bt_center">
+                            <img src="img/ItemList/cosum/황망.png" />
+                        </div>
+                        <div id="bt_right"></div>
+                    </div>
+
+                    <div id="cosumname">
+                        <div id="nm_left"></div>
+                        <div id="nm_center">황금 망치 50%</div>
+                        <div id="nm_right"></div>
+                    </div>
+
+                    <div id="cosumuse">
+                        <div id="cn_left"></div>
+                        <div id="cn_center" name="usecount"></div>
+                        <div id="cn_right"></div>
+                    </div>
+                </div>
+                <div id="cosum_button" onclick="starforce(); cosumcount(9);">
+                    <div id="cosumicon">
+                        <div id="bt_left"></div>
+                        <div id="bt_center">
+                            <img src="img/ItemList/cosum/강화권.png" />
+                        </div>
+                        <div id="bt_right"></div>
+                    </div>
+
+                    <div id="cosumname">
+                        <div id="nm_left"></div>
+                        <div id="nm_center">스타포스 강화<br />( +4.5% )</div>
+                        <div id="nm_right"></div>
+                    </div>
+
+                    <div id="cosumuse">
+                        <div id="cn_left"></div>
+                        <div id="cn_center" name="usecount"></div>
+                        <div id="cn_right"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="cosum_title" onclick="onoff(3);">
+                <div id="title_left"></div>
+                <div id="title_center">잠재능력</div>
+                <div id="title_right"></div>
+            </div>
+            <div id="cosum_list" name="c_list" style="display:none;">
+                <div id="cosum_button" onclick="upg(false, '잠재'); cosumcount(10);">
+                    <div id="cosumicon">
+                        <div id="bt_left"></div>
+                        <div id="bt_center">
+                            <img src="img/ItemList/cosum/잠재.png" />
+                        </div>
+                        <div id="bt_right"></div>
+                    </div>
+
+                    <div id="cosumname">
+                        <div id="nm_left"></div>
+                        <div id="nm_center">잠재능력 부여 주문서</div>
+                        <div id="nm_right"></div>
+                    </div>
+
+                    <div id="cosumuse">
+                        <div id="cn_left"></div>
+                        <div id="cn_center" name="usecount"></div>
+                        <div id="cn_right"></div>
+                    </div>
+                </div>
+                <div id="cosum_button" onclick="upg(false, '에잠'); cosumcount(11);">
+                    <div id="cosumicon">
+                        <div id="bt_left"></div>
+                        <div id="bt_center">
+                            <img src="img/ItemList/cosum/에잠.png" />
+                        </div>
+                        <div id="bt_right"></div>
+                    </div>
+
+                    <div id="cosumname">
+                        <div id="nm_left"></div>
+                        <div id="nm_center">에픽 잠재능력 부여 주문서 50%</div>
+                        <div id="nm_right"></div>
+                    </div>
+
+                    <div id="cosumuse">
+                        <div id="cn_left"></div>
+                        <div id="cn_center" name="usecount"></div>
+                        <div id="cn_right"></div>
+                    </div>
+                </div>
+                <div id="cosum_button" onclick="upg(false, '유잠'); cosumcount(12);">
+                    <div id="cosumicon">
+                        <div id="bt_left"></div>
+                        <div id="bt_center">
+                            <img src="img/ItemList/cosum/유잠.png" />
+                        </div>
+                        <div id="bt_right"></div>
+                    </div>
+
+                    <div id="cosumname">
+                        <div id="nm_left"></div>
+                        <div id="nm_center">유니크 잠재능력 부여 주문서 30%</div>
+                        <div id="nm_right"></div>
+                    </div>
+
+                    <div id="cosumuse">
+                        <div id="cn_left"></div>
+                        <div id="cn_center" name="usecount"></div>
+                        <div id="cn_right"></div>
+                    </div>
+                </div>
+                <div id="cosum_button" onclick="upg(false, '에디잠'); cosumcount(13);">
+                    <div id="cosumicon">
+                        <div id="bt_left"></div>
+                        <div id="bt_center">
+                            <img src="img/ItemList/cosum/에디잠재.png" />
+                        </div>
+                        <div id="bt_right"></div>
+                    </div>
+
+                    <div id="cosumname">
+                        <div id="nm_left"></div>
+                        <div id="nm_center">에디셔널 잠재능력 부여 주문서 50%</div>
+                        <div id="nm_right"></div>
+                    </div>
+
+                    <div id="cosumuse">
+                        <div id="cn_left"></div>
+                        <div id="cn_center" name="usecount"></div>
+                        <div id="cn_right"></div>
+                    </div>
+                </div>
+                <div id="cosum_button" onclick="upg(false, '에디에잠'); cosumcount(14);">
+                    <div id="cosumicon">
+                        <div id="bt_left"></div>
+                        <div id="bt_center">
+                            <img src="img/ItemList/cosum/에디에잠.png" />
+                        </div>
+                        <div id="bt_right"></div>
+                    </div>
+
+                    <div id="cosumname">
+                        <div id="nm_left"></div>
+                        <div id="nm_center">에픽 에디셔널 잠재능력 부여 주문서 30%</div>
+                        <div id="nm_right"></div>
+                    </div>
+
+                    <div id="cosumuse">
+                        <div id="cn_left"></div>
+                        <div id="cn_center" name="usecount"></div>
+                        <div id="cn_right"></div>
+                    </div>
+                </div>
+                <div id="cosum_button" onclick="upg(false, '금각'); cosumcount(15);">
+                    <div id="cosumicon">
+                        <div id="bt_left"></div>
+                        <div id="bt_center">
+                            <img src="img/ItemList/cosum/금각.png" />
+                        </div>
+                        <div id="bt_right"></div>
+                    </div>
+
+                    <div id="cosumname">
+                        <div id="nm_left"></div>
+                        <div id="nm_center">금빛 각인의 인장</div>
+                        <div id="nm_right"></div>
+                    </div>
+
+                    <div id="cosumuse">
+                        <div id="cn_left"></div>
+                        <div id="cn_center" name="usecount"></div>
+                        <div id="cn_right"></div>
+                    </div>
+                </div>
+                <div id="cosum_button" onclick="upg(false, '에디금각'); cosumcount(16);">
+                    <div id="cosumicon">
+                        <div id="bt_left"></div>
+                        <div id="bt_center">
+                            <img src="img/ItemList/cosum/에디금각.png" />
+                        </div>
+                        <div id="bt_right"></div>
+                    </div>
+
+                    <div id="cosumname">
+                        <div id="nm_left"></div>
+                        <div id="nm_center">금빛 에디셔널 각인의 인장</div>
+                        <div id="nm_right"></div>
+                    </div>
+
+                    <div id="cosumuse">
+                        <div id="cn_left"></div>
+                        <div id="cn_center" name="usecount"></div>
+                        <div id="cn_right"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="cosum_title" onclick="onoff(4);">
+                <div id="title_left"></div>
+                <div id="title_center">큐브</div>
+                <div id="title_right"></div>
+            </div>
+            <div id="cosum_list" name="c_list" style="display:none;">
+                <div id="cosum_button" onclick="cube('수큐'); cosumcount(17);">
+                    <div id="cosumicon">
+                        <div id="bt_left"></div>
+                        <div id="bt_center">
+                            <img src="img/ItemList/cosum/수큐.png" />
+                        </div>
+                        <div id="bt_right"></div>
+                    </div>
+
+                    <div id="cosumname">
+                        <div id="nm_left"></div>
+                        <div id="nm_center">수상한 큐브</div>
+                        <div id="nm_right"></div>
+                    </div>
+
+                    <div id="cosumuse">
+                        <div id="cn_left"></div>
+                        <div id="cn_center" name="usecount"></div>
+                        <div id="cn_right"></div>
+                    </div>
+                </div>
+                <div id="cosum_button" onclick="cube('레큐'); cosumcount(18);">
+                    <div id="cosumicon">
+                        <div id="bt_left"></div>
+                        <div id="bt_center">
+                            <img src="img/ItemList/cosum/레드큐브.png" />
+                        </div>
+                        <div id="bt_right"></div>
+                    </div>
+
+                    <div id="cosumname">
+                        <div id="nm_left"></div>
+                        <div id="nm_center">레드 큐브</div>
+                        <div id="nm_right"></div>
+                    </div>
+
+                    <div id="cosumuse">
+                        <div id="cn_left"></div>
+                        <div id="cn_center" name="usecount"></div>
+                        <div id="cn_right"></div>
+                    </div>
+                </div>
+                <div id="cosum_button" onclick="cube('블큐'); cosumcount(19);">
+                    <div id="cosumicon">
+                        <div id="bt_left"></div>
+                        <div id="bt_center">
+                            <img src="img/ItemList/cosum/블랙큐브.png" />
+                        </div>
+                        <div id="bt_right"></div>
+                    </div>
+
+                    <div id="cosumname">
+                        <div id="nm_left"></div>
+                        <div id="nm_center">블랙 큐브</div>
+                        <div id="nm_right"></div>
+                    </div>
+
+                    <div id="cosumuse">
+                        <div id="cn_left"></div>
+                        <div id="cn_center" name="usecount"></div>
+                        <div id="cn_right"></div>
+                    </div>
+                </div>
+                <div id="cosum_button" onclick="cube('수에큐'); cosumcount(20);">
+                    <div id="cosumicon">
+                        <div id="bt_left"></div>
+                        <div id="bt_center">
+                            <img src="img/ItemList/cosum/수에큐.png" />
+                        </div>
+                        <div id="bt_right"></div>
+                    </div>
+
+                    <div id="cosumname">
+                        <div id="nm_left"></div>
+                        <div id="nm_center">수상한 에디셔널 큐브</div>
+                        <div id="nm_right"></div>
+                    </div>
+
+                    <div id="cosumuse">
+                        <div id="cn_left"></div>
+                        <div id="cn_center" name="usecount"></div>
+                        <div id="cn_right"></div>
+                    </div>
+                </div>
+                <div id="cosum_button" onclick="cube('에큐'); cosumcount(21);">
+                    <div id="cosumicon">
+                        <div id="bt_left"></div>
+                        <div id="bt_center">
+                            <img src="img/ItemList/cosum/에디큐브.png" />
+                        </div>
+                        <div id="bt_right"></div>
+                    </div>
+
+                    <div id="cosumname">
+                        <div id="nm_left"></div>
+                        <div id="nm_center">에디셔널 큐브</div>
+                        <div id="nm_right"></div>
+                    </div>
+
+                    <div id="cosumuse">
+                        <div id="cn_left"></div>
+                        <div id="cn_center" name="usecount"></div>
+                        <div id="cn_right"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="cosum_title" onclick="onoff(5);">
+                <div id="title_left"></div>
+                <div id="title_center">캐시</div>
+                <div id="title_right"></div>
+            </div>
+            <div id="cosum_list" name="c_list" style="display:none;">
+                <div id="cosum_button" onclick="cash('리턴'); cosumcount(22);">
+                    <div id="cosumicon">
+                        <div id="bt_left"></div>
+                        <div id="bt_center">
+                            <img src="img/ItemList/cosum/리턴.png" />
+                        </div>
+                        <div id="bt_right"></div>
+                    </div>
+
+                    <div id="cosumname">
+                        <div id="nm_left"></div>
+                        <div id="nm_center">리턴 스크롤</div>
+                        <div id="nm_right"></div>
+                    </div>
+
+                    <div id="cosumuse">
+                        <div id="cn_left"></div>
+                        <div id="cn_center" name="usecount"></div>
+                        <div id="cn_right"></div>
+                    </div>
+                </div>
+                <div id="cosum_button" onclick=" cosumcount(23);">
+                    <div id="cosumicon">
+                        <div id="bt_left"></div>
+                        <div id="bt_center">
+                            <img src="img/ItemList/cosum/프텍.png" />
+                        </div>
+                        <div id="bt_right"></div>
+                    </div>
+
+                    <div id="cosumname">
+                        <div id="nm_left"></div>
+                        <div id="nm_center">프로텍트 실드</div>
+                        <div id="nm_right"></div>
+                    </div>
+
+                    <div id="cosumuse">
+                        <div id="cn_left"></div>
+                        <div id="cn_center" name="usecount"></div>
+                        <div id="cn_right"></div>
+                    </div>
+                </div>
+                <div id="cosum_button" onclick=" cosumcount(24);">
+                    <div id="cosumicon">
+                        <div id="bt_left"></div>
+                        <div id="bt_center">
+                            <img src="img/ItemList/cosum/리커.png" />
+                        </div>
+                        <div id="bt_right"></div>
+                    </div>
+
+                    <div id="cosumname">
+                        <div id="nm_left"></div>
+                        <div id="nm_center">리커버리 실드</div>
+                        <div id="nm_right"></div>
+                    </div>
+
+                    <div id="cosumuse">
+                        <div id="cn_left"></div>
+                        <div id="cn_center" name="usecount"></div>
+                        <div id="cn_right"></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </body>

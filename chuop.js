@@ -25,21 +25,7 @@ var edijul = 0;
 
 var itemname = "아케인셰이드 메이지 케이프";
 
-var cosumcnt = new Array(23);
-for (var i = 0; i < cosumcnt.length; i++) {
-    cosumcnt[i] = 0;
-}
 
-function cosumcount(index) {
-    cosumcnt[index]++;
-    textrefresh();
-}
-
-function textrefresh() {
-    for (var i = 0; i < cosumcnt.length; i++) {
-        document.getElementsByName("usecount")[i].innerText = "사용 한 갯수 : " + cosumcnt[i] + "개";
-    }
-}
 
 var isngh = false;
 function cash(code) {
@@ -454,6 +440,8 @@ function get_maxstf() {
 }
 
 function refresh() {
+    if (mobile) mtextrefresh();
+    if (!mobile) textrefresh();
     get_maxstf();
     for (var i = 0; i < 17; i++) {
         if (chu[i] != 0) {

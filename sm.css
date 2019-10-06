@@ -3,27 +3,45 @@
 }
 
     div#cosum_list {
-        margin: 8px 5px;
         height: 126px;
     }
 
     div#cosum_title {
-        background: url(img/ItemList/cosum/item_title.png);
-        width: 806px;
+        width: 100%;
+        height: 36px;
+        margin-top: 2px;
+        cursor: pointer;
+    }
+    div#title_left {
+        float: left;
+        width: 60px;
+        height: 36px;
+        background: url(img/ItemList/cosum/item_titleml.png);
+    }
+    div#title_center {
+        float: left;
+        width: Calc(100% - 142px);
         height: 14px;
         padding: 11px;
         color: white;
         font-size: 9pt;
         text-align: center;
-        border-radius: 10px;
-        box-shadow: 0px 2px 4px rgba(0,0,0,0.4);
-        cursor: pointer;
+        background: url(img/ItemList/cosum/item_titlemc.png);
+    }
+    div#title_right {
+        float: left;
+        width: 60px;
+        height: 36px;
+        background: url(img/ItemList/cosum/item_titlemr.png);
     }
 
     div#miteminfoUI {
         float: left;
     }
     div#cosumlist {
+        position: absolute;
+        left: 268px;
+        width: Calc(100% - 284px);
         padding-left: 8px;
         float: left;
         overflow: hidden;
@@ -44,22 +62,88 @@
 
     div#cosum_button {
         float: left;
-        margin-right: 10px;
-        background: url(img/ItemList/cosum/item_back.png) no-repeat;
-        width: 156px;
+        margin: 5px;
+        width: Calc(100% - 10px);
         height: 126px;
+        cursor: pointer;
+        overflow: hidden;
+    }
+
+    div#bt_left {
+        float: left;
+        background: url(img/ItemList/cosum/item_backml.png) no-repeat;
+        width: 60px;
+        height: 56px;
+    }
+    div#bt_center {
+        float: left;
+        padding-top: 13px;
+        background: url(img/ItemList/cosum/item_backmc.png);
+        width: Calc(100% - 120px);
+        height: 43px;
         text-align: center;
         font-size: 9pt;
         color: white;
         cursor: pointer;
         overflow: hidden;
     }
+    div#bt_right {
+        float: left;
+        background: url(img/ItemList/cosum/item_backmr.png) no-repeat;
+        width: 60px;
+        height: 56px;
+    }
+
+
+    div#nm_left {
+        float: left;
+        background: url(img/ItemList/cosum/item_back_nameml.png) no-repeat;
+        width: 7px;
+        height: 42px;
+    }
+    div#nm_center {
+        float: left;
+        padding-top: 6px;
+        background: url(img/ItemList/cosum/item_back_namemc.png);
+        width: Calc(100% - 14px);
+        height: 36px;
+        text-align: center;
+        font-size: 9pt;
+        color: white;
+        cursor: pointer;
+        overflow: hidden;
+    }
+    div#nm_right {
+        float: left;
+        background: url(img/ItemList/cosum/item_back_namemr.png) no-repeat;
+        width: 7px;
+        height: 42px;
+    }
+
+
+    div#cn_left {
+        float: left;
+        background: url(img/ItemList/cosum/item_back_cntml.png) no-repeat;
+        width: 10px;
+        height: 28px;
+    }
+    div#cn_center {
+        float: left;
+        background: url(img/ItemList/cosum/item_back_cntmc.png);
+        width: Calc(100% - 20px);
+        height: 28px;
+    }
+    div#cn_right {
+        float: left;
+        background: url(img/ItemList/cosum/item_back_cntmr.png) no-repeat;
+        width: 10px;
+        height: 28px;
+    }
+
 div#cosumicon {
     height: 34px;
-    padding-top: 13px;
 }
 div#cosumname {
-    padding: 16px;
     height: 25px;
 }
 div#cosumuse {
