@@ -125,19 +125,22 @@
         float: left;
         background: url(img/ItemList/cosum/item_back_cntml.png) no-repeat;
         width: 10px;
-        height: 28px;
+        height: 22px;
+        padding-top: 6px;
     }
     div#cn_center {
         float: left;
         background: url(img/ItemList/cosum/item_back_cntmc.png);
         width: Calc(100% - 20px);
-        height: 28px;
+        height: 22px;
+        padding-top: 6px;
     }
     div#cn_right {
         float: left;
         background: url(img/ItemList/cosum/item_back_cntmr.png) no-repeat;
         width: 10px;
-        height: 28px;
+        height: 22px;
+        padding-top: 6px;
     }
 
 div#cosumicon {
