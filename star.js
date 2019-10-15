@@ -3,6 +3,8 @@ var starcatch = 4.5;
 var fail = 0;
 var maxstf = 0;
 
+var addstat = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
 var star_per =
     [
         950, 900, 850, 850, 800,
@@ -29,8 +31,31 @@ var star_destroy =
         70, 70, 194, 294, 396
     ];
 
+function get_maxstf() {
+    if (reqlev < 98) {
+        maxstf = 5;
+    } else if (reqlev < 108) {
+        maxstf = 8;
+    } else if (reqlev < 118) {
+        maxstf = 10;
+    } else if (reqlev < 128) {
+        maxstf = 15;
+    } else if (reqlev < 138) {
+        maxstf = 20;
+    } else {
+        maxstf = 25;
+    }
+}
+
 function starforce() {
     var cost = 0;
+
+    var stats = [false, false, false, false];
+
+    for (var i = 0; i < addstat.length; i++) {
+        addstat[i] = 0;
+    }
+
     if (star_cnt < maxstf) {
         if (star_cnt < 10) {
             cost = Math.round(1000 + Math.pow(reqlev, 3) * (star_cnt + 1) / 2500) * 100;
@@ -39,6 +64,7 @@ function starforce() {
         } else if (star_cnt < 25) {
             cost = Math.round(1000 + Math.pow(reqlev, 3) * Math.pow(star_cnt + 1, 2.7) / 20000) * 100;
         }
+
         var hr = Math.random() * 1000;
         if (fail >= 2) {
             fail = 0;
@@ -58,6 +84,57 @@ function starforce() {
         } else {
             star_cnt = 12;
             alert("파괴 ㅋㅋㅋㅋㅋㅋㅋㅋ");
+        }
+
+        if (eqptype == 11) {
+            if (item_job[0] || item_job[1] || item_job[3] || item_job[5]) {
+                stats[0] = true;
+                stats[1] = true;
+            }
+            if (item_job[2]) {
+                stats[2] = true;
+                stats[3] = true;
+            }
+            if (item_job[4]) {
+                stats[1] = true;
+                stats[3] = true;
+            }
+            for (var i = 1; i < star_cnt + 1; i++) {
+                if (i <= 5) {
+                    for (var j = 0; j < stats.length; j++) {
+                        if (stats[j]) {
+                            addstat[j] += 2;
+                        }
+                    }
+                } else if (i <= 15) {
+                    for (var j = 0; j < stats.length; j++) {
+                        if (stats[j]) {
+                            addstat[j] += 3;
+                        }
+                    }
+                } else if (i <= 22) {
+                    for (var j = 0; j < stats.length; j++) {
+                        if (stats[j]) {
+                            if (reqlev == 200) {
+                                addstat[j] += 15;
+                            } else {
+                                addstat[j] += (reqlev / 10 - 10) * 2 + 1;
+                            }
+                        }
+                    }
+                }
+                if (i <= 15) {
+                    
+                } else if (i <= 22) {
+                    if (reqlev == 200) {
+                        addstat[8] += i - 4;
+                        addstat[9] += i - 4;
+                    } else {
+                        addstat[8] += reqlev / 10 - 22 + i;
+                        addstat[9] += reqlev / 10 - 22 + i;
+                    }
+                }
+            }
         }
     }
     refresh();

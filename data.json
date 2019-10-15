@@ -1,0 +1,39 @@
+{
+    "01102941": {
+        "name": "아케인셰이드 메이지케이프",
+        "job": [
+            { "can": false },
+            { "can": false },
+            { "can": true },
+            { "can": false },
+            { "can": false },
+            { "can": false }
+        ],
+        //"specialjob": "",
+        "reqlev": 200,
+        "reqstr": 0,
+        "reqdex": 0,
+        "reqint": 0,
+        "reqluk": 0,
+        "attackspeed": 6,
+        "knockback": 71,
+        "incstr": 35,
+        "incdex": 35,
+        "incint": 35,
+        "incluk": 35,
+        "inchpper": 0,
+        "incmpper": 0,
+        "inchp": 0,
+        "incmp": 0,
+        "incpad": 0,
+        "incmad": 0,
+        "incgrd": 0,
+        "incspeed": 0,
+        "incjump": 0,
+        "incboss": 0,
+        "incbreak": 0,
+        "incdmg": 0,
+        "incalls": 0,
+        "tradetype": 0
+    }
+}

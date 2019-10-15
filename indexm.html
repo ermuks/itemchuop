@@ -2,14 +2,16 @@
 
 <html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta name="viewport" content="width=device-width,initial-scale=0.75,minimum-scale=0.75,maximum-scale=0.75,user-scalable=no">
     <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="sm.css" />
+    <script type="text/javascript" src="upgrade.js"></script>
+    <script type="text/javascript" src="juheun.js"></script>
     <script type="text/javascript" src="chuop.js"></script>
     <script type="text/javascript" src="star.js"></script>
-    <script type="text/javascript" src="inventory.js"></script>
     <script type="text/javascript" src="poten.js"></script>
-    <title>메이플스토리 환생의 불꽃 시뮬레이터</title>
+    <script type="text/javascript" src="inventory.js"></script>
+    <title>메이플스토리 강화 시뮬레이션</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 </head>
 <body style="padding: 0px; margin: 8px;" onload="setmobile(true); refresh();">
     <div id="minfo_text" name="info">반갑습니다 아이템 강화 시뮬레이션입니다.</div>
@@ -174,8 +176,8 @@
                 <div id="title_center">불꽃</div>
                 <div id="title_right"></div>
             </div>
-            <div id="cosum_list" name="c_list" style="display:none;">
-                <div id="cosum_button" onclick="setchu(0, 0); cosumcount(0);">
+            <div id="cosum_list" name="c_list" style="display:block;">
+                <div id="cosum_button" onclick="setchu(0); cosumcount(0);">
 
                     <div id="cosumicon">
                         <div id="bt_left"></div>
@@ -197,7 +199,7 @@
                         <div id="cn_right"></div>
                     </div>
                 </div>
-                <div id="cosum_button" onclick="setchu(0,1); cosumcount(1);">
+                <div id="cosum_button" onclick="setchu(1); cosumcount(1);">
                     <div id="cosumicon">
                         <div id="bt_left"></div>
                         <div id="bt_center">
@@ -226,7 +228,28 @@
                 <div id="title_right"></div>
             </div>
             <div id="cosum_list" name="c_list" style="display:none;">
-                <div id="cosum_button" onclick="upg(true, '주흔70'); cosumcount(2);">
+                <div id="cosum_button" onclick="upg(true, '주흔100'); cosumcount(2);">
+                    <div id="cosumicon">
+                        <div id="bt_left"></div>
+                        <div id="bt_center">
+                            <img src="img/ItemList/cosum/주흔.png" />
+                        </div>
+                        <div id="bt_right"></div>
+                    </div>
+
+                    <div id="cosumname">
+                        <div id="nm_left"></div>
+                        <div id="nm_center">주문의 흔적 100%</div>
+                        <div id="nm_right"></div>
+                    </div>
+
+                    <div id="cosumuse">
+                        <div id="cn_left"></div>
+                        <div id="cn_center" name="usecount"></div>
+                        <div id="cn_right"></div>
+                    </div>
+                </div>
+                <div id="cosum_button" onclick="upg(true, '주흔70'); cosumcount(3);">
                     <div id="cosumicon">
                         <div id="bt_left"></div>
                         <div id="bt_center">
@@ -247,7 +270,7 @@
                         <div id="cn_right"></div>
                     </div>
                 </div>
-                <div id="cosum_button" onclick="upg(true, '주흔30'); cosumcount(3);">
+                <div id="cosum_button" onclick="upg(true, '주흔30'); cosumcount(4);">
                     <div id="cosumicon">
                         <div id="bt_left"></div>
                         <div id="bt_center">
@@ -259,27 +282,6 @@
                     <div id="cosumname">
                         <div id="nm_left"></div>
                         <div id="nm_center">주문의 흔적 30%</div>
-                        <div id="nm_right"></div>
-                    </div>
-
-                    <div id="cosumuse">
-                        <div id="cn_left"></div>
-                        <div id="cn_center" name="usecount"></div>
-                        <div id="cn_right"></div>
-                    </div>
-                </div>
-                <div id="cosum_button" onclick="upg(true, '주흔15'); cosumcount(4);">
-                    <div id="cosumicon">
-                        <div id="bt_left"></div>
-                        <div id="bt_center">
-                            <img src="img/ItemList/cosum/주흔.png" />
-                        </div>
-                        <div id="bt_right"></div>
-                    </div>
-
-                    <div id="cosumname">
-                        <div id="nm_left"></div>
-                        <div id="nm_center">주문의 흔적 15%</div>
                         <div id="nm_right"></div>
                     </div>
 
