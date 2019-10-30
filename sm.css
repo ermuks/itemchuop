@@ -186,437 +186,478 @@ div#iconlayout {
     margin-left: 7px;
 }
 
-div#itemicon {
-    width: 82px;
-    height: 82px;
-    background: url(img/Item/ItemIcon/base.png);
-}
+    div#itemicon {
+        width: 82px;
+        height: 82px;
+        background: url(img/Item/ItemIcon/base.png);
+    }
 
-div#itemclassb {
-    background: url(img/Item/ItemIcon/4.png);
-    width: 90px;
-    height: 80px;
-}
+    div#itemclassb {
+        position: absolute;
+        margin-top: -77px;
+        margin-left: 1px;
+        width: 90px;
+        height: 80px;
+    }
 
-div#itemnormalinfo, div#iteminfo, div#potential, div#itemoption, div#itemsoul, div#itemdefault {
-    background: url(img/Item/Frame/line.png);
-    width: 261px;
-}
+    div.p0 {
+        background: url();
+    }
 
-div#itemnormalinfo, div#iteminfo, div#itemoption {
-    min-height: 40px;
-}
+    div.p1 {
+        background: url(img/Item/ItemIcon/1.png);
+    }
 
-div#potential {
-    font-size: 8.6pt;
-    color: white;
-    padding-top: 4px;
-    padding-left: 7px;
-    padding-bottom: 5px;
-}
+    div.p2 {
+        background: url(img/Item/ItemIcon/2.png);
+    }
 
-div#potendata {
-    margin-top: 1px;
-    margin-left: 4px;
-}
+    div.p3 {
+        background: url(img/Item/ItemIcon/3.png);
+    }
 
-div#iteminfo {
-    height: 150px;
-    padding-top: 8px;
-}
+    div.p4 {
+        background: url(img/Item/ItemIcon/4.png);
+    }
 
-div#starforce {
-    margin-top: 0px;
-}
+    div#itemcover {
+        position: absolute;
+        margin: 3px;
+        width: 74px;
+        height: 74px;
+        background: url(img/Item/Frame/cover.png);
+    }
 
-div#star {
-    float: left;
-    background: url('img/Item/Star/Star0.png');
-    width: 11px;
-    height: 10px;
-    margin-left: -1px;
-}
+    div#itemnormalinfo, div#iteminfo, div#potential, div#itemoption, div#itemsoul, div#itemdefault {
+        background: url(img/Item/Frame/line.png);
+        width: 261px;
+    }
 
-div#stary {
-    float: left;
-    background: url('img/Item/Star/Star.png');
-    width: 11px;
-    height: 10px;
-    margin-left: -1px;
-}
+    div#itemnormalinfo, div#iteminfo, div#itemoption {
+        min-height: 40px;
+    }
 
-div#starb {
-    float: left;
-    background: url('img/Item/Star/Star1.png');
-    width: 11px;
-    height: 10px;
-    margin-left: -1px;
-}
+    div#potential {
+        font-size: 8.6pt;
+        color: white;
+        padding-top: 3px;
+        padding-left: 8px;
+        padding-bottom: 3px;
+    }
 
-div#starblank {
-    float: left;
-    width: 5px;
-    height: 10px;
-}
+    div#potendata {
+        margin-top: 1px;
+        margin-left: 4px;
+    }
 
-div#star1 {
-    height: 10px;
-}
+    div#iteminfo {
+        height: 139px;
+        padding-top: 6px;
+    }
 
-div#star2 {
-    padding-top: 8px;
-    height: 10px;
-}
+    div#starforce {
+        margin-top: 0px;
+    }
 
-div#star1 {
-    margin-left: 49px;
-    width: 163px;
-}
+    div#star {
+        float: left;
+        background: url('img/Item/Star/Star0.png');
+        width: 11px;
+        height: 10px;
+        margin-left: -1px;
+    }
 
-div#star2 {
-    margin-left: 78px;
-    width: 107px;
-}
+    div#stary {
+        float: left;
+        background: url('img/Item/Star/Star.png');
+        width: 11px;
+        height: 10px;
+        margin-left: -1px;
+    }
 
-div#itemsoulname {
-    font-size: 10.5pt;
-    margin-top: 8px;
-    width: 261px;
-    text-align: center;
-    font-weight: bold;
-    color: rgb(192,255,64);
-}
+    div#starb {
+        float: left;
+        background: url('img/Item/Star/Star1.png');
+        width: 11px;
+        height: 10px;
+        margin-left: -1px;
+    }
 
-div#itemname {
-    font-size: 10.5pt;
-    margin-top: 3px;
-    width: 261px;
-    text-align: center;
-    font-weight: bold;
-    color: rgb(255,255,255);
-}
+    div#starblank {
+        float: left;
+        width: 5px;
+        height: 10px;
+    }
 
-div#itemclass {
-    margin-top: 6px;
-    width: 261px;
-    text-align: center;
-    font-size: 8.6pt;
-    color: rgb(255,255,255);
-}
+    div#star1 {
+        height: 10px;
+    }
 
-div#itemtrade {
-    margin-top: 1px;
-    width: 261px;
-    text-align: center;
-    font-size: 8.6pt;
-    color: rgb(255,192,128);
-    padding-bottom: 11px;
-}
+    div#star2 {
+        padding-top: 8px;
+        height: 10px;
+    }
 
-div#itemname.normal {
-    color: rgb(255,255,255);
-}
+    div#star1 {
+        margin-left: 49px;
+        width: 163px;
+    }
 
-div#itemname.lv0 {
-    color: rgb(192,192,192);
-}
+    div#star2 {
+        margin-left: 78px;
+        width: 107px;
+    }
 
-div#itemname.lv1 {
-    color: rgb(255,128,64);
-}
+    div#itemsoulname {
+        font-size: 10.5pt;
+        margin-top: 8px;
+        width: 261px;
+        text-align: center;
+        font-weight: bold;
+        color: rgb(192,255,64);
+    }
 
-div#itemname.lv2 {
-    color: rgb(64,192,255);
-}
+    div#itemname {
+        font-size: 10.5pt;
+        margin-top: 7px;
+        margin-bottom: 2px;
+        width: 261px;
+        text-align: center;
+        font-weight: bold;
+        color: rgb(255,255,255);
+    }
 
-div#itemname.lv3 {
-    color: rgb(128,0,192);
-}
+    div#itemclass {
+        margin-top: 4px;
+        width: 261px;
+        text-align: center;
+        font-size: 8.6pt;
+        color: rgb(255,255,255);
+    }
 
-div#itemname.lv4 {
-    color: rgb(255,255,0);
-}
+    div#itemtrade {
+        margin-top: 1px;
+        width: 261px;
+        text-align: center;
+        font-size: 8.6pt;
+        color: rgb(255,192,128);
+        padding-bottom: 11px;
+    }
 
-div#itemname.lv5 {
-    color: rgb(192,255,64);
-}
+    div#itemname.normal {
+        color: rgb(255,255,255);
+    }
 
-div#itemname.lv6 {
-    color: rgb(255,0,64);
-}
+    div#itemname.lv0 {
+        color: rgb(192,192,192);
+    }
 
-div#dotline {
-    background: url(img/Item/Frame/dotline.png);
-    width: 261px;
-    height: 2px;
-}
+    div#itemname.lv1 {
+        color: rgb(255,128,64);
+    }
 
-div#addpower {
-    float: left;
-    width: 166px;
-    margin-right: 3px;
-    padding-top: 3px;
-}
+    div#itemname.lv2 {
+        color: rgb(64,192,255);
+    }
 
-div#itemaddpowertext {
-    float: left;
-    width: 160px;
-    font-size: 8.6pt;
-    color: rgb(153,153,153);
-    text-align: right;
-    margin-right: 12px;
-}
+    div#itemname.lv3 {
+        color: rgb(128,0,192);
+    }
 
-div#addp {
-    float: right;
-    background: url(img/Item/Summary/incline/plus.png);
-    width: 18px;
-    height: 18px;
-    margin-top: 4px;
-    margin-right: 1px;
-}
+    div#itemname.lv4 {
+        color: rgb(255,255,0);
+    }
 
-div#add0 {
-    float: right;
-    background: url(img/Item/Summary/incline/0.png);
-    width: 19px;
-    height: 26px;
-    margin-right: 1px;
-}
+    div#itemname.lv5 {
+        color: rgb(192,255,64);
+    }
 
-div#add1 {
-    float: right;
-    background: url(img/Item/Summary/incline/1.png);
-    width: 14px;
-    height: 26px;
-    margin-right: 1px;
-}
+    div#itemname.lv6 {
+        color: rgb(255,0,70);
+    }
 
-div#add2 {
-    float: right;
-    background: url(img/Item/Summary/incline/2.png);
-    width: 18px;
-    height: 26px;
-    margin-right: 1px;
-}
+    div#dotline {
+        background: url(img/Item/Frame/dotline.png);
+        width: 261px;
+        height: 2px;
+    }
 
-div#add3 {
-    float: right;
-    background: url(img/Item/Summary/incline/3.png);
-    width: 17px;
-    height: 26px;
-    margin-right: 1px;
-}
+    div#addpower {
+        float: left;
+        width: 159px;
+        margin-right: 3px;
+        padding-top: 6px;
+    }
 
-div#add4 {
-    float: right;
-    background: url(img/Item/Summary/incline/4.png);
-    width: 20px;
-    height: 26px;
-    margin-right: 1px;
-}
+    div#itemaddpowertext {
+        float: left;
+        width: 154px;
+        font-size: 8.6pt;
+        color: rgb(153,153,153);
+        text-align: right;
+        margin-right: 12px;
+    }
 
-div#add5 {
-    float: right;
-    background: url(img/Item/Summary/incline/5.png);
-    width: 17px;
-    height: 26px;
-    margin-right: 1px;
-}
+    div#addp {
+        float: right;
+        background: url(img/Item/Summary/incline/plus.png);
+        width: 18px;
+        height: 18px;
+        margin-top: 4px;
+        margin-right: 1px;
+    }
 
-div#add6 {
-    float: right;
-    background: url(img/Item/Summary/incline/6.png);
-    width: 18px;
-    height: 26px;
-    margin-right: 1px;
-}
+    div#add0 {
+        float: right;
+        background: url(img/Item/Summary/incline/0.png);
+        width: 19px;
+        height: 26px;
+        margin-right: 1px;
+    }
 
-div#add7 {
-    float: right;
-    background: url(img/Item/Summary/incline/7.png);
-    width: 18px;
-    height: 26px;
-    margin-right: 1px;
-}
+    div#add1 {
+        float: right;
+        background: url(img/Item/Summary/incline/1.png);
+        width: 14px;
+        height: 26px;
+        margin-right: 1px;
+    }
 
-div#add8 {
-    float: right;
-    background: url(img/Item/Summary/incline/8.png);
-    width: 19px;
-    height: 26px;
-    margin-right: 1px;
-}
+    div#add2 {
+        float: right;
+        background: url(img/Item/Summary/incline/2.png);
+        width: 18px;
+        height: 26px;
+        margin-right: 1px;
+    }
 
-div#add9 {
-    float: right;
-    background: url(img/Item/Summary/incline/9.png);
-    width: 19px;
-    height: 26px;
-    margin-right: 1px;
-}
+    div#add3 {
+        float: right;
+        background: url(img/Item/Summary/incline/3.png);
+        width: 17px;
+        height: 26px;
+        margin-right: 1px;
+    }
 
-div#reqlevel {
-    float: left;
-    padding-top: 7px;
-    width: 172px;
-}
+    div#add4 {
+        float: right;
+        background: url(img/Item/Summary/incline/4.png);
+        width: 20px;
+        height: 26px;
+        margin-right: 1px;
+    }
 
-div#reqlevelimg {
-    background: url(img/Item/Equip/Can/reqLEV.png);
-    width: 49px;
-    height: 6px;
-    margin-left: 5px;
-}
+    div#add5 {
+        float: right;
+        background: url(img/Item/Summary/incline/5.png);
+        width: 17px;
+        height: 26px;
+        margin-right: 1px;
+    }
+
+    div#add6 {
+        float: right;
+        background: url(img/Item/Summary/incline/6.png);
+        width: 18px;
+        height: 26px;
+        margin-right: 1px;
+    }
+
+    div#add7 {
+        float: right;
+        background: url(img/Item/Summary/incline/7.png);
+        width: 18px;
+        height: 26px;
+        margin-right: 1px;
+    }
+
+    div#add8 {
+        float: right;
+        background: url(img/Item/Summary/incline/8.png);
+        width: 19px;
+        height: 26px;
+        margin-right: 1px;
+    }
+
+    div#add9 {
+        float: right;
+        background: url(img/Item/Summary/incline/9.png);
+        width: 19px;
+        height: 26px;
+        margin-right: 1px;
+    }
+
+    div#reqlevel {
+        float: left;
+        padding-top: 5px;
+        margin-left: -3px;
+        width: 166px;
+    }
+
+    div#reqlevelimg {
+        background: url(img/Item/Equip/Can/reqLEV.png);
+        width: 49px;
+        height: 6px;
+        margin-left: 5px;
+    }
 
 img {
-image-rendering: pixelated;
+    image-rendering: pixelated;
 }
 
 div#potenlevel {
-float: left;
-margin-right: 5px;
-width: 236px;
-height: 13px;
-padding-left: 16px;
-padding-bottom: 2px
+    float: left;
+    margin-right: 5px;
+    width: 236px;
+    height: 13px;
+    padding-left: 16px;
+    padding-bottom: 2px
 }
 
-div#potenlevel.r {
-    background: url('img/Item/Potential/1.png') no-repeat;
-    color: rgb(102,255,255);
-}
+    div#potenlevel.r {
+        background: url('img/Item/Potential/1.png') no-repeat;
+        color: rgb(102,255,255);
+    }
 
-div#potenlevel.e {
-    background: url('img/Item/Potential/2.png') no-repeat;
-    color: rgb(153,102,255);
-}
+    div#potenlevel.e {
+        background: url('img/Item/Potential/2.png') no-repeat;
+        color: rgb(153,102,255);
+    }
 
-div#potenlevel.u {
-    background: url('img/Item/Potential/3.png') no-repeat;
-    color: rgb(255,204,0);
-}
+    div#potenlevel.u {
+        background: url('img/Item/Potential/3.png') no-repeat;
+        color: rgb(255,204,0);
+    }
 
-div#potenlevel.l {
-    background: url('img/Item/Potential/4.png') no-repeat;
-    color: rgb(204,255,0);
-}
+    div#potenlevel.l {
+        background: url('img/Item/Potential/4.png') no-repeat;
+        color: rgb(204,255,0);
+    }
 
-div#potenlevel.g {
-    background: url('img/Item/Potential/5.png') no-repeat;
-    color: rgb(224,224,224);
-}
+    div#potenlevel.g {
+        background: url('img/Item/Potential/5.png') no-repeat;
+        color: rgb(224,224,224);
+    }
 
 div#itemoption {
-padding: 6px 0px;
+    padding-top: 4px;
+    padding-bottom: 10px;
 }
 
 div#itemoptiondetail {
-font-size: 8.6pt;
-margin-left: 10px;
-color: white;
+    font-size: 8.6pt;
+    margin-left: 13px;
+    margin-bottom: 1px;
+    color: white;
 }
 
 div#reqstat {
-float: left;
-padding-top: 7px;
-width: 172px;
+    float: left;
+    padding-top: 9px;
+    margin-left: -3px;
+    width: 166px;
 }
 
 div#reqSTRimg {
-float: left;
-background: url(img/Item/Equip/Can/reqSTR.png) no-repeat;
-width: 21px;
-height: 6px;
-padding-left: 54px;
-margin-left: 5px;
-margin-bottom: 2px;
+    float: left;
+    background: url(img/Item/Equip/Can/reqSTR.png) no-repeat;
+    width: 21px;
+    height: 6px;
+    padding-left: 54px;
+    margin-left: 5px;
+    margin-bottom: 2px;
 }
 
 div#reqLUKimg {
-float: left;
-background: url(img/Item/Equip/Can/reqLUK.png) no-repeat;
-width: 21px;
-height: 6px;
-padding-left: 54px;
-margin-left: 5px;
-margin-bottom: 2px;
+    float: left;
+    background: url(img/Item/Equip/Can/reqLUK.png) no-repeat;
+    width: 21px;
+    height: 6px;
+    padding-left: 54px;
+    margin-left: 5px;
+    margin-bottom: 2px;
 }
 
 div#reqDEXimg {
-float: left;
-background: url(img/Item/Equip/Can/reqDEX.png) no-repeat;
-width: 21px;
-height: 6px;
-padding-left: 54px;
-margin-left: 5px;
+    float: left;
+    background: url(img/Item/Equip/Can/reqDEX.png) no-repeat;
+    width: 21px;
+    height: 6px;
+    padding-left: 54px;
+    margin-left: 5px;
 }
 
 div#reqINTimg {
-float: left;
-background: url(img/Item/Equip/Can/reqINT.png) no-repeat;
-width: 21px;
-height: 6px;
-padding-left: 54px;
-margin-left: 5px;
+    float: left;
+    background: url(img/Item/Equip/Can/reqINT.png) no-repeat;
+    width: 21px;
+    height: 6px;
+    padding-left: 54px;
+    margin-left: 5px;
 }
 
 
 font#addop {
-color: rgb(192,255,64);
+    color: rgb(192,255,64);
 }
 
 font#upop {
-color: rgb(128,255,255);
+    color: rgb(128,255,255);
 }
 
 div#itemabil {
-float: left;
-margin-left: 13px;
-margin-top: 4px;
-width: 237px;
-height: 16px;
+    float: left;
+    margin-left: 13px;
+    margin-top: 4px;
+    width: 237px;
+    height: 16px;
 }
 
 div#itemjob {
-float: left;
-margin-left: 13px;
-margin-top: 4px;
+    float: left;
+    margin-left: 13px;
+    margin-top: 4px;
+}
+
+div#Jobbgsp {
+    background: url(img/Item/Job/expand.png);
+    width: 237px;
+    height: 40px;
 }
 
 div#Jobbg {
-background: url(img/Item/Job/expand.png);
-width: 237px;
-height: 40px;
+    background: url(img/Item/Job/normal.png);
+    width: 237px;
+    height: 24px;
 }
 
 div#itemsoul {
-padding-left: 11px;
-padding-top: 4px;
-padding-bottom: 4px;
-width: 250px;
+    padding-left: 11px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    width: 250px;
 }
 
 div#isoul {
-padding-top: 1.4px;
-font-size: 9pt;
+    padding-top: 1.4px;
+    font-size: 9pt;
 }
 
-div#isoul.name {
-    color: rgb(255, 255, 68);
-}
+    div#isoul.name {
+        color: rgb(255, 255, 68);
+    }
 
-div#isoul.charge {
-    color: rgb(255, 255, 255);
-}
+    div#isoul.charge {
+        color: rgb(255, 255, 255);
+    }
 
-div#isoul.pasv {
-    color: rgb(255, 255, 255);
-}
+    div#isoul.pasv {
+        color: rgb(255, 255, 255);
+    }
 
-div#isoul.skill {
-    color: rgb(255, 136, 17);
-}
+    div#isoul.skill {
+        color: rgb(255, 136, 17);
+    }
 
 div#itemdefault {
     padding-left: 11px;
@@ -627,7 +668,7 @@ div#dft {
     font-size: 8.6pt;
 }
 
-div#dft.lucky {
-    padding-top: 3px;
-    color: rgb(255, 136, 17);
-}
+    div#dft.lucky {
+        padding-top: 3px;
+        color: rgb(255, 136, 17);
+    }

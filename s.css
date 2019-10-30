@@ -233,6 +233,7 @@ div#itemsoulname {
 div#itemname {
     font-size: 10.5pt;
     margin-top: 7px;
+    margin-bottom: 2px;
     width: 261px;
     text-align: center;
     font-weight: bold;
@@ -240,7 +241,7 @@ div#itemname {
 }
 
 div#itemclass {
-    margin-top: 6px;
+    margin-top: 4px;
     width: 261px;
     text-align: center;
     font-size: 8.6pt;

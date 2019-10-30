@@ -34,7 +34,11 @@ var meso = 0;
 
 var cosumcnt = new Array(23);
 
-
+function chogihwa() {
+    setchu(0);
+    upg(false, '잠재');
+    upg(false, '에디잠');
+}
 
 for (var i = 0; i < cosumcnt.length; i++) {
     cosumcnt[i] = 0;
@@ -144,15 +148,27 @@ function refresh() {
         document.getElementById("itemname").innerText = itemname;
     }
 
-    var potenclass = ["r", "e", "u", "l"];
-    document.getElementsByName("plevel")[0].className = potenclass[potlv - 1];
-    for (var i = 0; i < jamjul; i++) {
-        document.getElementsByName("uppoten")[i].innerText = pot[i];
-    }
+    if (potlv != 0) {
+        var potenclass = ["r", "e", "u", "l"];
+        document.getElementById("itemclass").style.display = "block";
+        document.getElementsByName("plevel")[0].className = potenclass[potlv - 1];
+        for (var i = 0; i < jamjul; i++) {
+            document.getElementsByName("uppoten")[i].innerText = pot[i];
+        }
 
-    document.getElementsByName("plevel")[1].className = potenclass[edipotlv - 1];
-    for (var i = 0; i < edijul; i++) {
-        document.getElementsByName("downpoten")[i].innerText = "+ " + edipot[i];
+        document.getElementsByName("plevel")[1].className = potenclass[edipotlv - 1];
+        for (var i = 0; i < edijul; i++) {
+            document.getElementsByName("downpoten")[i].innerText = "+ " + edipot[i];
+        }
+
+        if (potlv < edipotlv) {
+            document.getElementById("itemclassb").className = "p" + edipotlv;
+        } else {
+            document.getElementById("itemclassb").className = "p" + potlv;
+        }
+    } else {
+        document.getElementById("itemclass").style.display = "none";
+        document.getElementById("itemclassb").className = "p0";
     }
 
     if (jamjae) {
