@@ -1,10 +1,10 @@
 var nochu = new Array(20); // 추옵배열 겹침 방지
-var chustring = ["STR", "DEX", "INT", "LUK", "최대HP", "최대MP", "최대HP", "최대MP", "공격력", "마력", "방어력", "이동속도", "점프력", "보스 몬스터 공격 시 데미지", "몬스터 방어율 무시", "데미지", "올스탯", "착용 레벨 제한 감소"];
+var chustring = ["STR : +", "DEX : +", "INT : +", "LUK : +", "최대 HP : +", "최대 MP : +", "최대 HP : +", "최대 MP : +", "공격력 : +", "마력 : +", "방어력 : +", "이동속도 : +", "점프력 : +", "보스 몬스터 공격 시 데미지 +", "몬스터 방어율 무시 : +", "데미지 : +", "올스탯: +", "착용 레벨 제한 감소 : -"];
 var opper = ["", "", "", "", "", "", "%", "%", "", "", "", "", "", "%", "%", "%", "%"];
 
 
 var item_code = "01102941";
-var itemname = "아케인셰이드 메이지 케이프";
+var itemname = "앱솔랩스 파이렛케이프";
 
 var ucount = 0; // 강화된 횟수
 var goldhm = false;
@@ -38,6 +38,10 @@ var cosumcnt = new Array(23);
 
 for (var i = 0; i < cosumcnt.length; i++) {
     cosumcnt[i] = 0;
+}
+
+function addinfo(msg) {
+
 }
 
 function setmobile(b) {
@@ -88,21 +92,37 @@ function onoff(n) {
 }
 
 function refresh() {
+
+    basic = [15, 15, 15, 15, 0, 0, 0, 0, 2, 2, 250, 0, 0, 00, 0, 0, 0];
+    chu = [45, 0, 45, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 5, 0];
+    jak = [81, 25, 0, 0, 1090, 0, 0, 0, 1, 0, 295, 0, 0, 0, 0, 0, 0, 0];
+    pot = ["STR : +6%", "STR : +3%", "LUK : +3%"];
+    edipot = ["STR : +2%", "공격력 : +3", "공격력 : +3"];
+    ucount = 8;
+    elseup = 0;
+    jamjae = true;
+    edjamj = true;
+    jamjul = 3;
+    edijul = 3;
+    potlv = 2;
+    goldhm = true;
+
+
     if (mobile) mtextrefresh();
     if (!mobile) textrefresh();
     get_maxstf();
     for (var i = 0; i < 17; i++) {
         if (chu[i] != 0) {
             if (jak[i] + addstat[i] != 0) {
-                document.getElementsByName("ioption")[i + 2].innerHTML = "<font id=\"upop\">" + chustring[i] + " : +" + (chu[i] + jak[i] + basic[i]) + opper[i] + "</font> (" + basic[i] + " <font id=\"addop\">+" + chu[i] + opper[i] + "</font> <font id=\"upop\">+" + (jak[i] + addstat[i]) + opper[i] + "</font>)";
+                document.getElementsByName("ioption")[i + 2].innerHTML = "<font id=\"upop\">" + chustring[i] + (chu[i] + jak[i] + basic[i]) + opper[i] + "</font> (" + basic[i] + opper[i] + " <font id=\"addop\">+" + chu[i] + opper[i] + "</font> <font id=\"upop\">+" + (jak[i] + addstat[i]) + opper[i] + "</font>)";
             } else {
-                document.getElementsByName("ioption")[i + 2].innerHTML = "<font id=\"upop\">" + chustring[i] + " : +" + (chu[i] + basic[i]) + opper[i] + "</font> (" + basic[i] + " <font id=\"addop\">+" + chu[i] + opper[i] + "</font>)";
+                document.getElementsByName("ioption")[i + 2].innerHTML = "<font id=\"upop\">" + chustring[i] + (chu[i] + basic[i]) + opper[i] + "</font> (" + basic[i] + opper[i] + " <font id=\"addop\">+" + chu[i] + opper[i] + "</font>)";
             }
         } else {
             if (jak[i] + addstat[i] != 0) {
-                document.getElementsByName("ioption")[i + 2].innerHTML = "<font id=\"upop\">" + chustring[i] + " : +" + (jak[i] + basic[i]) + opper[i] + "</font> (" + basic[i] + " <font id=\"upop\">+" + (jak[i] + addstat[i]) + opper[i] + "</font>)";
+                document.getElementsByName("ioption")[i + 2].innerHTML = "<font id=\"upop\">" + chustring[i] + (jak[i] + basic[i]) + opper[i] + "</font> (" + basic[i] + opper[i] + " <font id=\"upop\">+" + (jak[i] + addstat[i]) + opper[i] + "</font>)";
             } else {
-                document.getElementsByName("ioption")[i + 2].innerHTML = chustring[i] + " : +" + basic[i] + opper[i];
+                document.getElementsByName("ioption")[i + 2].innerHTML = chustring[i] + basic[i] + opper[i];
             }
         }
         if (chu[i] + basic[i] + jak[i] <= 0) {
@@ -114,9 +134,9 @@ function refresh() {
     document.getElementsByName("ioption")[20].innerText = "업그레이드 가능 횟수 : " + elseup;
 
     if (goldhm) {
-        document.getElementsByName("ioption")[22].hidden = false;
+        document.getElementsByName("ioption")[21].hidden = false;
     } else {
-        document.getElementsByName("ioption")[22].hidden = true;
+        document.getElementsByName("ioption")[21].hidden = true;
     }
     if (ucount > 0) {
         document.getElementById("itemname").innerText = itemname + "(+" + ucount + ")";

@@ -39,9 +39,9 @@ function setchu(icls) {
     // 1 : 무기
     // -------------------------
     // 환불 종류
-    // 0 : 영환불    (1~4 추옵) ( 12.5 20 30 37.5 )
-    // 1 : 강환불    (2~5 추옵) ( 12.5 20 30 37.5 )
-    // 2 : 일반 환불 (2~5 추옵) ( 5 15 35 45 )
+    // 0 : 영환불    (1~4 추옵) ( 8 16 32 44 )
+    // 1 : 강환불    (2~5 추옵) ( 8 16 32 44 )
+    // 2 : 일반 환불 (2~5 추옵) ( 2 6 36 58 )
     danchu = parseInt(reqlev / 20) + 1;
     yeechu = parseInt(reqlev / 40) + 1;
     for (var i = 0; i < 4; i++) {
@@ -49,19 +49,19 @@ function setchu(icls) {
         var t = Math.floor(Math.random() * 1000);
         var clv = 0; // 추옵 단계
         if (icls == 0) {
-            if (t < 125) clv = 7
-            else if (t < 325) clv = 6
-            else if (t < 625) clv = 5
+            if (t < 80) clv = 7
+            else if (t < 240) clv = 6
+            else if (t < 560) clv = 5
             else if (t < 1000) clv = 4
         } else if (icls == 1) {
-            if (t < 125) clv = 6
-            else if (t < 325) clv = 5
-            else if (t < 625) clv = 4
+            if (t < 80) clv = 6
+            else if (t < 240) clv = 5
+            else if (t < 560) clv = 4
             else if (t < 1000) clv = 3
         } else if (icls == 2) {
-            if (t < 50) clv = 6
-            else if (t < 200) clv = 5
-            else if (t < 550) clv = 4
+            if (t < 20) clv = 6
+            else if (t < 80) clv = 5
+            else if (t < 420) clv = 4
             else if (t < 1000) clv = 3
         }
         t = Math.floor(Math.random() * 1000);

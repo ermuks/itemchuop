@@ -3,6 +3,8 @@ var starcatch = 4.5;
 var fail = 0;
 var maxstf = 0;
 
+var nobreak = 40;
+
 var addstat = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
 var star_per =
@@ -82,8 +84,11 @@ function starforce() {
                 star_cnt--;
             }
         } else {
+            if (Math.random() * 1000 < nobreak) {
+                addinfo("[파괴는 남의 일] 스킬 효과에 의하여 파괴되지 않았습니다.");
+            }
             star_cnt = 12;
-            alert("파괴 ㅋㅋㅋㅋㅋㅋㅋㅋ");
+            addinfo("장비가 파괴 되었습니다. (12성 자동복구)");
         }
 
         if (eqptype == 11) {

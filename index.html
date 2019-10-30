@@ -12,7 +12,7 @@
     <script type="text/javascript" src="inventory.js"></script>
     <title>메이플스토리 강화 시뮬레이션</title>
 </head>
-<body style="padding: 0px; margin: 0px;" onload="refresh();">
+<body style="padding: 0px; margin: 0px; background: url();" onload="refresh();">
     <div id="info_text" style="position: absolute; left: 8px; top: 8px; " name="info"></div>
 
     <div id="cosum_all" style="position: absolute; left: 280px; top: 40px; " name="info">
@@ -167,7 +167,7 @@
     </div>
 
 
-    <div id="iteminfoUI" style="position: absolute; left: 8px; top: 40px;">
+    <div id="iteminfoUI" style="position: absolute; left: 4px; top: 71px;">
         <div id="itembackground">
             <div id="itembacktopleft"></div>
         </div>
@@ -223,10 +223,11 @@
         <div id="iteminfo">
             <div id="iconlayout">
                 <div id="itemicon">
-                    <div id="itemclassb">
-                        <div id="itemcode">
-                            <img src="img/ItemList/01102941.png" width="70" style="margin-top: 13px;margin-left: 6px;">
-                        </div>
+                    <div id="itemcode">
+                        <img src="img/ItemList/01102941.png" width="70" style="margin-top: 13px;margin-left: 6px;">
+                    </div>
+                    <div id="itemclassb" class="p2">
+                        <div id="itemcover"></div>
                     </div>
                 </div>
             </div>
@@ -260,34 +261,34 @@
         <div id="itemoption">
             <div id="itemoptiondetail" name="ioption">장비종류 : 망토</div>
             <div id="itemoptiondetail" name="ioption" hidden>공격속도 : 보통</div>
-            <div id="itemoptiondetail" name="ioption"><font id="upop">STR : +118</font> (0 <font id="upop">+118</font>)</div>
-            <div id="itemoptiondetail" name="ioption"><font id="upop">DEX : +118</font> (0 <font id="upop">+118</font>)</div>
-            <div id="itemoptiondetail" name="ioption"><font id="upop">INT : +308</font> (150 <font id="upop">+158</font>)</div>
-            <div id="itemoptiondetail" name="ioption"><font id="upop">LUK : +308</font> (150 <font id="upop">+158</font>)</div>
-            <div id="itemoptiondetail" name="ioption"><font id="upop">최대 HP : +255</font> (0 <font id="upop">+255</font>)</div>
-            <div id="itemoptiondetail" name="ioption"><font id="upop">최대 MP : +255</font> (0 <font id="upop">+255</font>)</div>
-            <div id="itemoptiondetail" name="ioption" hidden>최대 HP : +0%</div>
-            <div id="itemoptiondetail" name="ioption" hidden>최대 MP : +0%</div>
-            <div id="itemoptiondetail" name="ioption">공격력 : +299</div>
-            <div id="itemoptiondetail" name="ioption"><font id="upop">마력 : +1155</font> (482 <font id="addop">+298</font> <font id="upop">+375</font>)</div>
-            <div id="itemoptiondetail" name="ioption" hidden>방어력 : +100 (0 +100)</div>
-            <div id="itemoptiondetail" name="ioption" hidden>이동속도 : +100 (0 +100)</div>
-            <div id="itemoptiondetail" name="ioption" hidden>점프력 : +100 (0 +100)</div>
-            <div id="itemoptiondetail" name="ioption"><font id="upop">보스 몬스터 공격 시 데미지 +42%</font> (30% <font id="addop">+12%</font>)</div>
-            <div id="itemoptiondetail" name="ioption">몬스터 방어율 무시 : +20%</div>
-            <div id="itemoptiondetail" name="ioption"><font id="upop">데미지 : +6%</font> (0% <font id="addop">+6%</font>)</div>
-            <div id="itemoptiondetail" name="ioption"><font id="upop">올스탯 : +7%</font> (0% <font id="addop">+7%</font>)</div>
-            <div id="itemoptiondetail" name="ioption" hidden>착용 레벨 감소 : -100</div>
-            <div id="itemoptiondetail" name="ioption">업그레이드 가능 횟수 : 7</div>
-            <div id="itemoptiondetail" name="ioption">가위 사용 가능 횟수 : 10회</div>
+            <div id="itemoptiondetail" name="ioption"></div>
+            <div id="itemoptiondetail" name="ioption"></div>
+            <div id="itemoptiondetail" name="ioption"></div>
+            <div id="itemoptiondetail" name="ioption"></div>
+            <div id="itemoptiondetail" name="ioption"></div>
+            <div id="itemoptiondetail" name="ioption"></div>
+            <div id="itemoptiondetail" name="ioption"></div>
+            <div id="itemoptiondetail" name="ioption"></div>
+            <div id="itemoptiondetail" name="ioption"></div>
+            <div id="itemoptiondetail" name="ioption"></div>
+            <div id="itemoptiondetail" name="ioption"></div>
+            <div id="itemoptiondetail" name="ioption"></div>
+            <div id="itemoptiondetail" name="ioption"></div>
+            <div id="itemoptiondetail" name="ioption"></div>
+            <div id="itemoptiondetail" name="ioption"></div>
+            <div id="itemoptiondetail" name="ioption"></div>
+            <div id="itemoptiondetail" name="ioption"></div>
+            <div id="itemoptiondetail" name="ioption"><font id="addop"></font></div>
+            <div id="itemoptiondetail" name="ioption"></div>
             <div id="itemoptiondetail" name="ioption" hidden>황금망치 제련 적용</div>
+            <div id="itemoptiondetail" name="ioption">가위 사용 가능 횟수 : 10회</div>
             <div id="itemoptiondetail" name="ioption" hidden>22성 강화 적용 (최대 25성)</div>
             <div id="itemoptiondetail" name="ioption" hidden>강화 불가</div>
         </div>
         <div name="optionline" style="display: none;">
             <div id="dotline"></div>
             <div id="potential" style="width:254px;">
-                <div id="potendata" style="margin-left:0px;"><div id="potenlevel" class="l" name="plevel">잠재옵션</div></div>
+                <div id="potendata" style="margin-left: 3px;"><div id="potenlevel" class="l" name="plevel">잠재옵션</div></div>
                 <div id="potendata" name="uppoten"></div>
                 <div id="potendata" name="uppoten"></div>
                 <div id="potendata" name="uppoten"></div>
@@ -296,7 +297,7 @@
         <div name="optionline" style="display: none;">
             <div id="dotline"></div>
             <div id="potential" style="width:254px;">
-                <div id="potendata" style="margin-left:0px;"><div id="potenlevel" class="l" name="plevel">에디셔널 잠재옵션</div></div>
+                <div id="potendata" style="margin-left: 3px;"><div id="potenlevel" class="l" name="plevel">에디셔널 잠재옵션</div></div>
                 <div id="potendata" name="downpoten">+ </div>
                 <div id="potendata" name="downpoten">+ </div>
                 <div id="potendata" name="downpoten">+ </div>
