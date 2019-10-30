@@ -93,7 +93,7 @@ function onoff(n) {
 
 function refresh() {
 
-    basic = [15, 15, 15, 15, 0, 0, 0, 0, 2, 2, 250, 0, 0, 00, 0, 0, 0];
+    /*basic = [15, 15, 15, 15, 0, 0, 0, 0, 2, 2, 250, 0, 0, 00, 0, 0, 0];
     chu = [45, 0, 45, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 5, 0];
     jak = [81, 25, 0, 0, 1090, 0, 0, 0, 1, 0, 295, 0, 0, 0, 0, 0, 0, 0];
     pot = ["STR : +6%", "STR : +3%", "LUK : +3%"];
@@ -105,7 +105,7 @@ function refresh() {
     jamjul = 3;
     edijul = 3;
     potlv = 2;
-    goldhm = true;
+    goldhm = true;*/
 
 
     if (mobile) mtextrefresh();
