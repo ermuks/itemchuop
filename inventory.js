@@ -1,5 +1,5 @@
-var nochu = new Array(20); // 추옵배열 겹침 방지
-var chustring = ["STR : +", "DEX : +", "INT : +", "LUK : +", "최대 HP : +", "최대 MP : +", "최대 HP : +", "최대 MP : +", "공격력 : +", "마력 : +", "방어력 : +", "이동속도 : +", "점프력 : +", "보스 몬스터 공격 시 데미지 +", "몬스터 방어율 무시 : +", "데미지 : +", "올스탯: +", "착용 레벨 제한 감소 : -"];
+var nochu = new Array(25); // 추옵배열 겹침 방지
+var chustring = ["STR : +", "DEX : +", "INT : +", "LUK : +", "최대 HP : +", "최대 MP : +", "최대 HP : +", "최대 MP : +", "공격력 : +", "마력 : +", "방어력 : +", "이동속도 : +", "점프력 : +", "보스 몬스터 공격 시 데미지 +", "몬스터 방어율 무시 : +", "데미지 : +", "올스탯: +", "착용 레벨 감소 : -"];
 var opper = ["", "", "", "", "", "", "%", "%", "", "", "", "", "", "%", "%", "%", "%"];
 
 
@@ -22,11 +22,11 @@ var item_job = [false, false, true, false, false, false]; // 0전체, 1전, 2법
 var item_job_special = "";
 var reqlev = 200;
 var eqptype = 0;
-var basic = [35, 35, 35, 35, 0, 0, 0, 0, 6, 6, 450, 0, 0, 0, 0, 0, 0, 0]; // 기본 옵션
-var jak = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]; // 작된 옵션 (주문서 및 스타포스)
-var chu = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]; // 추가 옵션
+var basic = [35, 35, 35, 35, 0, 0, 0, 0, 6, 6, 450, 0, 0, 0, 0, 0, 0, 0, 0]; // 기본 옵션
+var jak = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]; // 작된 옵션 (주문서 및 스타포스)
+var chu = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]; // 추가 옵션
 
-var ngh = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]; // 놀긍혼 리턴 배열
+var ngh = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]; // 놀긍혼 리턴 배열
 
 var mobile = false;
 
@@ -115,7 +115,7 @@ function refresh() {
     if (mobile) mtextrefresh();
     if (!mobile) textrefresh();
     get_maxstf();
-    for (var i = 0; i < 17; i++) {
+    for (var i = 0; i < basic.length - 1; i++) {
         if (chu[i] != 0) {
             if (jak[i] + addstat[i] != 0) {
                 document.getElementsByName("ioption")[i + 2].innerHTML = "<font id=\"upop\">" + chustring[i] + (chu[i] + jak[i] + basic[i]) + opper[i] + "</font> (" + basic[i] + opper[i] + " <font id=\"addop\">+" + chu[i] + opper[i] + "</font> <font id=\"upop\">+" + (jak[i] + addstat[i]) + opper[i] + "</font>)";
@@ -135,7 +135,13 @@ function refresh() {
             document.getElementsByName("ioption")[i + 2].style.display = "block";
         }
     }
-    document.getElementsByName("ioption")[20].innerText = "업그레이드 가능 횟수 : " + elseup;
+    if (chu[17] != 0) {
+        document.getElementsByName("ioption")[19].innerHTML = "<font id=\"addop\">" + chustring[17] + chu[17] + "</font>";
+        document.getElementsByName("ioption")[19].style.display = "block";
+    } else {
+        document.getElementsByName("ioption")[19].style.display = "none";
+    }
+    document.getElementsByName("ioption")[20].innerHTML = "업그레이드 가능 횟수 : " + elseup + " <font id=\"tooltip\">(복구 가능 횟수 : " + (maxupg - ucount - elseup) + ")";
 
     if (goldhm) {
         document.getElementsByName("ioption")[21].hidden = false;

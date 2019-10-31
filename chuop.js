@@ -69,63 +69,66 @@ function setchu(icls) {
             if (t < 50 && !nochu[0]) {
                 chu[0] += danchu * clv;
                 nochu[0] = true;
-            } else if (t < 100 && !nochu[1]) {
+            } else if (t < 95 && !nochu[1]) {
                 chu[1] += danchu * clv;
                 nochu[1] = true;
-            } else if (t < 150 && !nochu[2]) {
+            } else if (t < 140 && !nochu[2]) {
                 chu[2] += danchu * clv;
                 nochu[2] = true;
-            } else if (t < 200 && !nochu[3]) {
+            } else if (t < 185 && !nochu[3]) {
                 chu[3] += danchu * clv;
                 nochu[3] = true;
-            } else if (t < 250 && !nochu[4]) {
+            } else if (t < 230 && !nochu[4]) {
                 chu[0] += yeechu * clv;
                 chu[1] += yeechu * clv;
                 nochu[4] = true;
-            } else if (t < 300 && !nochu[5]) {
+            } else if (t < 275 && !nochu[5]) {
                 chu[0] += yeechu * clv;
                 chu[2] += yeechu * clv;
                 nochu[5] = true;
-            } else if (t < 350 && !nochu[6]) {
+            } else if (t < 320 && !nochu[6]) {
                 chu[0] += yeechu * clv;
                 chu[3] += yeechu * clv;
                 nochu[6] = true;
-            } else if (t < 400 && !nochu[7]) {
+            } else if (t < 365 && !nochu[7]) {
                 chu[1] += yeechu * clv;
                 chu[2] += yeechu * clv;
                 nochu[7] = true;
-            } else if (t < 450 && !nochu[8]) {
+            } else if (t < 410 && !nochu[8]) {
                 chu[1] += yeechu * clv;
                 chu[3] += yeechu * clv;
                 nochu[8] = true;
-            } else if (t < 500 && !nochu[9]) {
+            } else if (t < 450 && !nochu[9]) {
                 chu[2] += yeechu * clv;
                 chu[3] += yeechu * clv;
                 nochu[9] = true;
-            } else if (t < 560 && !nochu[10]) {
+            } else if (t < 510 && !nochu[10]) {
                 chu[4] += reqlev * 3 * clv;
                 nochu[10] = true;
-            } else if (t < 620 && !nochu[11]) {
+            } else if (t < 565 && !nochu[11]) {
                 chu[5] += reqlev * 3 * clv;
                 nochu[11] = true;
-            } else if (t < 680 && !nochu[12]) {
+            } else if (t < 620 && !nochu[12]) {
                 chu[8] += clv;
                 nochu[12] = true;
-            } else if (t < 730 && !nochu[13]) {
+            } else if (t < 665 && !nochu[13]) {
                 chu[9] += clv;
                 nochu[13] = true;
-            } else if (t < 790 && !nochu[14]) {
+            } else if (t < 720 && !nochu[14]) {
                 chu[10] += danchu * clv;
                 nochu[14] = true;
-            } else if (t < 870 && !nochu[15]) {
+            } else if (t < 795 && !nochu[15]) {
                 chu[11] += clv;
                 nochu[15] = true;
-            } else if (t < 950 && !nochu[16]) {
+            } else if (t < 870 && !nochu[16]) {
                 chu[12] += clv;
                 nochu[16] = true;
-            } else if (t < 1000 && !nochu[17]) {
+            } else if (t < 915 && !nochu[17]) {
                 chu[16] += clv;
                 nochu[17] = true;
+            } else if (t < 1000 && !nochu[18]) {
+                chu[17] += clv * 5;
+                nochu[18] = true;
             }
         } else if (eqptype == 1) {
             if (t < 50 && !nochu[0]) {
