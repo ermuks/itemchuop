@@ -1,11 +1,6 @@
-﻿div {
+﻿div, ul, li {
     font-family: '돋움',Dotum;
 }
-
-    div#cosum_list {
-        margin: 8px 5px;
-        height: 126px;
-    }
 
     div#cosum_title {
         background: url(img/ItemList/cosum/item_title.png);
@@ -23,13 +18,7 @@
     div#miteminfoUI {
         float: left;
     }
-    div#cosumlist {
-        padding-left: 8px;
-        float: left;
-        overflow: hidden;
-        overflow-y: scroll;
-        max-height: 834px;
-    }
+
     div#minfo_text {
         width: 100%;
         font-size: 16pt;
@@ -41,8 +30,13 @@
         box-shadow: 0px 3px 4px black;
     }
 
+    ul#cosum_list {
+        margin: 8px 5px;
+        padding-left: 8px;
+        min-height: 126px;
+    }
 
-    div#cosum_button {
+    li#cosum_button {
         float: left;
         margin-right: 10px;
         background: url(img/ItemList/cosum/item_back.png) no-repeat;
@@ -625,4 +619,13 @@ div#dft {
 div#dft.lucky {
     padding-top: 3px;
     color: rgb(255, 136, 17);
+}
+
+/* --------- 팝업 css ---------- */
+
+div#maxpopup {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.35);
+    width: 100%;
+    height: 100%;
 }

@@ -2,6 +2,9 @@ var nochu = new Array(25); // 추옵배열 겹침 방지
 var chustring = ["STR : +", "DEX : +", "INT : +", "LUK : +", "최대 HP : +", "최대 MP : +", "최대 HP : +", "최대 MP : +", "공격력 : +", "마력 : +", "방어력 : +", "이동속도 : +", "점프력 : +", "보스 몬스터 공격 시 데미지 +", "몬스터 방어율 무시 : +", "데미지 : +", "올스탯: +", "착용 레벨 감소 : -"];
 var opper = ["", "", "", "", "", "", "%", "%", "", "", "", "", "", "%", "%", "%", "%"];
 
+var cash_return = false;
+var cash_protect = false;
+var cash_recover = false;
 
 var item_code = "01102941";
 var itemname = "앱솔랩스 파이렛케이프";
@@ -32,7 +35,7 @@ var mobile = false;
 
 var meso = 0;
 
-var cosumcnt = new Array(23);
+var cosumcnt = new Array(25);
 
 function chogihwa() {
     setchu(0);

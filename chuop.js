@@ -1,8 +1,10 @@
 var isngh = false;
+
 function cash(code) {
     switch (code) {
         case "리턴":
-            for (var i = 0; i < ngh.length; i++) {
+            alert("오류로 인해 초기화 후 새로 작업중입니다.");
+            /*for (var i = 0; i < ngh.length; i++) {
                 jak[i] -= ngh[i];
             }
 
@@ -14,7 +16,14 @@ function cash(code) {
 
             for (var i = 0; i < ngh.length; i++) {
                 ngh[i] = 0;
-            }
+            }*/
+            
+            break;
+        case "프텍":
+            alert("현재 미구현 상태입니다. 놀장강 가즈아");
+            break;
+        case "리커":
+            alert("현재 미구현 상태입니다. 솔직히 이거 없어도될듯싶음;");
             break;
         default:
             alert('잘못된 접근 코드 : ' + code);
