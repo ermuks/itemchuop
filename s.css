@@ -2,6 +2,19 @@
     font-family: '돋움',Dotum;
 }
 
+    div::-webkit-scrollbar {
+        display: none;
+    }
+
+    div#cosum_all {
+        position: absolute;
+        left: 280px;
+        top: 40px;
+        overflow-y: scroll;
+        height: 726px;
+        width: 866px;
+    }
+
     div#cosum_title {
         background: url(img/ItemList/cosum/item_title.png);
         width: 806px;
