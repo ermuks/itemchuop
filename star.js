@@ -5,6 +5,8 @@ var maxstf = 0;
 
 var nobreak = 40;
 
+var star_stats = [false, false, false, false];
+
 var addstat = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
 var star_per =
@@ -52,8 +54,6 @@ function get_maxstf() {
 function starforce() {
     var cost = 0;
 
-    var stats = [false, false, false, false];
-
     for (var i = 0; i < addstat.length; i++) {
         addstat[i] = 0;
     }
@@ -93,33 +93,36 @@ function starforce() {
 
         if (eqptype == 11) {
             if (item_job[0] || item_job[1] || item_job[3] || item_job[5]) {
-                stats[0] = true;
-                stats[1] = true;
+                star_stats[0] = true;
+                star_stats[1] = true;
             }
             if (item_job[2]) {
-                stats[2] = true;
-                stats[3] = true;
+                star_stats[2] = true;
+                star_stats[3] = true;
             }
             if (item_job[4]) {
-                stats[1] = true;
-                stats[3] = true;
+                star_stats[1] = true;
+                star_stats[3] = true;
             }
+            var tmp_grd = basic[10];
             for (var i = 1; i < star_cnt + 1; i++) {
                 if (i <= 5) {
-                    for (var j = 0; j < stats.length; j++) {
-                        if (stats[j]) {
+                    for (var j = 0; j < star_stats.length; j++) {
+                        if (star_stats[j]) {
                             addstat[j] += 2;
                         }
                     }
+                    tmp_grd += parseInt(tmp_grd * 0.05);
                 } else if (i <= 15) {
-                    for (var j = 0; j < stats.length; j++) {
-                        if (stats[j]) {
+                    for (var j = 0; j < star_stats.length; j++) {
+                        if (star_stats[j]) {
                             addstat[j] += 3;
                         }
                     }
+                    tmp_grd += parseInt(tmp_grd * 0.05);
                 } else if (i <= 22) {
-                    for (var j = 0; j < stats.length; j++) {
-                        if (stats[j]) {
+                    for (var j = 0; j < star_stats.length; j++) {
+                        if (star_stats[j]) {
                             if (reqlev == 200) {
                                 addstat[j] += 15;
                             } else {
@@ -127,6 +130,7 @@ function starforce() {
                             }
                         }
                     }
+                    tmp_grd += parseInt(tmp_grd * 0.05);
                 }
                 if (i <= 15) {
                     

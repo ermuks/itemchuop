@@ -400,31 +400,68 @@ div#add9 {
     margin-right: 1px;
 }
 
-div#reqlevel {
-    float: left;
-    padding-top: 5px;
-    margin-left: -3px;
-    width: 166px;
-}
+    div#reqlevel {
+        float: left;
+        background: url(img/Item/Equip/Can/reqLEV.png) no-repeat;
+        margin-left: 2px;
+        padding-left: 54px;
+        width: 100px;
+    }
 
-div#reqlevelimg {
-    background: url(img/Item/Equip/Can/reqLEV.png);
-    width: 49px;
-    height: 6px;
-    margin-left: 5px;
-}
+div#reqnum { float: left; height: 5px; margin-left: 1px; }
+
+div#reqnum.nrn     { width: 5px; }
+div#reqnum.nr0     { width: 5px; background: url(img/Item/Equip/Disable/0.png); }
+div#reqnum.nr1     { width: 2px; background: url(img/Item/Equip/Disable/1.png); }
+div#reqnum.nr2     { width: 5px; background: url(img/Item/Equip/Disable/2.png); }
+div#reqnum.nr3     { width: 5px; background: url(img/Item/Equip/Disable/3.png); }
+div#reqnum.nr4     { width: 5px; background: url(img/Item/Equip/Disable/4.png); }
+div#reqnum.nr5     { width: 5px; background: url(img/Item/Equip/Disable/5.png); }
+div#reqnum.nr6     { width: 5px; background: url(img/Item/Equip/Disable/6.png); }
+div#reqnum.nr7     { width: 5px; background: url(img/Item/Equip/Disable/7.png); }
+div#reqnum.nr8     { width: 5px; background: url(img/Item/Equip/Disable/8.png); }
+div#reqnum.nr9     { width: 5px; background: url(img/Item/Equip/Disable/9.png); }
+
+div#reqnum.urn     { width: 5px; }
+div#reqnum.ur0     { width: 5px; background: url(img/Item/Equip/Can/0.png); }
+div#reqnum.ur1     { width: 2px; background: url(img/Item/Equip/Can/1.png); }
+div#reqnum.ur2     { width: 5px; background: url(img/Item/Equip/Can/2.png); }
+div#reqnum.ur3     { width: 5px; background: url(img/Item/Equip/Can/3.png); }
+div#reqnum.ur4     { width: 5px; background: url(img/Item/Equip/Can/4.png); }
+div#reqnum.ur5     { width: 5px; background: url(img/Item/Equip/Can/5.png); }
+div#reqnum.ur6     { width: 5px; background: url(img/Item/Equip/Can/6.png); }
+div#reqnum.ur7     { width: 5px; background: url(img/Item/Equip/Can/7.png); }
+div#reqnum.ur8     { width: 5px; background: url(img/Item/Equip/Can/8.png); }
+div#reqnum.ur9     { width: 5px; background: url(img/Item/Equip/Can/9.png); }
+div#reqnum.urm     { width: 5px; background: url(img/Item/Equip/Can/-.png); }
+div#reqnum.urcalcl { width: 2px; background: url(img/Item/Equip/Can/calcl.png); }
+div#reqnum.urcalcr { width: 2px; background: url(img/Item/Equip/Can/calcr.png); }
+
+div#reqnum.yrn     { width: 5px; }
+div#reqnum.yr0     { width: 5px; background: url(img/Item/Equip/Calc/0.png); }
+div#reqnum.yr1     { width: 2px; background: url(img/Item/Equip/Calc/1.png); }
+div#reqnum.yr2     { width: 5px; background: url(img/Item/Equip/Calc/2.png); }
+div#reqnum.yr3     { width: 5px; background: url(img/Item/Equip/Calc/3.png); }
+div#reqnum.yr4     { width: 5px; background: url(img/Item/Equip/Calc/4.png); }
+div#reqnum.yr5     { width: 5px; background: url(img/Item/Equip/Calc/5.png); }
+div#reqnum.yr6     { width: 5px; background: url(img/Item/Equip/Calc/6.png); }
+div#reqnum.yr7     { width: 5px; background: url(img/Item/Equip/Calc/7.png); }
+div#reqnum.yr8     { width: 5px; background: url(img/Item/Equip/Calc/8.png); }
+div#reqnum.yr9     { width: 5px; background: url(img/Item/Equip/Calc/9.png); }
+div#reqnum.yrm     { width: 5px; background: url(img/Item/Equip/Calc/-.png); }
+
 
 img {
-image-rendering: pixelated;
+    image-rendering: pixelated;
 }
 
 div#potenlevel {
-float: left;
-margin-right: 5px;
-width: 236px;
-height: 13px;
-padding-left: 16px;
-padding-bottom: 2px
+    float: left;
+    margin-right: 5px;
+    width: 236px;
+    height: 13px;
+    padding-left: 16px;
+    padding-bottom: 2px
 }
 
 div#potenlevel.r {

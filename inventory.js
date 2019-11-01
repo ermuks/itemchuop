@@ -138,9 +138,33 @@ function refresh() {
     if (chu[17] != 0) {
         document.getElementsByName("ioption")[19].innerHTML = "<font id=\"addop\">" + chustring[17] + chu[17] + "</font>";
         document.getElementsByName("ioption")[19].style.display = "block";
+
+        var innHTML = "<div id=\"reqnum\" class=\"urcalcl\"></div>";
+
+        for (var i = 0; i < reqlev.toString().length; i++) {
+            innHTML += "<div id=\"reqnum\" class=\"ur" + reqlev.toString()[i] + "\"></div>";
+        }
+        innHTML += "<div id=\"reqnum\" class=\"yrm\"></div>";
+        for (var i = 0; i < chu[17].toString().length; i++) {
+            innHTML += "<div id=\"reqnum\" class=\"yr" + chu[17].toString()[i] + "\"></div>";
+        }
+        innHTML += "<div id=\"reqnum\" class=\"urcalcr\"></div>";
+        document.getElementById("reqcalc").innerHTML = innHTML;
+        document.getElementById("reqcalc").style.display = "block";
     } else {
+        document.getElementById("reqcalc").style.display = "none";
         document.getElementsByName("ioption")[19].style.display = "none";
     }
+
+    var reqlv = (reqlev - chu[17]);
+    while (reqlv.toString().length < 3) {
+        reqlv = "n" + reqlv;
+    }
+    
+    for (var i = 0; i < reqlv.toString().length; i++) {
+        document.getElementsByName("reqlev")[i].className = "yr" + reqlv.toString()[i];
+    }
+
     document.getElementsByName("ioption")[20].innerHTML = "업그레이드 가능 횟수 : " + elseup + " <font id=\"tooltip\">(복구 가능 횟수 : " + (maxupg - ucount - elseup) + ")";
 
     if (goldhm) {
