@@ -91,7 +91,7 @@ function starforce() {
             addinfo("장비가 파괴 되었습니다. (12성 자동복구)");
         }
 
-        if (eqptype == 11) {
+        if (eqptype == 0) {
             if (item_job[0] || item_job[1] || item_job[3] || item_job[5]) {
                 star_stats[0] = true;
                 star_stats[1] = true;

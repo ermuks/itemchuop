@@ -7,7 +7,7 @@ var cash_protect = false;
 var cash_recover = false;
 
 var item_code = "01102941";
-var itemname = "앱솔랩스 파이렛케이프";
+var itemname = "앱솔랩스 메이지케이프";
 
 var ucount = 0; // 강화된 횟수
 var goldhm = false;
@@ -23,7 +23,7 @@ var edijul = 0;
 
 var item_job = [false, false, true, false, false, false]; // 0전체, 1전, 2법, 3궁, 4도, 5해
 var item_job_special = "";
-var reqlev = 200;
+var reqlev = 160;
 var eqptype = 0;
 var basic = [35, 35, 35, 35, 0, 0, 0, 0, 6, 6, 450, 0, 0, 0, 0, 0, 0, 0, 0]; // 기본 옵션
 var jak = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]; // 작된 옵션 (주문서 및 스타포스)

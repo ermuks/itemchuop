@@ -349,12 +349,13 @@
 
     <div id="maxpopup" style="display: none;">
         <div id="exit_popup" style="background:rgba(255, 255, 255, 0.5); width: Calc(1366px - 16px); text-align:right; padding:8px; color:white;">
-            <font size="4" style="cursor: pointer;" onclick="document.getElementById('maxpopup').style.display = 'none';">닫기</font>
+            <!--font size="4" style="cursor: pointer;" onclick="/*document.getElementById('maxpopup').style.display = 'none';*/">닫기</font-->
+            블랙큐브
         </div>
         <div id="blackcube_ui" style="display: none;">
             <div id="cube_back">
                 <div id="cube_item">
-                    <img src="img/ItemList/01102941.png" width="35">
+                    <img style="position: absolute; z-index: 4;margin-left: -16px;" src="img/ItemList/01102941.png" width="35">
                 </div>
 
                 <div id="cube_before" onclick="blackcube_before();">

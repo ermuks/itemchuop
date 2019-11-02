@@ -74,7 +74,6 @@ var edipotenper_cape = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 ];
-
 //
 var potenstring = ["레어", "에픽", "유니크", "레전드리"];
 
@@ -135,7 +134,7 @@ function cube(item) {
             break;
         case "블큐":
             temppotlv = potlv;
-            if (jamjae) {
+            if (jamjae && potlv > 0) {
                 document.getElementById("maxpopup").style.display = "block";
                 document.getElementById("blackcube_ui").style.display = "block";
                 document.getElementsByName("cubeclass_before")[0].innerText = potenstring[potlv - 1];
@@ -154,7 +153,7 @@ function cube(item) {
                 if (Math.random() * 1000 < 6) {
                     lv[2] = edipotlv;
                 }
-                edisetting();
+                edisetting(5);
             }
             break;
         case "에큐":
@@ -165,7 +164,7 @@ function cube(item) {
                     edipotlv++;
                 }
             }
-            edisetting();
+            edisetting(10);
             break;
         default:
             alert("잘못된 접근입니다.");
@@ -173,7 +172,7 @@ function cube(item) {
 }
 
 function blackcube() {
-    var sg = [0, 150, 35, 14];
+    var sg = [0, 150, 30, 12];
     t = Math.random() * 1000;
     if (potlv < 4) {
         if (t < sg[potlv]) {
@@ -181,6 +180,7 @@ function blackcube() {
         }
     }
     jamsetting(150);
+    cosumcount(19);
     document.getElementsByName("cubeclass_after")[0].innerText = potenstring[potlv - 1];
     for (var i = 0; i < 3; i++) {
         document.getElementsByName("cube_class_after")[i].innerText = "";
@@ -188,7 +188,6 @@ function blackcube() {
     for (var i = 0; i < jamjul; i++) {
         document.getElementsByName("cube_class_after")[i].innerText = pot[i];
     }
-    cosumcount(19);
 }
 
 function blackcube_before() {
@@ -230,12 +229,12 @@ function jamsetting(ovr) {
     }
 }
 
-function edisetting() {
+function edisetting(ovr) {
     lv = [edipotlv, edipotlv - 1, edipotlv - 1];
-    if (Math.random() * 1000 < 10) {
+    if (Math.random() * 1000 < ovr) {
         lv[1] = edipotlv;
     }
-    if (Math.random() * 1000 < 10) {
+    if (Math.random() * 1000 < ovr) {
         lv[2] = edipotlv;
     }
     for (var i = 0; i < edipot.length; i++) {

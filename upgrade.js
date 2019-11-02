@@ -85,6 +85,7 @@
                 goldhm = false;
                 elseup = maxupg;
                 ucount = 0;
+                star_cnt = 0;
                 for (var i = 0; i < jak.length; i++) {
                     jak[i] = 0;
                 }
@@ -105,7 +106,7 @@
                         } else {
                             potlv = 3;
                         }
-                        jamsetting();
+                        jamsetting(5);
                     }
                 }
             }
@@ -118,7 +119,7 @@
                         jamjae = true;
                     }
                     potlv = 2;
-                    jamsetting();
+                    jamsetting(10);
                 }
             }
             break;
@@ -130,7 +131,7 @@
                         jamjae = true;
                     }
                     potlv = 3;
-                    jamsetting();
+                    jamsetting(50);
                 }
             }
             break;
@@ -150,7 +151,7 @@
                             } else {
                                 edipotlv = 3;
                             }
-                            edisetting();
+                            edisetting(5);
                         }
                     }
                 }
@@ -165,7 +166,7 @@
                             edjamj = true;
                         }
                         edipotlv = 2;
-                        edisetting();
+                        edisetting(10);
                     }
                 }
             }
