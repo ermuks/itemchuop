@@ -121,13 +121,13 @@ function refresh() {
     for (var i = 0; i < basic.length - 1; i++) {
         if (chu[i] != 0) {
             if (jak[i] + addstat[i] != 0) {
-                document.getElementsByName("ioption")[i + 2].innerHTML = "<font id=\"upop\">" + chustring[i] + (chu[i] + jak[i] + basic[i]) + opper[i] + "</font> (" + basic[i] + opper[i] + " <font id=\"addop\">+" + chu[i] + opper[i] + "</font> <font id=\"upop\">+" + (jak[i] + addstat[i]) + opper[i] + "</font>)";
+                document.getElementsByName("ioption")[i + 2].innerHTML = "<font id=\"upop\">" + chustring[i] + (chu[i] + jak[i] + basic[i] + addstat[i]) + opper[i] + "</font> (" + basic[i] + opper[i] + " <font id=\"addop\">+" + chu[i] + opper[i] + "</font> <font id=\"upop\">+" + (jak[i] + addstat[i]) + opper[i] + "</font>)";
             } else {
                 document.getElementsByName("ioption")[i + 2].innerHTML = "<font id=\"upop\">" + chustring[i] + (chu[i] + basic[i]) + opper[i] + "</font> (" + basic[i] + opper[i] + " <font id=\"addop\">+" + chu[i] + opper[i] + "</font>)";
             }
         } else {
             if (jak[i] + addstat[i] != 0) {
-                document.getElementsByName("ioption")[i + 2].innerHTML = "<font id=\"upop\">" + chustring[i] + (jak[i] + basic[i]) + opper[i] + "</font> (" + basic[i] + opper[i] + " <font id=\"upop\">+" + (jak[i] + addstat[i]) + opper[i] + "</font>)";
+                document.getElementsByName("ioption")[i + 2].innerHTML = "<font id=\"upop\">" + chustring[i] + (jak[i] + addstat[i] + basic[i]) + opper[i] + "</font> (" + basic[i] + opper[i] + " <font id=\"upop\">+" + (jak[i] + addstat[i]) + opper[i] + "</font>)";
             } else {
                 document.getElementsByName("ioption")[i + 2].innerHTML = chustring[i] + basic[i] + opper[i];
             }
