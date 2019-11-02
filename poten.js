@@ -1,3 +1,21 @@
+
+var poten_STR = [
+    [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6],
+    [2, 2, 4, 4, 6, 6, 8, 8, 10, 10, 12, 12]
+];
+var poten_DEX = [
+    [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6],
+    [2, 2, 4, 4, 6, 6, 8, 8, 10, 10, 12, 12]
+];
+var poten_INT = [
+    [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6],
+    [2, 2, 4, 4, 6, 6, 8, 8, 10, 10, 12, 12]
+];
+var poten_LUK = [
+    [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6],
+    [2, 2, 4, 4, 6, 6, 8, 8, 10, 10, 12, 12]
+];
+
 // 망토
 var potenlist_cape = [
     ["STR : +#v", "DEX : +#v", "INT : +#v", "LUK : +#v", "최대HP : +#v", "최대MP : +#v", "방어력 : +#v"],
@@ -60,11 +78,13 @@ var edipotenper_cape = [
 //
 var potenstring = ["레어", "에픽", "유니크", "레전드리"];
 
+var temppotlv = 0;
+var temppot = ["", "", ""];
 //
-var potlv = 1;
+var potlv = 0;
 var pot = ["", "", ""];
 
-var edipotlv = 1;
+var edipotlv = 0;
 var edipot = ["", "", ""];
 var lv = [0, 0, 0];
 
@@ -91,7 +111,8 @@ function cube(item) {
                 if (Math.random() * 1000 < 30) {
                     lv[2] = potlv;
                 }
-                jamsetting();
+                jamsetting(10);
+                refresh();
             }
             break;
         case "레큐":
@@ -109,17 +130,20 @@ function cube(item) {
             if (Math.random() * 1000 < 90) {
                 lv[2] = potlv;
             }
-            jamsetting();
+            jamsetting(80);
+            refresh();
             break;
         case "블큐":
-            var sg = [0, 150, 35, 14];
-            t = Math.random() * 1000;
-            if (potlv < 4) {
-                if (t < sg[potlv]) {
-                    potlv++;
+            temppotlv = potlv;
+            if (jamjae) {
+                document.getElementById("maxpopup").style.display = "block";
+                document.getElementById("blackcube_ui").style.display = "block";
+                document.getElementsByName("cubeclass_before")[0].innerText = potenstring[potlv - 1];
+                for (var i = 0; i < 3; i++) {
+                    document.getElementsByName("cube_class_before")[i].innerText = document.getElementsByName("uppoten")[i].innerText;
                 }
             }
-            jamsetting();
+            blackcube();
             break;
         case "수에큐":
             if (edipotlv <= 1) {
@@ -148,12 +172,47 @@ function cube(item) {
     }
 }
 
-function jamsetting() {
+function blackcube() {
+    var sg = [0, 150, 35, 14];
+    t = Math.random() * 1000;
+    if (potlv < 4) {
+        if (t < sg[potlv]) {
+            potlv++;
+        }
+    }
+    jamsetting(150);
+    document.getElementsByName("cubeclass_after")[0].innerText = potenstring[potlv - 1];
+    for (var i = 0; i < 3; i++) {
+        document.getElementsByName("cube_class_after")[i].innerText = "";
+    }
+    for (var i = 0; i < jamjul; i++) {
+        document.getElementsByName("cube_class_after")[i].innerText = pot[i];
+    }
+    cosumcount(19);
+}
+
+function blackcube_before() {
+    document.getElementById("maxpopup").style.display = "none";
+    document.getElementById("blackcube_ui").style.display = "none";
+    potlv = temppotlv;
+    for (var i = 0; i < 3; i++) {
+        pot[i] = document.getElementsByName("uppoten")[i].innerText;
+    }
+    refresh();
+}
+
+function blackcube_after() {
+    document.getElementById("maxpopup").style.display = "none";
+    document.getElementById("blackcube_ui").style.display = "none";
+    refresh();
+}
+
+function jamsetting(ovr) {
     lv = [potlv, potlv - 1, potlv - 1];
-    if (Math.random() * 1000 < 210) {
+    if (Math.random() * 1000 < ovr) {
         lv[1] = potlv;
     }
-    if (Math.random() * 1000 < 210) {
+    if (Math.random() * 1000 < ovr) {
         lv[2] = potlv;
     }
     for (var i = 0; i < pot.length; i++) {
@@ -169,7 +228,6 @@ function jamsetting() {
             }
         }
     }
-    refresh();
 }
 
 function edisetting() {

@@ -348,7 +348,33 @@
     </div>
 
     <div id="maxpopup" style="display: none;">
+        <div id="exit_popup" style="background:rgba(255, 255, 255, 0.5); width: Calc(1366px - 16px); text-align:right; padding:8px; color:white;">
+            <font size="4" style="cursor: pointer;" onclick="document.getElementById('maxpopup').style.display = 'none';">닫기</font>
+        </div>
+        <div id="blackcube_ui" style="display: none;">
+            <div id="cube_back">
+                <div id="cube_item">
+                    <img src="img/ItemList/01102941.png" width="35">
+                </div>
 
+                <div id="cube_before" onclick="blackcube_before();">
+                    <div id="bf_class" name="cubeclass_before">에픽</div>
+                    <div id="cube_poten" name="cube_class_before">STR : +6%</div>
+                    <div id="cube_poten" name="cube_class_before">STR : +6%</div>
+                    <div id="cube_poten" name="cube_class_before">STR : +6%</div>
+                    <div id="cube_sgong" name="cube_sgong">공격력 증가량 : <font class="sgong">+0</font></div>
+                </div>
+                <div id="cube_after" onclick="blackcube_after();">
+                    <div id="bf_class" name="cubeclass_after">에픽</div>
+                    <div id="cube_poten" name="cube_class_after">STR : +6%</div>
+                    <div id="cube_poten" name="cube_class_after">STR : +6%</div>
+                    <div id="cube_poten" name="cube_class_after">STR : +6%</div>
+                    <div id="cube_sgong" name="cube_sgong">공격력 증가량 : <font class="sgong">+0</font></div>
+                </div>
+
+                <div id="cube_submit" onclick="blackcube();"></div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
