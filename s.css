@@ -639,105 +639,117 @@ div#reqnum.yrm     { width: 5px; background: url(img/Item/Equip/Calc/-.png); }
 
     /* --------- 팝업 css ---------- */
 
-    div#maxpopup {
-        position: absolute;
-        background: rgba(0, 0, 0, 0.35);
-        width: 100%;
-        height: 100%;
-    }
+div#maxpopup {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.35);
+    width: 100%;
+    height: 100%;
+}
 
-    div#cube_back {
-        position: absolute;
-        background: url(img/cube/black/background.png);
-        width: 196px;
-        height: 385px;
-        left: Calc(1366px / 2);
-        top: Calc(768px / 2);
-        margin-left: -98px;
-        margin-top: -192px;
-        font-size: 9pt;
-    }
+div#cube_back {
+    position: absolute;
+    background: url(img/cube/black/background.png);
+    width: 196px;
+    height: 385px;
+    left: Calc(1366px / 2);
+    top: Calc(768px / 2);
+    margin-left: -98px;
+    margin-top: -192px;
+    font-size: 9pt;
+    z-index: 2;
+}
 
-    div#cube_item {
-        margin-top: 98px;
-        text-align: center;
-    }
+div#cube_item {
+    margin-top: 98px;
+    text-align: center;
+}
 
-    div#cube_before {
-        background: url(img/cube/black/select_before.png);
-        cursor: pointer;
-        padding-top: 16px;
-        width: 176px;
-        height: 81px;
-        margin-top: 19px;
-        margin-left: 10px;
-    }
+div#cube_before {
+    background: url(img/cube/black/select_before.png);
+    cursor: pointer;
+    padding-top: 16px;
+    width: 176px;
+    height: 81px;
+    margin-top: 151px;
+    margin-left: 10px;
+}
 
-    div#cube_before:hover {
-        background: url(img/cube/black/select_before_hover.png);
-    }
+div#cube_before:hover {
+    background: url(img/cube/black/select_before_hover.png);
+}
 
-    div#cube_before:active {
-        background: url(img/cube/black/select_before_click.png);
-    }
+div#cube_before:active {
+    background: url(img/cube/black/select_before_click.png);
+}
 
-    div#cube_after {
-        background: url(img/cube/black/select_after.png);
-        cursor: pointer;
-        padding-top: 16px;
-        width: 176px;
-        height: 81px;
-        margin-top: 2px;
-        margin-left: 10px;
-    }
+div#cube_after {
+    background: url(img/cube/black/select_after.png);
+    cursor: pointer;
+    padding-top: 16px;
+    width: 176px;
+    height: 81px;
+    margin-top: 2px;
+    margin-left: 10px;
+}
 
-    div#cube_after:hover {
-        background: url(img/cube/black/select_after_hover.png);
-    }
+div#cube_after:hover {
+    background: url(img/cube/black/select_after_hover.png);
+}
 
-    div#cube_after:active {
-        background: url(img/cube/black/select_after_click.png);
-    }
+div#cube_after:active {
+    background: url(img/cube/black/select_after_click.png);
+}
 
-    div#cube_submit {
-        background: url(img/cube/black/onemore.png);
-        cursor: pointer;
-        width: 133px;
-        height: 16px;
-        margin-top: 9px;
-        margin-left: 30px;
-    }
+div#cube_submit {
+    background: url(img/cube/black/onemore.png);
+    cursor: pointer;
+    width: 133px;
+    height: 16px;
+    margin-top: 9px;
+    margin-left: 30px;
+}
 
-    div#cube_submit:hover {
-        background: url(img/cube/black/onemore_hover.png);
-    }
+div#cube_submit:hover {
+    background: url(img/cube/black/onemore_hover.png);
+}
 
-    div#cube_submit:active {
-        background: url(img/cube/black/onemore_click.png);
-    }
+div#cube_submit:active {
+    background: url(img/cube/black/onemore_click.png);
+}
 
-    div#bf_class {
-        text-align: center;
-        margin-top: 4px;
-        color: rgb(255,255,17);
-    }
+div#bf_class {
+    text-align: center;
+    margin-top: 4px;
+    color: rgb(255,255,17);
+}
 
-    div#cube_poten {
-        padding-left: 11px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: clip;
-        height: 14px;
-        max-width: 150px;
-        color: white;
-    }
+div#cube_poten {
+    padding-left: 11px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip;
+    height: 14px;
+    max-width: 150px;
+    color: white;
+}
 
-    div#cube_sgong {
-        padding-left: 11px;
-        color: rgb(153, 153, 153);
-    }
+div#cube_sgong {
+    padding-left: 11px;
+    color: rgb(153, 153, 153);
+}
 
-    font.sgong {
-        color: rgb(255, 255, 17);
-        font-weight: bold;
-    }
+div#cube_effect {
+    position: absolute;
+    width: 196px;
+    height: 385px;
+    left: Calc(1366px / 2);
+    top: Calc(768px / 2);
+    margin-left: -88px;
+    margin-top: -130px;
+    z-index: 3;
+}
+
+font.sgong {
+    color: rgb(255, 255, 17);
+    font-weight: bold;
+}
