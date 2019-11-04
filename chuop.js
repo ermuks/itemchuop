@@ -1,24 +1,10 @@
 var isngh = false;
+var isnghsuc = false;
 
 function cash(code) {
     switch (code) {
         case "리턴":
-            //alert("오류로 인해 초기화 후 새로 작업중입니다.");
             cash_return = true;
-            /*for (var i = 0; i < ngh.length; i++) {
-                jak[i] -= ngh[i];
-            }
-
-            if (isngh) {
-                elseup++;
-                ucount--;
-                isngh = false;
-            }
-
-            for (var i = 0; i < ngh.length; i++) {
-                ngh[i] = 0;
-            }*/
-            
             break;
         case "프텍":
             alert("현재 미구현 상태입니다. 놀장강 가즈아");
@@ -33,8 +19,22 @@ function cash(code) {
 }
 
 function return_use() {
+    for (var i = 0; i < ngh.length; i++) {
+        jak[i] -= ngh[i];
+    }
+
+    if (isngh) {
+        elseup++;
+        if (isnghsuc) ucount--;
+        isngh = false;
+    }
+
+    for (var i = 0; i < ngh.length; i++) {
+        ngh[i] = 0;
+    }
     document.getElementById("maxpopup").style.display = "none";
     document.getElementById("cash_return").style.display = "none";
+    refresh();
 }
 
 function return_cancel() {
