@@ -44,6 +44,7 @@
             }
             if (Math.random() * 100 < 60) {
                 ucount++;
+                isnghsuc = true;
                 for (var b = 0; b < 13; b++) {
                     if (basic[b] + chu[b] + jak[b] > 0) {
                         var ranper = [25, 30, 20, 15, 5, 0, 5];
@@ -67,6 +68,8 @@
                         }
                     }
                 }
+            } else {
+                isnghsuc = false;
             }
             refresh();
             if (cash_return) {
