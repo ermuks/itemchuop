@@ -62,13 +62,14 @@ function setchu(icls) {
     // 0 : 영환불    (1~4 추옵) ( 14 26 36 24 )
     // 1 : 강환불    (2~5 추옵) ( 8 16 32 44 )
     // 2 : 일반 환불 (2~5 추옵) ( 4 31 46 29 )
+    var onechu = false;
     danchu = parseInt(reqlev / 20) + 1;
     yeechu = parseInt(reqlev / 40) + 1;
     for (var i = 0; i < 4; i++) {
         var t = Math.floor(Math.random() * 1000);
         var clv = 0; // 추옵 단계
         if (icls == 0) {
-            if (t < 140) { clv = 7; }
+            if (t < 140 && (!onechu || (onechu && Math.random() * 10000) < 5)) { clv = 7; onechu = true;}
             else if (t < 400) { clv = 6; }
             else if (t < 760) { clv = 5; }
             else if (t < 1000) { clv = 4; }
@@ -85,69 +86,145 @@ function setchu(icls) {
         }
         t = Math.floor(Math.random() * 1000);
         if (eqptype == 0) {
-            if (t < 50 && !nochu[0]) {
-                chu[0] += danchu * clv;
-                nochu[0] = true;
-            } else if (t < 95 && !nochu[1]) {
-                chu[1] += danchu * clv;
-                nochu[1] = true;
-            } else if (t < 140 && !nochu[2]) {
-                chu[2] += danchu * clv;
-                nochu[2] = true;
-            } else if (t < 185 && !nochu[3]) {
-                chu[3] += danchu * clv;
-                nochu[3] = true;
-            } else if (t < 230 && !nochu[4]) {
-                chu[0] += yeechu * clv;
-                chu[1] += yeechu * clv;
-                nochu[4] = true;
-            } else if (t < 275 && !nochu[5]) {
-                chu[0] += yeechu * clv;
-                chu[2] += yeechu * clv;
-                nochu[5] = true;
-            } else if (t < 320 && !nochu[6]) {
-                chu[0] += yeechu * clv;
-                chu[3] += yeechu * clv;
-                nochu[6] = true;
-            } else if (t < 365 && !nochu[7]) {
-                chu[1] += yeechu * clv;
-                chu[2] += yeechu * clv;
-                nochu[7] = true;
-            } else if (t < 410 && !nochu[8]) {
-                chu[1] += yeechu * clv;
-                chu[3] += yeechu * clv;
-                nochu[8] = true;
-            } else if (t < 450 && !nochu[9]) {
-                chu[2] += yeechu * clv;
-                chu[3] += yeechu * clv;
-                nochu[9] = true;
-            } else if (t < 510 && !nochu[10]) {
-                chu[4] += reqlev * 3 * clv;
-                nochu[10] = true;
-            } else if (t < 565 && !nochu[11]) {
-                chu[5] += reqlev * 3 * clv;
-                nochu[11] = true;
-            } else if (t < 620 && !nochu[12]) {
-                chu[8] += clv;
-                nochu[12] = true;
-            } else if (t < 665 && !nochu[13]) {
-                chu[9] += clv;
-                nochu[13] = true;
-            } else if (t < 720 && !nochu[14]) {
-                chu[10] += danchu * clv;
-                nochu[14] = true;
-            } else if (t < 795 && !nochu[15]) {
-                chu[11] += clv;
-                nochu[15] = true;
-            } else if (t < 870 && !nochu[16]) {
-                chu[12] += clv;
-                nochu[16] = true;
-            } else if (t < 915 && !nochu[17]) {
-                chu[16] += clv;
-                nochu[17] = true;
-            } else if (t < 1000 && !nochu[18]) {
-                chu[17] += clv * 5;
-                nochu[18] = true;
+            if (t < 50) {
+                if (!nochu[0]) {
+                    chu[0] += danchu * clv;
+                    nochu[0] = true;
+                } else {
+                    i--;
+                }
+            } else if (t < 95) {
+                if (!nochu[1]) {
+                    chu[1] += danchu * clv;
+                    nochu[1] = true;
+                } else {
+                    i--;
+                }
+            } else if (t < 140) {
+                if (!nochu[2]) {
+                    chu[2] += danchu * clv;
+                    nochu[2] = true;
+                } else {
+                    i--;
+                }
+            } else if (t < 185) {
+                if (!nochu[3]) {
+                    chu[3] += danchu * clv;
+                    nochu[3] = true;
+                } else {
+                    i--;
+                }
+            } else if (t < 230) {
+                if (!nochu[4]) {
+                    chu[0] += yeechu * clv;
+                    chu[1] += yeechu * clv
+                    nochu[4] = true;
+                } else {
+                    i--;
+                }
+            } else if (t < 275) {
+                if (!nochu[5]) {
+                    chu[0] += yeechu * clv;
+                    chu[2] += yeechu * clv;
+                    nochu[5] = true;
+                } else {
+                    i--;
+                }
+            } else if (t < 320) {
+                if (!nochu[6]) {
+                    chu[0] += yeechu * clv;
+                    chu[3] += yeechu * clv;
+                    nochu[6] = true;
+                } else {
+                    i--;
+                }
+            } else if (t < 365) {
+                if (!nochu[7]) {
+                    chu[1] += yeechu * clv;
+                    chu[2] += yeechu * clv;
+                    nochu[7] = true;
+                } else {
+                    i--;
+                }
+            } else if (t < 410) {
+                if (!nochu[8]) {
+                    chu[1] += yeechu * clv;
+                    chu[3] += yeechu * clv;
+                    nochu[8] = true;
+                } else {
+                    i--;
+                }
+            } else if (t < 450) {
+                if (!nochu[9]) {
+                    chu[2] += yeechu * clv;
+                    chu[3] += yeechu * clv;
+                    nochu[9] = true;
+                } else {
+                    i--;
+                }
+            } else if (t < 510) {
+                if (!nochu[10]) {
+                    chu[4] += reqlev * 3 * clv;
+                    nochu[10] = true;
+                } else {
+                    i--;
+                }
+            } else if (t < 565) {
+                if (!nochu[11]) {
+                    chu[5] += reqlev * 3 * clv;
+                    nochu[11] = true;
+                } else {
+                    i--;
+                }
+            } else if (t < 620) {
+                if (!nochu[12]) {
+                    chu[8] += clv;
+                    nochu[12] = true;
+                } else {
+                    i--;
+                }
+            } else if (t < 665) {
+                if (!nochu[13]) {
+                    chu[9] += clv;
+                    nochu[13] = true;
+                } else {
+                    i--;
+                }
+            } else if (t < 720) {
+                if (!nochu[14]) {
+                    chu[10] += danchu * clv;
+                    nochu[14] = true;
+                } else {
+                    i--;
+                }
+            } else if (t < 795) {
+                if (!nochu[15]) {
+                    chu[11] += clv;
+                    nochu[15] = true;
+                } else {
+                    i--;
+                }
+            } else if (t < 870) {
+                if (!nochu[16]) {
+                    chu[12] += clv;
+                    nochu[16] = true;
+                } else {
+                    i--;
+                }
+            } else if (t < 915) {
+                if (!nochu[17]) {
+                    chu[16] += clv;
+                    nochu[17] = true;
+                } else {
+                    i--;
+                }
+            } else if (t < 1000) {
+                if (!nochu[18]) {
+                    chu[17] += clv * 5;
+                    nochu[18] = true;
+                } else {
+                    i--;
+                }
             }
         } else if (eqptype == 1) {
             if (t < 50 && !nochu[0]) {
