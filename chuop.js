@@ -65,7 +65,6 @@ function setchu(icls) {
     danchu = parseInt(reqlev / 20) + 1;
     yeechu = parseInt(reqlev / 40) + 1;
     for (var i = 0; i < 4; i++) {
-        if (Math.random() * 100 < 3) continue;
         var t = Math.floor(Math.random() * 1000);
         var clv = 0; // 추옵 단계
         if (icls == 0) {
