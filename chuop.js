@@ -299,7 +299,6 @@ function setchu(icls) {
             }
         }
     }
-
     refresh();
 }
 

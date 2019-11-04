@@ -6,7 +6,7 @@ var cash_return = false;
 var cash_protect = false;
 var cash_recover = false;
 
-var item_code = "01102941";
+var item_code = "01102794";
 var itemname = "앱솔랩스 메이지케이프";
 
 var ucount = 0; // 강화된 횟수
@@ -25,7 +25,7 @@ var item_job = [false, false, true, false, false, false]; // 0전체, 1전, 2법
 var item_job_special = "";
 var reqlev = 160;
 var eqptype = 0;
-var basic = [35, 35, 35, 35, 0, 0, 0, 0, 6, 6, 450, 0, 0, 0, 0, 0, 0, 0, 0]; // 기본 옵션
+var basic = [15, 15, 15, 15, 0, 0, 0, 0, 2, 2, 100, 0, 0, 0, 0, 0, 0, 0, 0]; // 기본 옵션
 var jak = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]; // 작된 옵션 (주문서 및 스타포스)
 var chu = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]; // 추가 옵션
 
