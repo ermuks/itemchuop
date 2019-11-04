@@ -753,3 +753,121 @@ font.sgong {
     color: rgb(255, 255, 17);
     font-weight: bold;
 }
+
+/* 리턴 스크롤 ui css*/
+
+div#return_top {
+    background: url(img/return/top.png);
+    width: 630px;
+    height: 81px;
+}
+
+div#return_body {
+    background: url(img/return/body.png);
+    width: 630px;
+    height: 284px;
+}
+
+div#return_bottom {
+    background: url(img/return/bottom.png);
+    width: 630px;
+    height: 78px;
+}
+
+
+div#return_itemoption {
+    float: left;
+    width: 257px;
+    height: 100%;
+    background: rgb(22, 22, 22);
+}
+
+/* 변경 전 */
+div#return_left {
+    float: left;
+    height: Calc(100% - 24px);
+    margin-left: 24px;
+}
+
+div#return_left_top {
+    width: 259px;
+    height: 19px;
+    background: url(img/return/Lefttop.png);
+}
+
+div#return_left_body {
+    height: 100%;
+}
+
+div#return_left_border {
+    float: left;
+    width: 1px;
+    height: 100%;
+    background: url(img/return/Leftbody.png);
+}
+
+div#return_left_bottom {
+    width: 259px;
+    height: 7px;
+    background: url(img/return/Leftbottom.png);
+}
+
+
+/* 화살표 */
+div#return_arrow {
+    float: left;
+    width: 36px;
+    height: 99px;
+    margin-left: 16px;
+    margin-top: 92px;
+    background: url(img/return/arrow.png);
+}
+
+
+/* 변경 전 */
+div#return_right {
+    float: left;
+    height: Calc(100% - 24px);
+    margin-left: 13px;
+}
+
+div#return_right_top {
+    width: 259px;
+    height: 19px;
+    background: url(img/return/Righttop.png);
+}
+
+div#return_right_body {
+    height: 100%;
+}
+
+div#return_right_border {
+    float: left;
+    width: 1px;
+    height: 100%;
+    background: url(img/return/Rightbody.png);
+}
+
+div#return_right_bottom {
+    width: 259px;
+    height: 7px;
+    background: url(img/return/Rightbottom.png);
+}
+
+div#return_change {
+    float: left;
+    width: 113px;
+    height: 36px;
+    margin-left: 360px;
+    margin-top: 18px;
+    background: url(img/return/use.png);
+}
+
+div#return_cancel {
+    float: left;
+    width: 113px;
+    height: 36px;
+    margin-left: 16px;
+    margin-top: 18px;
+    background: url(img/return/cancel.png);
+}

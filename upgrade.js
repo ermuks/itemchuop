@@ -36,6 +36,12 @@
         case "놀긍혼":
             elseup--;
             isngh = true;
+            if (cash_return) {
+                for (var i = 0; i < 25; i++) {
+                    document.getElementsByName("return_option_left")[i].innerHTML = document.getElementsByName("ioption")[i].innerHTML;
+                    document.getElementsByName("return_option_left")[i].style.display = document.getElementsByName("ioption")[i].style.display;
+                }
+            }
             if (Math.random() * 100 < 60) {
                 ucount++;
                 for (var b = 0; b < 13; b++) {
@@ -62,6 +68,16 @@
                     }
                 }
             }
+            refresh();
+            if (cash_return) {
+                for (var i = 0; i < 25; i++) {
+                    document.getElementsByName("return_option_right")[i].innerHTML = document.getElementsByName("ioption")[i].innerHTML;
+                    document.getElementsByName("return_option_right")[i].style.display = document.getElementsByName("ioption")[i].style.display;
+                }
+                document.getElementById("maxpopup").style.display = "block";
+                document.getElementById("cash_return").style.display = "block";
+            }
+            cash_return = false;
             break;
         case "순백":
             if (elseup + ucount < maxupg) {
@@ -88,6 +104,7 @@
                 star_cnt = 0;
                 for (var i = 0; i < jak.length; i++) {
                     jak[i] = 0;
+                    addstat[i] = 0;
                 }
             }
             break;

@@ -3,7 +3,8 @@ var isngh = false;
 function cash(code) {
     switch (code) {
         case "리턴":
-            alert("오류로 인해 초기화 후 새로 작업중입니다.");
+            //alert("오류로 인해 초기화 후 새로 작업중입니다.");
+            cash_return = true;
             /*for (var i = 0; i < ngh.length; i++) {
                 jak[i] -= ngh[i];
             }
@@ -29,6 +30,16 @@ function cash(code) {
             alert('잘못된 접근 코드 : ' + code);
     }
     refresh();
+}
+
+function return_use() {
+    document.getElementById("maxpopup").style.display = "none";
+    document.getElementById("cash_return").style.display = "none";
+}
+
+function return_cancel() {
+    document.getElementById("maxpopup").style.display = "none";
+    document.getElementById("cash_return").style.display = "none";
 }
 
 function setchu(icls) {
@@ -58,20 +69,20 @@ function setchu(icls) {
         var t = Math.floor(Math.random() * 1000);
         var clv = 0; // 추옵 단계
         if (icls == 0) {
-            if (t < 140) clv = 7
-            else if (t < 400) clv = 6
-            else if (t < 760) clv = 5
-            else if (t < 1000) clv = 4
+            if (t < 140) { clv = 7; }
+            else if (t < 400) { clv = 6; }
+            else if (t < 760) { clv = 5; }
+            else if (t < 1000) { clv = 4; }
         } else if (icls == 1) {
-            if (t < 140) clv = 6
-            else if (t < 400) clv = 5
-            else if (t < 760) clv = 4
-            else if (t < 1000) clv = 3
+            if (t < 140) { clv = 6;}
+            else if (t < 400) { clv = 5; }
+            else if (t < 760) { clv = 4; }
+            else if (t < 1000) { clv = 3; }
         } else if (icls == 2) {
-            if (t < 40) clv = 6
-            else if (t < 350) clv = 5
-            else if (t < 710) clv = 4
-            else if (t < 1000) clv = 3
+            if (t < 40) { clv = 6; }
+            else if (t < 350) { clv = 5; }
+            else if (t < 710) { clv = 4; }
+            else if (t < 1000) { clv = 3; }
         }
         t = Math.floor(Math.random() * 1000);
         if (eqptype == 0) {
