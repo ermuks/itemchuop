@@ -1,0 +1,86 @@
+﻿{
+    "01102941": {
+        "name": "아케인셰이드 메이지케이프",
+        "job": [
+            { "can": false },
+            { "can": false },
+            { "can": true },
+            { "can": false },
+            { "can": false },
+            { "can": false }
+        ],
+        "reqlev": 200,
+        "reqstr": 0,
+        "reqdex": 0,
+        "reqint": 0,
+        "reqluk": 0,
+        "attackspeed": 0,
+        "knockback": 0,
+        "itemstat": [
+            {
+                "stat": 35,
+                "stat": 35,
+                "stat": 35,
+                "stat": 35,
+                "stat": 0,
+                "stat": 0,
+                "stat": 0,
+                "stat": 0,
+                "stat": 6,
+                "stat": 6,
+                "stat": 450,
+                "stat": 0,
+                "stat": 0,
+                "stat": 0,
+                "stat": 0,
+                "stat": 0,
+                "stat": 0,
+                "stat": 7
+            }
+        ],
+        "setitem": 0,
+        "tradetype": 0
+    },
+    "01102794": {
+        "name": "앱솔랩스 메이지케이프",
+        "job": [
+            { "can": false },
+            { "can": false },
+            { "can": true },
+            { "can": false },
+            { "can": false },
+            { "can": false }
+        ],
+        "reqlev": 160,
+        "reqstr": 0,
+        "reqdex": 0,
+        "reqint": 0,
+        "reqluk": 0,
+        "attackspeed": 0,
+        "knockback": 0,
+        "itemstat": [
+            {
+                "stat": 15,
+                "stat": 15,
+                "stat": 15,
+                "stat": 15,
+                "stat": 0,
+                "stat": 0,
+                "stat": 0,
+                "stat": 0,
+                "stat": 2,
+                "stat": 2,
+                "stat": 150,
+                "stat": 0,
+                "stat": 0,
+                "stat": 0,
+                "stat": 0,
+                "stat": 0,
+                "stat": 0,
+                "stat": 7
+            }
+        ],
+        "setitem": 0,
+        "tradetype": 0
+    }
+}
