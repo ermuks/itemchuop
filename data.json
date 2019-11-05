@@ -1,6 +1,6 @@
-{
+ï»¿{
     "01102941": {
-        "name": "¾ÆÄÉÀÎ¼ÎÀÌµå ¸ŞÀÌÁöÄÉÀÌÇÁ",
+        "name": "ì•„ì¼€ì¸ì…°ì´ë“œ ë©”ì´ì§€ì¼€ì´í”„",
         "job": [
             { "can": false },
             { "can": false },
@@ -9,31 +9,78 @@
             { "can": false },
             { "can": false }
         ],
-        //"specialjob": "",
         "reqlev": 200,
         "reqstr": 0,
         "reqdex": 0,
         "reqint": 0,
         "reqluk": 0,
-        "attackspeed": 6,
-        "knockback": 71,
-        "incstr": 35,
-        "incdex": 35,
-        "incint": 35,
-        "incluk": 35,
-        "inchpper": 0,
-        "incmpper": 0,
-        "inchp": 0,
-        "incmp": 0,
-        "incpad": 0,
-        "incmad": 0,
-        "incgrd": 0,
-        "incspeed": 0,
-        "incjump": 0,
-        "incboss": 0,
-        "incbreak": 0,
-        "incdmg": 0,
-        "incalls": 0,
+        "attackspeed": 0,
+        "knockback": 0,
+        "itemstat": [
+            {
+                "stat": 35,
+                "stat": 35,
+                "stat": 35,
+                "stat": 35,
+                "stat": 0,
+                "stat": 0,
+                "stat": 0,
+                "stat": 0,
+                "stat": 6,
+                "stat": 6,
+                "stat": 450,
+                "stat": 0,
+                "stat": 0,
+                "stat": 0,
+                "stat": 0,
+                "stat": 0,
+                "stat": 0,
+                "stat": 7
+            }
+        ]
+        "setitem": 0,
+        "tradetype": 0
+    },
+    "01102794": {
+        "name": "ì•±ì†”ë©ìŠ¤ ë©”ì´ì§€ì¼€ì´í”„",
+        "job": [
+            { "can": false },
+            { "can": false },
+            { "can": true },
+            { "can": false },
+            { "can": false },
+            { "can": false }
+        ],
+        "reqlev": 160,
+        "reqstr": 0,
+        "reqdex": 0,
+        "reqint": 0,
+        "reqluk": 0,
+        "attackspeed": 0,
+        "knockback": 0,
+        "itemstat": [
+            {
+                "stat": 15,
+                "stat": 15,
+                "stat": 15,
+                "stat": 15,
+                "stat": 0,
+                "stat": 0,
+                "stat": 0,
+                "stat": 0,
+                "stat": 2,
+                "stat": 2,
+                "stat": 150,
+                "stat": 0,
+                "stat": 0,
+                "stat": 0,
+                "stat": 0,
+                "stat": 0,
+                "stat": 0,
+                "stat": 7
+            }
+        ]
+        "setitem": 0,
         "tradetype": 0
     }
 }
