@@ -180,7 +180,7 @@ function blackcube() {
         }
     }
     jamsetting(150);
-    cosumcount(19);
+    cosumcount(21);
     document.getElementsByName("cubeclass_after")[0].innerText = potenstring[potlv - 1];
     for (var i = 0; i < 3; i++) {
         document.getElementsByName("cube_class_after")[i].innerText = "";
@@ -211,7 +211,7 @@ function jamsetting(ovr) {
     if (Math.random() * 1000 < ovr) {
         lv[1] = potlv;
     }
-    if (Math.random() * 1000 < ovr) {
+    if (Math.random() * 1000 < ovr / 2) {
         lv[2] = potlv;
     }
     for (var i = 0; i < pot.length; i++) {
@@ -234,7 +234,7 @@ function edisetting(ovr) {
     if (Math.random() * 1000 < ovr) {
         lv[1] = edipotlv;
     }
-    if (Math.random() * 1000 < ovr) {
+    if (Math.random() * 1000 < ovr / 2) {
         lv[2] = edipotlv;
     }
     for (var i = 0; i < edipot.length; i++) {

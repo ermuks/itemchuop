@@ -51,6 +51,10 @@ function get_maxstf() {
     }
 }
 
+function wowstarforce() {
+
+}
+
 function starforce() {
     var cost = 0;
 
@@ -61,11 +65,11 @@ function starforce() {
     if (star_cnt <= maxstf) {
         if (star_cnt < maxstf) {
             if (star_cnt < 10) {
-                cost = Math.round(1000 + Math.pow(reqlev, 3) * (star_cnt + 1) / 2500) * 100;
+                cost = Math.round(10 + Math.pow(reqlev, 3) * (star_cnt + 1) / 2500) * 100;
             } else if (star_cnt < 15) {
-                cost = Math.round(1000 + Math.pow(reqlev, 3) * Math.pow(star_cnt + 1, 2.7) / 40000) * 100;
+                cost = Math.round(10 + Math.pow(reqlev, 3) * Math.pow(star_cnt + 1, 2.7) / 40000) * 100;
             } else if (star_cnt < 25) {
-                cost = Math.round(1000 + Math.pow(reqlev, 3) * Math.pow(star_cnt + 1, 2.7) / 20000) * 100;
+                cost = Math.round(10 + Math.pow(reqlev, 3) * Math.pow(star_cnt + 1, 2.7) / 20000) * 100;
             }
 
             var hr = Math.random() * 1000;
@@ -137,13 +141,21 @@ function starforce() {
 
                 if (i <= 15) {
 
-                } else if (i <= 22) {
+                } else if (i <= 21) {
                     if (reqlev == 200) {
                         addstat[8] += i - 4;
                         addstat[9] += i - 4;
                     } else {
                         addstat[8] += reqlev / 10 - 22 + i;
                         addstat[9] += reqlev / 10 - 22 + i;
+                    }
+                } else if (i == 22) {
+                    if (reqlev == 200) {
+                        addstat[8] += i - 4;
+                        addstat[9] += i - 4;
+                    } else {
+                        addstat[8] += reqlev / 10 - 21 + i;
+                        addstat[9] += reqlev / 10 - 21 + i;
                     }
                 } else if (i <= 25) {
                     if (reqlev == 200) {
