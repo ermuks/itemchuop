@@ -15,35 +15,33 @@ var poten_LUK = [
     [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6],
     [2, 2, 4, 4, 6, 6, 8, 8, 10, 10, 12, 12]
 ];
-
-// 망토
 var potenlist_cape = [
-    ["STR : +#v", "DEX : +#v", "INT : +#v", "LUK : +#v", "최대HP : +#v", "최대MP : +#v", "방어력 : +#v"],
-    ["STR : +#v", "DEX : +#v", "INT : +#v", "LUK : +#v", "최대HP : +#v", "최대MP : +#v", "방어력 : +#v", "STR : +#v%", "DEX : +#v%", "INT : +#v%", "LUK : +#v%", "최대HP : +#v%", "최대MP : +#v%", "올스탯 : +#v"],
-    ["STR : +#v%", "DEX : +#v%", "INT : +#v%", "LUK : +#v%", "최대HP : +#v%", "최대MP : +#v%", "올스탯 : +#v%", "피격 시 #p% 확률로 #v의 데미지 무시", "피격 시 #p% 확률로 #v의 데미지 무시", "피격 시 #p% 확률로 #v의 데미지 무시", "올스탯 : +#v"],
-    ["STR : +#v%", "DEX : +#v%", "INT : +#v%", "LUK : +#v%", "최대HP : +#v%", "최대MP : +#v%", "올스탯 : +#v%", "HP 회복 아이템 및 회복 스킬 효율 : +#v%", "피격 시 #p% 확률로 #v%의 데미지 무시", "피격 시 #p% 확률로 #v%의 데미지 무시"],
-    ["STR : +#v%", "DEX : +#v%", "INT : +#v%", "LUK : +#v%", "최대HP : +#v%", "최대MP : +#v%", "올스탯 : +#v%", "HP 회복 아이템 및 회복 스킬 효율 : +#v%", "피격 시 #p% 확률로 #v%의 데미지 무시", "피격 시 #p% 확률로 #v%의 데미지 무시"]
+    ["STR : +#v" , "DEX : +#v" , "INT : +#v" , "LUK : +#v" , "최대HP : +#v" , "최대MP : +#v" , "방어력 : +#v"],
+    ["STR : +#v" , "DEX : +#v" , "INT : +#v" , "LUK : +#v" , "최대HP : +#v" , "최대MP : +#v" , "방어력 : +#v" , "STR : +#v%", "DEX : +#v%", "INT : +#v%", "LUK : +#v%", "최대HP : +#v%", "최대MP : +#v%", "올스탯 : +#v"],
+    ["STR : +#v%", "DEX : +#v%", "INT : +#v%", "LUK : +#v%", "최대HP : +#v%", "최대MP : +#v%", "방어력 : +#v%", "올스탯 : +#v%", "올스탯 : +#v"],
+    ["STR : +#v%", "DEX : +#v%", "INT : +#v%", "LUK : +#v%", "최대HP : +#v%", "최대MP : +#v%", "방어력 : +#v%", "올스탯 : +#v%", "HP 회복 아이템 및 회복 스킬 효율 : +#v%", "캐릭터 기준 10레벨 당 STR : +#v", "캐릭터 기준 10레벨 당 DEX : +#v", "캐릭터 기준 10레벨 당 INT : +#v", "캐릭터 기준 10레벨 당 LUK : +#v"],
+    ["STR : +#v%", "DEX : +#v%", "INT : +#v%", "LUK : +#v%", "최대HP : +#v%", "최대MP : +#v%", "방어력 : +#v%", "올스탯 : +#v%", "HP 회복 아이템 및 회복 스킬 효율 : +#v%", "캐릭터 기준 10레벨 당 STR : +#v", "캐릭터 기준 10레벨 당 DEX : +#v", "캐릭터 기준 10레벨 당 INT : +#v", "캐릭터 기준 10레벨 당 LUK : +#v", "아이템 획득 확률 : +#v", "메소 획득량 : +#v"]
 ];
-var potenlist_per = [
-    [13, 13, 13, 13, 13, 13, 22],
-    [8, 8, 8, 8, 8, 8, 10, 6, 6, 6, 6, 6, 6, 6],
-    [9, 9, 9, 9, 10, 10, 8, 12, 12, 12],
-    [9, 9, 9, 9, 10, 10, 8, 12, 12, 12],
-    [9, 9, 9, 9, 10, 10, 8, 12, 12, 12]
+var potenlist_per_cape = [
+    [10, 10, 10, 10, 10, 10, 15],
+    [10, 10, 10, 10, 10, 10, 15, 9, 9, 9, 9, 9, 9, 10],
+    [10, 10, 10, 10, 10, 10, 15, 8, 10],
+    [10, 10, 10, 10, 10, 10, 15, 8, 20, 9, 9, 9, 9],
+    [10, 10, 10, 10, 10, 10, 15, 8, 20, 9, 9, 9, 9, 7, 7]
 ];
 var potenvalue_cape = [
     [6, 6, 6, 6, 60, 60, 60],
     [12, 12, 12, 12, 120, 120, 120, 3, 3, 3, 3, 3, 3, 5],
-    [6, 6, 6, 6, 6, 6, 3, 25, 38, 51],
-    [9, 9, 9, 9, 9, 9, 6, 30, 20, 40],
-    [12, 12, 12, 12, 12, 12, 9, 40, 20, 40]
+    [6, 6, 6, 6, 6, 6, 6, 3],
+    [9, 9, 9, 9, 9, 9, 9, 6, 30, 1, 1, 1, 1],
+    [12, 12, 12, 12, 12, 12, 12, 9, 40, 2, 2, 2, 2, 20, 20]
 ];
 var potenper_cape = [
     [0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 20, 20, 30],
-    [0, 0, 0, 0, 0, 0, 0, 0, 5, 5],
-    [0, 0, 0, 0, 0, 0, 0, 0, 10, 10]
+    [0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0]
 ];
 var edipotenlist_cape = [
     ["STR : +#v", "DEX : +#v", "INT : +#v", "LUK : +#v", "최대HP : +#v", "최대MP : +#v", "방어력 : +#v", "공격력 : +#v", "마력 : +#v", "이동속도 : +#v", "점프력 : +#v"],
@@ -52,7 +50,7 @@ var edipotenlist_cape = [
     ["STR : +#v", "DEX : +#v", "INT : +#v", "LUK : +#v", "최대HP : +#v", "최대MP : +#v", "방어력 : +#v", "STR : +#v%", "DEX : +#v%", "INT : +#v%", "LUK : +#v%", "최대HP : +#v%", "최대MP : +#v%", "올스탯 : +#v%", "공격력 : +#v", "마력 : +#v", "이동속도 : +#v", "점프력 : +#v", "모든 속성 내성 : +#v%", "캐릭터 기준 10레벨당 INT +#v"],
     ["STR : +#v", "DEX : +#v", "INT : +#v", "LUK : +#v", "최대HP : +#v", "최대MP : +#v", "방어력 : +#v", "STR : +#v%", "DEX : +#v%", "INT : +#v%", "LUK : +#v%", "최대HP : +#v%", "최대MP : +#v%", "올스탯 : +#v%", "공격력 : +#v", "마력 : +#v", "이동속도 : +#v", "점프력 : +#v", "모든 속성 내성 : +#v%", "메소 획득량 : +#v%", "아이템 획득확률 : +#v%", "크리티컬 데미지 : +#v%", "캐릭터 기준 10레벨당 INT +#v"],
 ];
-var edipotenlist_per = [
+var edipotenlist_per_cape = [
     [10, 10, 10, 10, 10, 10, 12, 6, 6, 8, 8],
     [8, 8, 8, 8, 8, 8, 10, 6, 6, 6, 6, 6, 6, 6],
     [6, 6, 6, 6, 6, 6, 10, 4, 4, 4, 4, 4, 4, 4, 3, 3, 10, 10],
@@ -74,6 +72,17 @@ var edipotenper_cape = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 ];
+
+
+// 망토
+var op_potenlist;
+var op_potenlist;
+var op_potenvalue;
+var op_potenper;
+var op_edipotenlist;
+var op_edipotenlist_per;
+var op_edipotenvalue;
+var op_edipotenper;
 //
 var potenstring = ["레어", "에픽", "유니크", "레전드리"];
 
@@ -214,19 +223,25 @@ function jamsetting(ovr) {
     if (Math.random() * 1000 < ovr / 2) {
         lv[2] = potlv;
     }
+    var potenlist_per_sum = 0;
     for (var i = 0; i < pot.length; i++) {
-        t = parseInt(Math.random() * 100);
+        potenlist_per_sum = 0;
+        for (var j = 0; j < op_potenlist_per[lv[i]].length; j++) {
+            potenlist_per_sum += op_potenlist_per[lv[i]][j];
+        }
+        t = parseInt(Math.random() * potenlist_per_sum);
         perc = 0;
-        for (var j = 0; j < potenlist_per[lv[i]].length; j++) {
-            perc += potenlist_per[lv[i]][j];
+        for (var j = 0; j < op_potenlist_per[lv[i]].length; j++) {
+            perc += op_potenlist_per[lv[i]][j];
             if (perc > t) {
-                pot[i] = potenlist_cape[lv[i]][j];
-                pot[i] = pot[i].replace('#v', potenvalue_cape[lv[i]][j]);
-                pot[i] = pot[i].replace('#p', potenper_cape[lv[i]][j]);
+                pot[i] = op_potenlist[lv[i]][j];
+                pot[i] = pot[i].replace('#v', op_potenvalue[lv[i]][j]);
+                pot[i] = pot[i].replace('#p', op_potenper_cape[lv[i]][j]);
                 break;
             }
         }
     }
+    meso += reqlev * reqlev * 20; 
 }
 
 function edisetting(ovr) {
@@ -238,14 +253,18 @@ function edisetting(ovr) {
         lv[2] = edipotlv;
     }
     for (var i = 0; i < edipot.length; i++) {
-        t = parseInt(Math.random() * 100);
+        edipotenlist_per_sum = 0;
+        for (var j = 0; j < op_edipotenlist_per[lv[i]].length; j++) {
+            edipotenlist_per_sum += ediop_potenlist_per[lv[i]][j];
+        }
+        t = parseInt(Math.random() * edipotenlist_per_sum);
         perc = 0;
-        for (var j = 0; j < edipotenlist_per[lv[i]].length; j++) {
-            perc += edipotenlist_per[lv[i]][j];
+        for (var j = 0; j < op_edipotenlist_per[lv[i]].length; j++) {
+            perc += op_edipotenlist_per[lv[i]][j];
             if (perc > t) {
-                edipot[i] = edipotenlist_cape[lv[i]][j];
-                edipot[i] = edipot[i].replace('#v', edipotenvalue_cape[lv[i]][j]);
-                edipot[i] = edipot[i].replace('#p', edipotenper_cape[lv[i]][j]);
+                edipot[i] = op_edipotenlist[lv[i]][j];
+                edipot[i] = edipot[i].replace('#v', op_edipotenvalue[lv[i]][j]);
+                edipot[i] = edipot[i].replace('#p', op_edipotenper[lv[i]][j]);
                 break;
             }
         }
