@@ -50,6 +50,14 @@ var cosumcnt = new Array(25);
 var js = "";
 
 function chogihwa() {
+    op_potenlist = potenlist_cape;
+    op_potenlist_per = potenlist_per_cape;
+    op_potenvalue = potenvalue_cape;
+    op_potenper = potenper_cape;
+    op_edipotenlist = edipotenlist_cape;
+    op_edipotenlist_per = edipotenlist_per_cape;
+    op_edipotenvalue = edipotenvalue_cape;
+    op_edipotenper = edipotenper_cape;
     setchu(0);
     upg(false, '잠재');
     upg(false, '에디잠');

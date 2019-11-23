@@ -76,9 +76,10 @@ var edipotenper_cape = [
 
 // 망토
 var op_potenlist;
-var op_potenlist;
+var op_potenlist_per;
 var op_potenvalue;
 var op_potenper;
+
 var op_edipotenlist;
 var op_edipotenlist_per;
 var op_edipotenvalue;
