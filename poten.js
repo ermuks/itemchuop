@@ -18,14 +18,14 @@ var poten_LUK = [
 var potenlist_cape = [
     ["STR : +#v" , "DEX : +#v" , "INT : +#v" , "LUK : +#v" , "최대HP : +#v" , "최대MP : +#v" , "방어력 : +#v"],
     ["STR : +#v" , "DEX : +#v" , "INT : +#v" , "LUK : +#v" , "최대HP : +#v" , "최대MP : +#v" , "방어력 : +#v" , "STR : +#v%", "DEX : +#v%", "INT : +#v%", "LUK : +#v%", "최대HP : +#v%", "최대MP : +#v%", "올스탯 : +#v"],
-    ["STR : +#v%", "DEX : +#v%", "INT : +#v%", "LUK : +#v%", "최대HP : +#v%", "최대MP : +#v%", "방어력 : +#v%", "올스탯 : +#v%", "올스탯 : +#v"],
+    ["STR : +#v%", "DEX : +#v%", "INT : +#v%", "LUK : +#v%", "최대HP : +#v%", "최대MP : +#v%", "방어력 : +#v%", "올스탯 : +#v%"],
     ["STR : +#v%", "DEX : +#v%", "INT : +#v%", "LUK : +#v%", "최대HP : +#v%", "최대MP : +#v%", "방어력 : +#v%", "올스탯 : +#v%", "HP 회복 아이템 및 회복 스킬 효율 : +#v%", "캐릭터 기준 10레벨 당 STR : +#v", "캐릭터 기준 10레벨 당 DEX : +#v", "캐릭터 기준 10레벨 당 INT : +#v", "캐릭터 기준 10레벨 당 LUK : +#v"],
-    ["STR : +#v%", "DEX : +#v%", "INT : +#v%", "LUK : +#v%", "최대HP : +#v%", "최대MP : +#v%", "방어력 : +#v%", "올스탯 : +#v%", "HP 회복 아이템 및 회복 스킬 효율 : +#v%", "캐릭터 기준 10레벨 당 STR : +#v", "캐릭터 기준 10레벨 당 DEX : +#v", "캐릭터 기준 10레벨 당 INT : +#v", "캐릭터 기준 10레벨 당 LUK : +#v", "아이템 획득 확률 : +#v", "메소 획득량 : +#v"]
+    ["STR : +#v%", "DEX : +#v%", "INT : +#v%", "LUK : +#v%", "최대HP : +#v%", "최대MP : +#v%", "방어력 : +#v%", "올스탯 : +#v%", "HP 회복 아이템 및 회복 스킬 효율 : +#v%", "캐릭터 기준 10레벨 당 STR : +#v", "캐릭터 기준 10레벨 당 DEX : +#v", "캐릭터 기준 10레벨 당 INT : +#v", "캐릭터 기준 10레벨 당 LUK : +#v", "아이템 획득 확률 : +#v%", "메소 획득량 : +#v%"]
 ];
 var potenlist_per_cape = [
     [10, 10, 10, 10, 10, 10, 15],
     [10, 10, 10, 10, 10, 10, 15, 9, 9, 9, 9, 9, 9, 10],
-    [10, 10, 10, 10, 10, 10, 15, 8, 10],
+    [10, 10, 10, 10, 10, 10, 15, 8],
     [10, 10, 10, 10, 10, 10, 15, 8, 20, 9, 9, 9, 9],
     [10, 10, 10, 10, 10, 10, 15, 8, 20, 9, 9, 9, 9, 7, 7]
 ];
@@ -237,7 +237,7 @@ function jamsetting(ovr) {
             if (perc > t) {
                 pot[i] = op_potenlist[lv[i]][j];
                 pot[i] = pot[i].replace('#v', op_potenvalue[lv[i]][j]);
-                pot[i] = pot[i].replace('#p', op_potenper_cape[lv[i]][j]);
+                pot[i] = pot[i].replace('#p', op_potenper[lv[i]][j]);
                 break;
             }
         }
@@ -256,7 +256,7 @@ function edisetting(ovr) {
     for (var i = 0; i < edipot.length; i++) {
         edipotenlist_per_sum = 0;
         for (var j = 0; j < op_edipotenlist_per[lv[i]].length; j++) {
-            edipotenlist_per_sum += ediop_potenlist_per[lv[i]][j];
+            edipotenlist_per_sum += op_edipotenlist_per[lv[i]][j];
         }
         t = parseInt(Math.random() * edipotenlist_per_sum);
         perc = 0;
