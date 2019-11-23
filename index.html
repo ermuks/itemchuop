@@ -4,15 +4,28 @@
 <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="s.css" />
+    <script type="text/javascript" src="inventory.js"></script>
     <script type="text/javascript" src="upgrade.js"></script>
     <script type="text/javascript" src="juheun.js"></script>
     <script type="text/javascript" src="chuop.js"></script>
     <script type="text/javascript" src="star.js"></script>
     <script type="text/javascript" src="poten.js"></script>
-    <script type="text/javascript" src="inventory.js"></script>
+    <script>
+        function init() {/*
+            var url = "http://ermuks.github.io/itemchuop/data.json";
+
+            var xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            xmlhttp.open("GET", url.value, "false");
+            xmlhttp.send();
+            console.log(xmlhttp.responseText);
+
+
+            refresh();*/
+        }
+    </script>
     <title>메이플스토리 강화 시뮬레이션</title>
 </head>
-<body style="padding: 0px; margin: 0px; background: url(back.png) no-repeat;" onload="chogihwa(); refresh();">
+<body style="padding: 0px; margin: 0px; background: url(back.png) no-repeat;" onload="init(); chogihwa(); refresh();">
     <div id="info_text" style="position: absolute; left: 8px; top: 8px; " name="info"></div>
 
     <div id="cosum_all" style="" name="info">
@@ -240,7 +253,7 @@
             <div id="iconlayout">
                 <div id="itemicon">
                     <div id="itemcode">
-                        <img src="img/ItemList/01102794.png" width="70" style="margin-top: 7px;margin-left: 6px;">
+                        <img src="img/ItemList/01122430.png" width="70" style="margin-top: 5px;margin-left: 6px;">
                     </div>
                     <div id="itemclassb" class="p0">
                         <div id="itemcover"></div>
@@ -295,7 +308,7 @@
         </div>
         <div id="dotline"></div>
         <div id="itemoption">
-            <div id="itemoptiondetail" name="ioption">장비분류 : 망토</div>
+            <div id="itemoptiondetail" name="ioption">장비분류 : 펜던트</div>
             <div id="itemoptiondetail" name="ioption" hidden>공격속도 : 보통</div>
             <div id="itemoptiondetail" name="ioption"></div>
             <div id="itemoptiondetail" name="ioption"></div>

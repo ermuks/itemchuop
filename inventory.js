@@ -1,3 +1,12 @@
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+var httplink = "http://ermuks.github.io/itemchuop/";
+
 var nochu = new Array(25); // 추옵배열 겹침 방지
 var chustring = ["STR : +", "DEX : +", "INT : +", "LUK : +", "최대 HP : +", "최대 MP : +", "최대 HP : +", "최대 MP : +", "공격력 : +", "마력 : +", "방어력 : +", "이동속도 : +", "점프력 : +", "보스 몬스터 공격 시 데미지 +", "몬스터 방어율 무시 : +", "데미지 : +", "올스탯: +", "착용 레벨 감소 : -"];
 var opper = ["", "", "", "", "", "", "%", "%", "", "", "", "", "", "%", "%", "%", "%"];
@@ -6,13 +15,15 @@ var cash_return = false;
 var cash_protect = false;
 var cash_recover = false;
 
-var item_code = "01102794";
-var itemname = "앱솔랩스 메이지케이프";
+var item_code = getParameterByName('code');
+if (item_code == "") { item_code = "01122430"; }
+
+var itemname = "고통의 근원";
 
 var ucount = 0; // 강화된 횟수
 var goldhm = false;
-var maxupg = 7; // 최대 업그레이드 가능횟수
-var elseup = 7; // 업그레이드 가능 횟수
+var maxupg = 5; // 최대 업그레이드 가능횟수
+var elseup = 5; // 업그레이드 가능 횟수
 var goldhm = false; // 황금망치 제련 적용
 
 var jamjae = false; // 잠재가 있는가
@@ -21,11 +32,11 @@ var edjamj = false; // 에디가 있는가
 var jamjul = 0;
 var edijul = 0;
 
-var item_job = [false, false, true, false, false, false]; // 0전체, 1전, 2법, 3궁, 4도, 5해
+var item_job = [true, true, true, true, true, true]; // 0전체, 1전, 2법, 3궁, 4도, 5해
 var item_job_special = "";
 var reqlev = 160;
 var eqptype = 0;
-var basic = [15, 15, 15, 15, 0, 0, 0, 0, 2, 2, 100, 0, 0, 0, 0, 0, 0, 0, 0]; // 기본 옵션
+var basic = [10, 10, 10, 10, 0, 0, 5, 0, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0]; // 기본 옵션
 var jak = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]; // 작된 옵션 (주문서 및 스타포스)
 var chu = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]; // 추가 옵션
 
@@ -36,6 +47,7 @@ var mobile = false;
 var meso = 0;
 
 var cosumcnt = new Array(25);
+var js = "";
 
 function chogihwa() {
     setchu(0);

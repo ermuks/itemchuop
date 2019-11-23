@@ -94,6 +94,7 @@ function starforce() {
                 }
                 star_cnt = 12;
                 addinfo("장비가 파괴 되었습니다. (12성 자동복구)");
+                alert("파괴됨 ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ");
             }
         }
 
