@@ -167,7 +167,7 @@ function cube(item) {
             }
             break;
         case "에큐":
-            var sg = [0, 80, 14, 6];
+            var sg = [0, 60, 19, 5];
             t = Math.random() * 1000;
             if (edipotlv < 4) {
                 if (t < sg[edipotlv]) {
