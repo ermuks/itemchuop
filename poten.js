@@ -125,7 +125,7 @@ function cube(item) {
             }
             break;
         case "레큐":
-            var sg = [0, 60, 20, 6];
+            var sg = [0, 60, 18, 3];
             t = Math.random() * 1000;
             if (potlv < 4) {
                 if (t < sg[potlv]) {
@@ -167,7 +167,7 @@ function cube(item) {
             }
             break;
         case "에큐":
-            var sg = [0, 60, 19, 5];
+            var sg = [0, 47, 19, 6];
             t = Math.random() * 1000;
             if (edipotlv < 4) {
                 if (t < sg[edipotlv]) {
@@ -182,7 +182,7 @@ function cube(item) {
 }
 
 function blackcube() {
-    var sg = [0, 150, 30, 12];
+    var sg = [0, 150, 35, 12];
     t = Math.random() * 1000;
     if (potlv < 4) {
         if (t < sg[potlv]) {
